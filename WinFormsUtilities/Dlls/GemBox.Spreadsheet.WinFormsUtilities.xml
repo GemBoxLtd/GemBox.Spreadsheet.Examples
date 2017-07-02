@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>GemBox.Spreadsheet.WinFormsUtilities</name>
+  </assembly>
+  <members>
+    <member name="T:GemBox.Spreadsheet.WinFormsUtilities.DataGridViewConverter">
+      <summary>
+        <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.DataGridViewConverter" /> is used for importing <see cref="T:System.Windows.Forms.DataGridView" /> control into <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" /> and
+            exporting a <see cref="T:GemBox.Spreadsheet.CellRange" /> from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" /> into <see cref="T:System.Windows.Forms.DataGridView" /> control.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.DataGridViewConverter.ExportToDataGridView(GemBox.Spreadsheet.ExcelWorksheet,System.Windows.Forms.DataGridView,GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions)">
+      <summary>
+            Imports data from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" /> to <see cref="T:System.Windows.Forms.DataGridView" /> using specified <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions">options</see>.
+            </summary>
+      <param name="worksheet">Source <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="dataGridView">Destination <see cref="T:System.Windows.Forms.DataGridView" />.</param>
+      <param name="options">
+        <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions" />.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.DataGridViewConverter.ImportFromDataGridView(GemBox.Spreadsheet.ExcelWorksheet,System.Windows.Forms.DataGridView,GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions)">
+      <summary>
+            Imports data from <see cref="T:System.Windows.Forms.DataGridView" /> control into <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" /> using specified <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions">options</see>.
+            </summary>
+      <param name="worksheet">Destination <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="dataGridView">Source <see cref="T:System.Windows.Forms.DataGridView" />.</param>
+      <param name="options">
+        <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions" />.</param>
+    </member>
+    <member name="T:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions">
+      <summary>
+            Represents options for exporting data from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" /> to <see cref="T:System.Windows.Forms.DataGridView" />.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.#ctor">
+      <summary>
+            Initializes an instance of <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions" /> class.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+            Initializes an instance of <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions" /> class.
+            </summary>
+      <param name="startRow">Index of the first row of data being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="startColumn">Index of the first column of data being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="numberOfRows">Number of rows being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="numberOfColumns">Number of columns being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.#ctor(System.String,System.Int32,System.Int32)">
+      <summary>
+            Initializes an instance of <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions" /> class.
+            </summary>
+      <param name="startCell">Name of the first (top left) cell of data being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="numberOfRows">Number of rows being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="numberOfColumns">Number of columns being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.ColumnHeaders">
+      <summary>
+            Gets or sets a value indicating whether to use first row of exported data for column headers.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.NumberOfColumns">
+      <summary>
+            Gets or sets the number of columns being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.NumberOfRows">
+      <summary>
+            Gets or sets the number of rows being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.StartColumn">
+      <summary>
+            Gets or sets the index of the first column of data being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ExportToDataGridViewOptions.StartRow">
+      <summary>
+            Gets or sets the index of the first row of data being exported from <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="T:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions">
+      <summary>
+            Represents options for importing data from <see cref="T:System.Windows.Forms.DataGridView" /> to <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions.#ctor">
+      <summary>
+            Initializes an instance of <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions" /> class.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions.#ctor(System.Int32,System.Int32)">
+      <summary>
+            Initializes an instance of <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions" /> class.
+            </summary>
+      <param name="startRow">Index of the first row of imported data in <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+      <param name="startColumn">Index of the first column of imported data in <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions.#ctor(System.String)">
+      <summary>
+            Initializes an instance of <see cref="T:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions" /> class.
+            </summary>
+      <param name="startCell">Name of the first (top left) cell of imported data in <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.</param>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions.ColumnHeaders">
+      <summary>
+            Gets or sets a value indicating whether to import column headers into first row.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions.StartColumn">
+      <summary>
+            Gets or sets the index of the first column of imported data in <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.WinFormsUtilities.ImportFromDataGridViewOptions.StartRow">
+      <summary>
+            Gets or sets the index of the first row of imported data in <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+  </members>
+</doc>
