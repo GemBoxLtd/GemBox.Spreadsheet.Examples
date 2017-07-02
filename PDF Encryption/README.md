@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **PDF Encryption** example in C# and VB.NET that is availab
 
 **Screenshot**
 
+
 ![PDF Encryption Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/Protection/PDFEncryption/PdfEncryption.png)

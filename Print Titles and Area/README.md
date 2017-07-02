@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Print Titles and Area** example in C# and VB.NET that is 
 
 **Screenshot**
 
+
 ![Print Titles and Area Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/PrintTitlesandArea/PrintTitles.png)

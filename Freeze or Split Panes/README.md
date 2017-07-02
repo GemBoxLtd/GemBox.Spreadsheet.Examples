@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Freeze or Split Panes** example in C# and VB.NET that is 
 
 **Screenshot**
 
+
 ![Freeze or Split Panes Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/FreezeorSplitPanes/Panes.png)

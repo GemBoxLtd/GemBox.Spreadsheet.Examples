@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Data Types** example in C# and VB.NET that is available [
 
 **Screenshot**
 
+
 ![Data Types Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/DataTypes/DataTypes.png)

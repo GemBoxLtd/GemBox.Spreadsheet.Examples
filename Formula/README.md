@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Formula** example in C# and VB.NET that is available [her
 
 **Screenshot**
 
+
 ![Formula Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/Formula/Formula.png)

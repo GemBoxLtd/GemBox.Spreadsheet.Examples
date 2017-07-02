@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Formula Utility Methods** example in C# and VB.NET that i
 
 **Screenshot**
 
+
 ![Formula Utility Methods Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/FormulaUtilityMethods/FormulaUtilityMethods.png)

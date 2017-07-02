@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Comments** example in C# and VB.NET that is available [he
 
 **Screenshot**
 
+
 ![Comments Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/Comments/Comments.png)

@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Template Use** example in C# and VB.NET that is available
 
 **Screenshot**
 
+
 ![Template Use Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/CommonUses/TemplateUse/TemplateUse.png)

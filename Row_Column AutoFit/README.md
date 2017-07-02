@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Row/Column AutoFit** example in C# and VB.NET that is ava
 
 **Screenshot**
 
+
 ![Row/Column AutoFit Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/Row_ColumnAutoFit/AutoFit.png)

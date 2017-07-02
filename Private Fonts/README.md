@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Private Fonts** example in C# and VB.NET that is availabl
 
 **Screenshot**
 
+
 ![Private Fonts Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/PrivateFonts/PrivateFonts.png)

@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Illustrations and Shapes** example in C# and VB.NET that 
 
 **Screenshot**
 
+
 ![Illustrations and Shapes Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/XLSXPreservation/IllustrationsandShapes/IllustrationsAndShapes.png)

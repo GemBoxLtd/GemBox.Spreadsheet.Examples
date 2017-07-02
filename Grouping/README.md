@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Grouping** example in C# and VB.NET that is available [he
 
 **Screenshot**
 
+
 ![Grouping Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/Grouping/Grouping.png)

@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Preservation** example in C# and VB.NET that is available
 
 **Screenshot**
 
+
 ![Preservation Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/Charts/Preservation/ChartPreservation.png)

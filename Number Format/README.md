@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Number Format** example in C# and VB.NET that is availabl
 
 **Screenshot**
 
+
 ![Number Format Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/NumberFormat/NumberFormat.png)

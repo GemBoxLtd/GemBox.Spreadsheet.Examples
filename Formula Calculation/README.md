@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Formula Calculation** example in C# and VB.NET that is av
 
 **Screenshot**
 
+
 ![Formula Calculation Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/CalculationEngine/FormulaCalculation/FormulaCalculation.png)

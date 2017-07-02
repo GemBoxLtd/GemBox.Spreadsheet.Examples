@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Iterative Calculation** example in C# and VB.NET that is 
 
 **Screenshot**
 
+
 ![Iterative Calculation Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/CalculationEngine/IterativeCalculation/IterativeCalculation.png)

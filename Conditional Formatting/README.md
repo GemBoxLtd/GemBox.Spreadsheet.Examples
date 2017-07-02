@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Conditional Formatting** example in C# and VB.NET that is
 
 **Screenshot**
 
+
 ![Conditional Formatting Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/ConditionalFormatting/ConditionalFormatting.png)

@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **XLSX Encryption** example in C# and VB.NET that is availa
 
 **Screenshot**
 
+
 ![XLSX Encryption Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/Protection/XLSXEncryption/XlsxEncryption.png)

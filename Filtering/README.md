@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Filtering** example in C# and VB.NET that is available [h
 
 **Screenshot**
 
+
 ![Filtering Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/Filtering/Filtering.png)

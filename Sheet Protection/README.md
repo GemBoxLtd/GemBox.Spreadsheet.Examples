@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Sheet Protection** example in C# and VB.NET that is avail
 
 **Screenshot**
 
+
 ![Sheet Protection Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/Protection/SheetProtection/Protection.png)

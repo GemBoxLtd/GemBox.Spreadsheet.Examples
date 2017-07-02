@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **PDF Digital Signature** example in C# and VB.NET that is 
 
 **Screenshot**
 
+
 ![PDF Digital Signature Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/Protection/PDFDigitalSignature/PdfDigitalSignature.png)

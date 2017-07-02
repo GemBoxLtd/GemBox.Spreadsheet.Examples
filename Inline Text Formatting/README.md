@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Inline Text Formatting** example in C# and VB.NET that is
 
 **Screenshot**
 
+
 ![Inline Text Formatting Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/InlineTextFormatting/InlineTextFormatting.png)

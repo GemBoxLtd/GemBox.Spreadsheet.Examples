@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Print and View Options** example in C# and VB.NET that is
 
 **Screenshot**
 
+
 ![Print and View Options Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/AdvancedFeatures/PrintandViewOptions/PrintViewOptions.png)

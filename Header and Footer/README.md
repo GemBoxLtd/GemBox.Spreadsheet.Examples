@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Header and Footer** example in C# and VB.NET that is avai
 
 **Screenshot**
 
+
 ![Header and Footer Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/HeaderandFooter/HeadersAndFooters.png)

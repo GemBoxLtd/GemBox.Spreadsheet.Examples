@@ -2,4 +2,5 @@ GemBox.Spreadsheet's **Styles and Formatting** example in C# and VB.NET that is 
 
 **Screenshot**
 
+
 ![Styles and Formatting Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/BasicFeatures/StylesandFormatting/Style.png)
