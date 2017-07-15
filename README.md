@@ -7,7 +7,7 @@ GemBox.Spreadsheet Free is free of charge while GemBox.Spreadsheet Professional 
 <br>
 
 <p align="center">
-  <a title="Download GemBox.Spreadsheet Examples source code" href="https://www.gemboxsoftware.com/">
+  <a title="Download GemBox.Spreadsheet Examples source code" href="https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/archive/master.zip">
     <img src="https://www.gemboxsoftware.com/Images/download.png" />
   </a>
 </p>
