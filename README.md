@@ -1,23 +1,23 @@
 # GemBox.Spreadsheet Examples
 
-<img src="https://www.gemboxsoftware.com/spreadsheet/examples/content/Spreadsheet.png" alt="GemBox.Spreadsheet" align="left" /> GemBox.Spreadsheet is a C# / VB.NET component that enables developers to read, write, convert and print spreadsheet files (XLSX, XLS, ODS, CSV, HTML, PDF or XPS) from their .NET applications using one simple API.
+![GemBox.Spreadsheet](https://www.gemboxsoftware.com/spreadsheet/examples/content/Spreadsheet.png)
 
-GemBox.Spreadsheet Free is free of charge while GemBox.Spreadsheet Professional is a commercial version licensed per developer. Server deployment is royalty free.
+GemBox.Spreadsheet is a C# / VB.NET component that enables developers to read, write, convert and print spreadsheet files (XLSX, XLS, ODS, CSV, HTML, PDF or XPS) from their .NET applications using one simple API.
 
-<br>
+[GemBox.Spreadsheet Free](https://www.gemboxsoftware.com/spreadsheet/free-version) is free of charge while [GemBox.Spreadsheet Professional](https://www.gemboxsoftware.com/spreadsheet/pricelist) is a commercial version licensed per developer. Server deployment is royalty free.
 
 <p align="center">
+  <br>
   <a title="Download GemBox.Spreadsheet Examples source code" href="https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/archive/master.zip">
     <img src="https://www.gemboxsoftware.com/Images/download.png" />
   </a>
 </p>
 
-<br>
-
 This repository contains the source code of GemBox.Spreadsheet example projects. The demos or live examples are available online on:  
 [GemBox.Spreadsheet - C# / VB.NET Excel - Examples](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-library/601)
 
-## More Info
+## Resources
 + **[Overview](https://www.gemboxsoftware.com/spreadsheet/overview)**
-+ **[Free version](https://www.gemboxsoftware.com/spreadsheet/free-version)**
++ **[Documentation](https://www.gemboxsoftware.com/spreadsheet/help/html/Introduction.htm)**
 + **[Support](https://www.gemboxsoftware.com/spreadsheet/support)**
++ **[Blog](https://www.gemboxsoftware.com/gembox-spreadsheet)**
