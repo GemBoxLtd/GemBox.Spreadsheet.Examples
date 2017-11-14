@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello World", "Hello World", "{0188212F-6B08-4E9F-A2DB-D1E19E8E1335}"
 	ProjectSection(SolutionItems) = preProject
@@ -309,15 +309,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChartCs", "Chart\ChartCs\Ch
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ChartVb", "Chart\ChartVb\ChartVb.vbproj", "{3FA6F5C0-B05C-4DED-ABCB-31E74A336C69}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Preservation", "Preservation", "{7026F471-0020-4359-9373-75AD993574AA}"
-	ProjectSection(SolutionItems) = preProject
-		Preservation\README.md = Preservation\README.md
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreservationCs", "Preservation\PreservationCs\PreservationCs.csproj", "{69B6D4AA-6244-45E6-8141-4B5C07F5024C}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PreservationVb", "Preservation\PreservationVb\PreservationVb.vbproj", "{BFFA95E5-3EA3-4A09-8711-25D5B0F4B0E2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chart Components", "Chart Components", "{2B358F08-F205-4B30-B119-352D36210E47}"
 	ProjectSection(SolutionItems) = preProject
 		Chart Components\README.md = Chart Components\README.md
@@ -326,6 +317,24 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChartComponentsCs", "Chart Components\ChartComponentsCs\ChartComponentsCs.csproj", "{65397BA6-735C-49C6-9EF5-D5C11DCA150B}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ChartComponentsVb", "Chart Components\ChartComponentsVb\ChartComponentsVb.vbproj", "{6F9AA929-785C-445F-88B1-D53F1262B456}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chart Sheet", "Chart Sheet", "{771329A5-03CA-45CB-9327-98101BF1CB06}"
+	ProjectSection(SolutionItems) = preProject
+		Chart Sheet\README.md = Chart Sheet\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChartSheetCs", "Chart Sheet\ChartSheetCs\ChartSheetCs.csproj", "{4C2803C6-AED3-4F53-BB27-131EEC974ECB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ChartSheetVb", "Chart Sheet\ChartSheetVb\ChartSheetVb.vbproj", "{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Preservation", "Preservation", "{7026F471-0020-4359-9373-75AD993574AA}"
+	ProjectSection(SolutionItems) = preProject
+		Preservation\README.md = Preservation\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreservationCs", "Preservation\PreservationCs\PreservationCs.csproj", "{69B6D4AA-6244-45E6-8141-4B5C07F5024C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PreservationVb", "Preservation\PreservationVb\PreservationVb.vbproj", "{BFFA95E5-3EA3-4A09-8711-25D5B0F4B0E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTable to Sheet", "DataTable to Sheet", "{323AA9B6-BC3D-4690-8E6D-F11907BD6771}"
 	ProjectSection(SolutionItems) = preProject
@@ -1363,6 +1372,22 @@ Global
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|Any CPU.ActiveCfg = Release|x86
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.ActiveCfg = Release|x86
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.Build.0 = Release|x86
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Debug|x86.Build.0 = Debug|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Release|x86.ActiveCfg = Release|Any CPU
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB}.Release|x86.Build.0 = Release|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Debug|x86.Build.0 = Debug|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Release|x86.ActiveCfg = Release|Any CPU
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1477,5 +1502,10 @@ Global
 		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8} = {AED867EE-0957-455A-81DB-0DC0C2EC5017}
 		{DBE794A9-4F7F-4F41-BF7C-12383330146A} = {094B6424-BDD2-4462-99CC-C27D1D4557A5}
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E} = {094B6424-BDD2-4462-99CC-C27D1D4557A5}
+		{4C2803C6-AED3-4F53-BB27-131EEC974ECB} = {771329A5-03CA-45CB-9327-98101BF1CB06}
+		{E123C3F0-C991-47C0-B0D9-BD0CE16F5819} = {771329A5-03CA-45CB-9327-98101BF1CB06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07B2EA9D-1983-422D-9E2F-61D6A3BC5685}
 	EndGlobalSection
 EndGlobal

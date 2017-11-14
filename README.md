@@ -1,6 +1,6 @@
 # GemBox.Spreadsheet Examples
 
-![GemBox.Spreadsheet](https://www.gemboxsoftware.com/spreadsheet/examples/content/Spreadsheet.png)
+![GemBox.Spreadsheet](https://www.gemboxsoftware.com/images/gbs-256x256.png)
 
 GemBox.Spreadsheet is a C# / VB.NET component that enables developers to read, write, convert and print spreadsheet files (XLSX, XLS, ODS, CSV, HTML, PDF or XPS) from their .NET applications using one simple API.
 
@@ -12,7 +12,7 @@ This repository contains the source code of GemBox.Spreadsheet example projects.
 [GemBox.Spreadsheet - C# / VB.NET Excel - Examples](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-library/601)
 
 ## Resources
-+ **[Overview](https://www.gemboxsoftware.com/spreadsheet/overview)**
++ **[Overview](https://www.gemboxsoftware.com/spreadsheet)**
 + **[Documentation](https://www.gemboxsoftware.com/spreadsheet/help/html/Introduction.htm)**
 + **[Support](https://www.gemboxsoftware.com/spreadsheet/support)**
 + **[Blog](https://www.gemboxsoftware.com/gembox-spreadsheet)**

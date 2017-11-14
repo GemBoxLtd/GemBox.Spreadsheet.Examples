@@ -4465,7 +4465,7 @@
             </summary>
       <param name="httpResponse">System.Web.HttpResponse object that can be retrieved through the Response property of the System.Web.HttpApplication, System.Web.HttpContext, System.Web.UI.Page or System.Web.UI.UserControl classes or System.Web.HttpResponseBase object or System.Net.Http.HttpResponseMessage object.</param>
       <param name="fileName">File name that will be presented in client browser when downloading a file.</param>
-      <exception cref="T:System.InvalidOperationException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.ExcelFile.Save(System.Object,System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
+      <exception cref="T:System.ArgumentException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.ExcelFile.Save(System.Object,System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
     </member>
     <member name="M:GemBox.Spreadsheet.ExcelFile.Save(System.Object,System.String,GemBox.Spreadsheet.SaveOptions)">
       <summary>
@@ -4480,6 +4480,7 @@
             Saves the spreadsheet to a file with the specified path.
             </summary>
       <param name="path">The path to which to save the spreadsheet.</param>
+      <exception cref="T:System.ArgumentException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.ExcelFile.Save(System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
     </member>
     <member name="M:GemBox.Spreadsheet.ExcelFile.Save(System.String,GemBox.Spreadsheet.SaveOptions)">
       <summary>
@@ -5587,8 +5588,9 @@
     </member>
     <member name="P:GemBox.Spreadsheet.ExcelViewOptions.SelectedCells">
       <summary>
-            Gets or sets the selected cells.
-            </summary>
+        <para>This property is obsolete. Use <see cref="P:GemBox.Spreadsheet.ExcelWorksheet.SelectedRanges" /> property instead.</para>
+        <para>Gets or sets the selected cells.</para>
+      </summary>
     </member>
     <member name="P:GemBox.Spreadsheet.ExcelViewOptions.ShowColumnsFromRightToLeft">
       <summary>
@@ -5976,6 +5978,11 @@
             Gets or sets the worksheet protection flag.
             </summary>
     </member>
+    <member name="P:GemBox.Spreadsheet.ExcelWorksheet.ProtectedRanges">
+      <summary>
+            Gets the protected ranges. Supported in XLSX only.
+            </summary>
+    </member>
     <member name="P:GemBox.Spreadsheet.ExcelWorksheet.ProtectionSettings">
       <summary>
             Gets or sets worksheet protection properties. This settings will be used only if <see cref="P:GemBox.Spreadsheet.ExcelWorksheet.Protected" /> is set to <see langword="true" />;
@@ -5997,6 +6004,12 @@
             Gets collection of all rows (<see cref="T:GemBox.Spreadsheet.ExcelRow" />) in the worksheet.
             </summary>
     </member>
+    <member name="P:GemBox.Spreadsheet.ExcelWorksheet.SelectedRanges">
+      <summary>
+        <para>Gets the selected ranges of cells in the worksheet.</para>
+        <para>Supported only in XLSX.</para>
+      </summary>
+    </member>
     <member name="P:GemBox.Spreadsheet.ExcelWorksheet.Sort">
       <summary>
         <para>Gets or sets the active <see cref="T:GemBox.Spreadsheet.SortState" />.
@@ -6012,6 +6025,11 @@
         <para>Gets or sets the worksheet tab color.</para>
         <para>Supported only in XLSX and HTML.</para>
       </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ExcelWorksheet.Type">
+      <summary>
+            Gets worksheet type.
+            </summary>
     </member>
     <member name="P:GemBox.Spreadsheet.ExcelWorksheet.VerticalPageBreaks">
       <summary>
@@ -6043,6 +6061,15 @@
       <summary>
             Gets or sets active worksheet.
             </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ExcelWorksheetCollection.Add(GemBox.Spreadsheet.SheetType,System.String)">
+      <summary>
+            Adds an empty worksheet to the end of the collection.
+            </summary>
+      <param name="type">The sheet type.</param>
+      <param name="worksheetName">Worksheet name.</param>
+      <returns>Newly created worksheet.</returns>
+      <exception cref="T:System.ArgumentException">Worksheet name is not unique.</exception>
     </member>
     <member name="M:GemBox.Spreadsheet.ExcelWorksheetCollection.Add(System.String)">
       <summary>
@@ -6098,6 +6125,15 @@
       <param name="worksheetIndex">The zero-based index of the worksheet.</param>
       <param name="worksheetName">Worksheet name.</param>
       <param name="sourceWorksheet">Source worksheet to copy.</param>
+      <returns>Newly created worksheet.</returns>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ExcelWorksheetCollection.InsertEmpty(System.Int32,GemBox.Spreadsheet.SheetType,System.String)">
+      <summary>
+            Inserts empty worksheet at the specified index.
+            </summary>
+      <param name="worksheetIndex">The zero-based index of the worksheet.</param>
+      <param name="type">The sheet type.</param>
+      <param name="worksheetName">Worksheet name.</param>
       <returns>Newly created worksheet.</returns>
     </member>
     <member name="M:GemBox.Spreadsheet.ExcelWorksheetCollection.InsertEmpty(System.Int32,System.String)">
@@ -6878,7 +6914,7 @@
             </summary>
       <param name="httpResponse">System.Web.HttpResponse object that can be retrieved through the Response property of the System.Web.HttpApplication, System.Web.HttpContext, System.Web.UI.Page or System.Web.UI.UserControl classes or System.Web.HttpResponseBase object or System.Net.Http.HttpResponseMessage object.</param>
       <param name="fileName">File name that will be presented in client browser when downloading a file.</param>
-      <exception cref="T:System.InvalidOperationException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.FormattedExcelDrawing.Save(System.Object,System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
+      <exception cref="T:System.ArgumentException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.FormattedExcelDrawing.Save(System.Object,System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
     </member>
     <member name="M:GemBox.Spreadsheet.FormattedExcelDrawing.Save(System.Object,System.String,GemBox.Spreadsheet.SaveOptions)">
       <summary>
@@ -6893,7 +6929,7 @@
             Saves the drawing to a file with the specified path. Path must include file extension.
             </summary>
       <param name="path">The path to which to save the drawing.</param>
-      <exception cref="T:System.InvalidOperationException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.FormattedExcelDrawing.Save(System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
+      <exception cref="T:System.ArgumentException">If file extension is not specified or not supported. If file extension is not recognized, use <see cref="M:GemBox.Spreadsheet.FormattedExcelDrawing.Save(System.String,GemBox.Spreadsheet.SaveOptions)" /> method overload instead.</exception>
     </member>
     <member name="M:GemBox.Spreadsheet.FormattedExcelDrawing.Save(System.String,GemBox.Spreadsheet.SaveOptions)">
       <summary>
@@ -8720,6 +8756,119 @@
             Gets or sets the index of the last page to print.
             </summary>
     </member>
+    <member name="T:GemBox.Spreadsheet.ProtectedRange">
+      <summary>
+            Represents a range of cells to be protected.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ProtectedRange.RefersToCells">
+      <summary>
+            Gets or sets the range to be protected.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRange.SetPassword(System.String)">
+      <summary>
+            Sets the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> password.
+            </summary>
+      <param name="password">The <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> password.</param>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ProtectedRange.Title">
+      <summary>
+            Gets or sets the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> title.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRange.ToString">
+      <summary>
+            Returns a <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> instance.
+            </summary>
+      <returns>
+            A <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> instance.
+            </returns>
+    </member>
+    <member name="T:GemBox.Spreadsheet.ProtectedRangeCollection">
+      <summary>
+            Represents a collection of all protected ranges on the <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRangeCollection.AddNew(System.String,System.String)">
+      <summary>
+            Adds the new <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> to the current <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+      <param name="title">The <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> title.</param>
+      <param name="refersToCells">A reference to a range of cells that should be protected.</param>
+      <returns>
+            A new <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> added to the current <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="title" /> or <paramref name="refersToCells" /> is <see langword="null" /> or <see cref="F:System.String.Empty" />.</exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRangeCollection.AddNew(System.String,System.String,System.String)">
+      <summary>
+            Adds the new <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> to the current <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+      <param name="title">The <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> title.</param>
+      <param name="refersToCells">A reference to a range of cells that should be protected.</param>
+      <param name="password">The optional password.</param>
+      <returns>
+            A new <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> added to the current <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="title" /> or <paramref name="refersToCells" /> is <see langword="null" /> or <see cref="F:System.String.Empty" />.</exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRangeCollection.Clear">
+      <summary>
+            Removes all <see cref="T:GemBox.Spreadsheet.ProtectedRange" />s from the current <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ProtectedRangeCollection.Count">
+      <summary>
+            Gets the number of <see cref="T:GemBox.Spreadsheet.ProtectedRange" />s actually contained in the <see cref="T:GemBox.Spreadsheet.ProtectedRangeCollection" />.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRangeCollection.GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:GemBox.Spreadsheet.ProtectedRangeCollection" />.
+            </summary>
+      <returns>
+            An enumerator for the <see cref="T:GemBox.Spreadsheet.ProtectedRangeCollection" />.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ProtectedRangeCollection.Item(System.Int32)">
+      <summary>
+            Gets the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> at the specified index.
+            </summary>
+      <param name="index">The zero-based index of the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> to get.</param>
+      <returns>
+            The <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> at the specified index.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than zero or is equal to or greater than <see cref="P:GemBox.Spreadsheet.ProtectedRangeCollection.Count" />.</exception>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ProtectedRangeCollection.Item(System.String)">
+      <summary>
+            Gets the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> with the specified title or <see langword="null" />.
+            </summary>
+      <param name="title">The <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> title.</param>
+      <returns>
+            The <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> with the specified title or <see langword="null" />.
+            </returns>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRangeCollection.RemoveAt(System.Int32)">
+      <summary>
+            Removes the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> at the specified index of the <see cref="T:GemBox.Spreadsheet.ProtectedRangeCollection" />.
+            </summary>
+      <param name="index">The zero-based index of the <see cref="T:GemBox.Spreadsheet.ProtectedRange" /> to remove.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than zero or is equal to or greater than <see cref="P:GemBox.Spreadsheet.ProtectedRangeCollection.Count" />.</exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ProtectedRangeCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:GemBox.Spreadsheet.ProtectedRangeCollection" />.
+            </summary>
+      <returns>
+            An enumerator for the <see cref="T:GemBox.Spreadsheet.ProtectedRangeCollection" />.
+            </returns>
+    </member>
     <member name="T:GemBox.Spreadsheet.RangeIndexingMode">
       <summary>
             Indexing modes used by <see cref="T:GemBox.Spreadsheet.CellRange" />.
@@ -8938,6 +9087,21 @@
     <member name="P:GemBox.Spreadsheet.SheetHeaderFooter.ScaleWithDoc">
       <summary>
             Gets or sets if headers/footers will be scaled with document scaling.
+            </summary>
+    </member>
+    <member name="T:GemBox.Spreadsheet.SheetType">
+      <summary>
+            Specifies the sheet type.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.SheetType.Worksheet">
+      <summary>
+            The most common type of sheet is the worksheet, which is represented as a grid of cells.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.SheetType.Chart">
+      <summary>
+            Represents a chart that is stored in its own sheet.
             </summary>
     </member>
     <member name="T:GemBox.Spreadsheet.SheetVisibility">
