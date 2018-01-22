@@ -21,7 +21,7 @@ class Program
         ws.Columns[2].Width = 36 * 256;
 
         ws.Cells[row += 2, 1].Value = ".Style.Borders.SetBorders(...)";
-        ws.Cells[row, 2].Style.Borders.SetBorders(MultipleBorders.All, SpreadsheetColor.FromArgb(252, 1, 1), LineStyle.Thin);
+        ws.Cells[row, 2].Style.Borders.SetBorders(MultipleBorders.All | MultipleBorders.Diagonal, SpreadsheetColor.FromArgb(252, 1, 1), LineStyle.Thin);
 
         ws.Cells[row += 2, 1].Value = ".Style.FillPattern.SetPattern(...)";
         ws.Cells[row, 2].Style.FillPattern.SetPattern(FillPatternStyle.ThinHorizontalCrosshatch, SpreadsheetColor.FromName(ColorName.Green), SpreadsheetColor.FromName(ColorName.Yellow));

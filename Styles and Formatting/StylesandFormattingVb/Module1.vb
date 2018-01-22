@@ -22,7 +22,7 @@ Module Module1
 
         row = row + 2
         ws.Cells(row, 1).Value = ".Style.Borders.SetBorders(...)"
-        ws.Cells(row, 2).Style.Borders.SetBorders(MultipleBorders.All, SpreadsheetColor.FromArgb(252, 1, 1), LineStyle.Thin)
+        ws.Cells(row, 2).Style.Borders.SetBorders(MultipleBorders.All Or MultipleBorders.Diagonal, SpreadsheetColor.FromArgb(252, 1, 1), LineStyle.Thin)
 
         row = row + 2
         ws.Cells(row, 1).Value = ".Style.FillPattern.SetPattern(...)"

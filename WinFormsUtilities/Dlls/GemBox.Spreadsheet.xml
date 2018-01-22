@@ -10877,6 +10877,91 @@
             A <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.Charts.ChartAxis" /> instance.
             </returns>
     </member>
+    <member name="T:GemBox.Spreadsheet.Charts.ChartDataLabels">
+      <summary>
+            Represents the settings for the data labels for an entire series or the entire chart.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Charts.ChartDataLabels.Delete">
+      <summary>
+            Deletes data labels.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.LabelContainsCategoryName">
+      <summary>
+            Gets or sets a value indicating whether the category name should be shown in a data label.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.LabelContainsLegendKey">
+      <summary>
+            Gets or sets a value indicating whether the legend key should be shown in a data label.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.LabelContainsSeriesName">
+      <summary>
+            Gets or sets a value indicating whether the series name should be shown in a data label.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.LabelContainsValue">
+      <summary>
+            Gets or sets a value indicating whether the value should be shown in a data label.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.LabelPosition">
+      <summary>
+            Gets or sets the position of the data label.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.NumberFormat">
+      <summary>
+            Gets or sets the number format used for formatting data labels.
+            If <see cref="P:GemBox.Spreadsheet.Charts.ChartDataLabels.NumberFormatLinkedToSource" /> is <see langword="true" />, then number format from chart's source data (cells) will be used to format data labels.
+            Setting this property, sets <see cref="P:GemBox.Spreadsheet.Charts.ChartDataLabels.NumberFormatLinkedToSource" /> to <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.NumberFormatLinkedToSource">
+      <summary>
+            Gets or sets a value indicating whether number format from chart's source data (cells) will be used to format data labels.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.Separator">
+      <summary>
+            Gets or sets the text that should be used to separate the parts of a data label.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Charts.ChartDataLabels.Show">
+      <summary>
+            Shows the value in the data label.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Charts.ChartDataLabels.Show(GemBox.Spreadsheet.Charts.DataLabelPosition)">
+      <summary>
+        <para>Shows the value in the data label at the specified position.</para>
+        <para>
+          <see cref="T:GemBox.Spreadsheet.Charts.ColumnChart" /> and <see cref="T:GemBox.Spreadsheet.Charts.BarChart" /> support <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Center" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.InsideEnd" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.InsideBase" /> and <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.OutsideEnd" /> data label positions.</para>
+        <para>
+          <see cref="T:GemBox.Spreadsheet.Charts.LineChart" /> supports <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Center" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Left" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Right" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Top" /> and <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Bottom" /> data label positions.</para>
+        <para>
+          <see cref="T:GemBox.Spreadsheet.Charts.PieChart" /> supports <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Center" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.InsideEnd" />, <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.OutsideEnd" /> and <see cref="F:GemBox.Spreadsheet.Charts.DataLabelPosition.BestFit" /> data label positions.</para>
+        <para>
+          <see cref="T:GemBox.Spreadsheet.Charts.AreaChart" /> supports none of the data label positions. Use <see cref="M:GemBox.Spreadsheet.Charts.ChartDataLabels.Show" /> overload for <see cref="T:GemBox.Spreadsheet.Charts.AreaChart" /> instead.</para>
+      </summary>
+      <param name="labelPosition">The position of the label.</param>
+      <exception cref="T:System.NotSupportedException">The specified <paramref name="labelPosition" /> is not supported for this chart.</exception>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartDataLabels.ShowLeaderLines">
+      <summary>
+            Gets or sets a value indicating whether leader lines should be shown for data labels.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Charts.ChartDataLabels.ToString">
+      <summary>
+            Returns a <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.Charts.ChartDataLabels" /> instance.
+            </summary>
+      <returns>
+            A <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.Charts.ChartDataLabels" /> instance.
+            </returns>
+    </member>
     <member name="T:GemBox.Spreadsheet.Charts.ChartGrouping">
       <summary>
             Represents the grouping of a chart series for each category in a chart.
@@ -10976,6 +11061,11 @@
     <member name="T:GemBox.Spreadsheet.Charts.ChartSeries">
       <summary>
             Represents a single chart series.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ChartSeries.DataLabels">
+      <summary>
+            Gets the settings for the data labels for an entire series.
             </summary>
     </member>
     <member name="M:GemBox.Spreadsheet.Charts.ChartSeries.Delete">
@@ -11423,6 +11513,61 @@
             Gets or sets the chart grouping.
             </summary>
     </member>
+    <member name="T:GemBox.Spreadsheet.Charts.DataLabelPosition">
+      <summary>
+            Represents the possible positions for a data label.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.None">
+      <summary>
+            Data label is not shown.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Left">
+      <summary>
+            Specifies that data labels shall be displayed to the left of the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Right">
+      <summary>
+            Specifies that data labels shall be displayed to the right of the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Top">
+      <summary>
+            Specifies that data labels shall be displayed above the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Bottom">
+      <summary>
+            Specifies that data labels shall be displayed below the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.Center">
+      <summary>
+            Specifies that data labels shall be displayed centered on the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.InsideBase">
+      <summary>
+            Specifies that data labels shall be displayed inside the base of the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.InsideEnd">
+      <summary>
+            Specifies that data labels shall be displayed inside the end of the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.OutsideEnd">
+      <summary>
+            Specifies that data labels shall be displayed outside the end of the data marker.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Charts.DataLabelPosition.BestFit">
+      <summary>
+            Specifies that data labels shall be displayed in the best position.
+            </summary>
+    </member>
     <member name="T:GemBox.Spreadsheet.Charts.DateAxis">
       <summary>
         <para>Represents an axis used for categories which are dates / times.</para>
@@ -11523,6 +11668,11 @@
     <member name="P:GemBox.Spreadsheet.Charts.ExcelChart.ChartType">
       <summary>
             Gets the <see cref="T:GemBox.Spreadsheet.Charts.ChartType" /> of this <see cref="T:GemBox.Spreadsheet.Charts.ExcelChart" /> instance.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Charts.ExcelChart.DataLabels">
+      <summary>
+            Gets the settings for the data labels for the entire chart.
             </summary>
     </member>
     <member name="P:GemBox.Spreadsheet.Charts.ExcelChart.Legend">
