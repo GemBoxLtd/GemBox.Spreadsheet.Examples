@@ -2,5 +2,4 @@ GemBox.Spreadsheet's **Chart Sheet** example in C# and VB.NET that is available 
 
 **Screenshot**
 
-
 ![Chart Sheet Screenshot](https://www.gemboxsoftware.com/Spreadsheet/Examples/Content/Charts/ChartSheet/ChartSheet.png)

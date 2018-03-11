@@ -1437,6 +1437,11 @@
         <para>If set to <see langword="null" />, number format will be resolved from referenced workbook style.</para>
       </summary>
     </member>
+    <member name="P:GemBox.Spreadsheet.CellStyle.NumberFormatLocal">
+      <summary>
+            Gets a <see cref="T:System.String" /> that represents the format code for the numeric value in the language of the user.
+            </summary>
+    </member>
     <member name="P:GemBox.Spreadsheet.CellStyle.QuotePrefix">
       <summary>
         <para>Gets or sets a value indicating whether the text string in a cell should be prefixed by a single quote mark (e.g., 'text). Use it to store numeric value of a cell as text.</para>
@@ -8172,7 +8177,7 @@
     </member>
     <member name="F:GemBox.Spreadsheet.MultipleBorders.All">
       <summary>
-            All borders.
+            All borders except diagonal.
             </summary>
     </member>
     <member name="T:GemBox.Spreadsheet.NamedRange">
@@ -9617,7 +9622,7 @@
     <member name="P:GemBox.Spreadsheet.SpreadsheetHyperlink.Location">
       <summary>
             Gets or sets the location string for hyperlink.
-            <remarks>URL have to be in escaped format(You can use<see cref="M:System.Uri.EscapeUriString(System.String)">System.Uri.EscapeUriString</see> method).</remarks></summary>
+            </summary>
     </member>
     <member name="M:GemBox.Spreadsheet.SpreadsheetHyperlink.op_Equality(GemBox.Spreadsheet.SpreadsheetHyperlink,GemBox.Spreadsheet.SpreadsheetHyperlink)">
       <summary>
@@ -10600,6 +10605,23 @@
     <member name="T:GemBox.Spreadsheet.CalculationEngine.SpreadsheetParserException">
       <summary>
             Represents exception that can occur in GemBox.Spreadsheet formula parsing process.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.CalculationEngine.SpreadsheetParserException.CellName">
+      <summary>
+            Gets the name of the <see cref="T:GemBox.Spreadsheet.ExcelCell" />.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.CalculationEngine.SpreadsheetParserException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Adds additional exception data to the <see cref="T:System.Runtime.Serialization.SerializationInfo" />.
+            </summary>
+      <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+      <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+    </member>
+    <member name="P:GemBox.Spreadsheet.CalculationEngine.SpreadsheetParserException.WorksheetName">
+      <summary>
+            Gets the name of the <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
             </summary>
     </member>
     <member name="T:GemBox.Spreadsheet.Charts.AreaChart">

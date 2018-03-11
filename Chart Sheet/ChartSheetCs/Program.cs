@@ -4,6 +4,7 @@ using GemBox.Spreadsheet.Charts;
 
 class Program
 {
+    [STAThread]
     static void Main(string[] args)
     {
         // If using Professional version, put your serial key below.
