@@ -6,7 +6,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("GemBox Ltd.")>
 <Assembly: AssemblyProduct("GroupingVb")>
-<Assembly: AssemblyCopyright("Copyright © GemBox Ltd. 2017")>
+<Assembly: AssemblyCopyright("Copyright © GemBox Ltd.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(False)>
 <Assembly: Guid("a9830190-3cd8-4955-9fbe-1b60f856fc59")>

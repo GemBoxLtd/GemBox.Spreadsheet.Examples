@@ -6,7 +6,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("GemBox Ltd.")>
 <Assembly: AssemblyProduct("SheetCopying_DeletingVb")>
-<Assembly: AssemblyCopyright("Copyright © GemBox Ltd. 2017")>
+<Assembly: AssemblyCopyright("Copyright © GemBox Ltd.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(False)>
 <Assembly: Guid("85384852-2a85-4894-86be-8032f3dafa54")>

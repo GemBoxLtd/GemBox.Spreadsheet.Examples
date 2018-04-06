@@ -6,7 +6,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("GemBox Ltd.")>
 <Assembly: AssemblyProduct("InlineTextFormattingVb")>
-<Assembly: AssemblyCopyright("Copyright © GemBox Ltd. 2017")>
+<Assembly: AssemblyCopyright("Copyright © GemBox Ltd.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(False)>
 <Assembly: Guid("eab41453-1650-4ee3-af35-aa51ef90f3d0")>

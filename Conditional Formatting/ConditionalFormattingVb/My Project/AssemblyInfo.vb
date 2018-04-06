@@ -6,7 +6,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("GemBox Ltd.")>
 <Assembly: AssemblyProduct("ConditionalFormattingVb")>
-<Assembly: AssemblyCopyright("Copyright © GemBox Ltd. 2017")>
+<Assembly: AssemblyCopyright("Copyright © GemBox Ltd.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(False)>
 <Assembly: Guid("86da6753-9d38-4e08-8d1c-0eb49d27b12e")>

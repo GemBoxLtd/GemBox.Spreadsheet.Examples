@@ -6,7 +6,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("GemBox Ltd.")>
 <Assembly: AssemblyProduct("FormsandMacrosVb")>
-<Assembly: AssemblyCopyright("Copyright © GemBox Ltd. 2017")>
+<Assembly: AssemblyCopyright("Copyright © GemBox Ltd.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(False)>
 <Assembly: Guid("437d7cb9-2b4d-4180-bb09-5a63446a8ac4")>

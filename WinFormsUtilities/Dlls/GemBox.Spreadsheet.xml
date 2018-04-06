@@ -62,6 +62,12 @@
             Gets or sets hyperlink.
             </summary>
     </member>
+    <member name="M:GemBox.Spreadsheet.AbstractRange.Insert(GemBox.Spreadsheet.InsertShiftDirection)">
+      <summary>
+            Inserts a range by shifting cells in the specified direction.
+            </summary>
+      <param name="direction">The shift direction.</param>
+    </member>
     <member name="P:GemBox.Spreadsheet.AbstractRange.IsStyleDefault">
       <summary>
             Returns <see langword="true" /> if all cells in <see cref="T:GemBox.Spreadsheet.AbstractRange" /> have default cell style; otherwise, <see langword="false" />.
@@ -71,6 +77,12 @@
       <summary>
             Gets the name of <see cref="T:GemBox.Spreadsheet.AbstractRange" /> instance.
             </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.AbstractRange.Remove(GemBox.Spreadsheet.RemoveShiftDirection)">
+      <summary>
+            Removes a range by shifting cells in the specified direction.
+            </summary>
+      <param name="direction">The shift direction.</param>
     </member>
     <member name="M:GemBox.Spreadsheet.AbstractRange.ReplaceText(System.String,System.String)">
       <summary>
@@ -908,6 +920,13 @@
             Represents a single set of cell border formats (left, right, top, bottom and diagonal).
             </summary>
     </member>
+    <member name="M:GemBox.Spreadsheet.CellBorders.GetUnresolvedBorder(GemBox.Spreadsheet.IndividualBorder)">
+      <summary>
+            Gets the unresolved (direct) <see cref="T:GemBox.Spreadsheet.CellBorder" /> which contains the color and line style for the specified individual border of a cell.
+            </summary>
+      <param name="individualBorder">The individual border for which to get the color and line style.</param>
+      <returns>The unresolved (direct) <see cref="T:GemBox.Spreadsheet.CellBorder" /> which contains the color and line style for the specified individual border of a cell.</returns>
+    </member>
     <member name="P:GemBox.Spreadsheet.CellBorders.Item(GemBox.Spreadsheet.IndividualBorder)">
       <summary>
             Gets the <see cref="T:GemBox.Spreadsheet.CellBorder" /> which contains the color and line style for the specified individual border of a cell.
@@ -1155,6 +1174,12 @@
             Gets indexing mode used for cell range.
             </summary>
     </member>
+    <member name="M:GemBox.Spreadsheet.CellRange.Insert(GemBox.Spreadsheet.InsertShiftDirection)">
+      <summary>
+            Inserts a range by shifting cells in the specified direction.
+            </summary>
+      <param name="direction">The shift direction.</param>
+    </member>
     <member name="P:GemBox.Spreadsheet.CellRange.IsAnyCellMerged">
       <summary>
             Returns <see langword="true" /> is any cell in this cell range is merged; otherwise, <see langword="false" />.
@@ -1233,6 +1258,12 @@
       <param name="position">Position string.</param>
       <param name="row">Row index.</param>
       <param name="column">Column index.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.CellRange.Remove(GemBox.Spreadsheet.RemoveShiftDirection)">
+      <summary>
+            Removes a range by shifting cells in the specified direction.
+            </summary>
+      <param name="direction">The shift direction.</param>
     </member>
     <member name="M:GemBox.Spreadsheet.CellRange.RowColumnToPosition(System.Int32,System.Int32)">
       <summary>
@@ -3288,6 +3319,12 @@
             Gets or sets cell hyperlink.
             </summary>
     </member>
+    <member name="M:GemBox.Spreadsheet.ExcelCell.Insert(GemBox.Spreadsheet.InsertShiftDirection)">
+      <summary>
+            Inserts a cell by shifting cells in the specified direction.
+            </summary>
+      <param name="direction">The shift direction.</param>
+    </member>
     <member name="P:GemBox.Spreadsheet.ExcelCell.IntValue">
       <summary>
             Gets the integer value of this cell or of merged range if this cell is merged.
@@ -3318,6 +3355,12 @@
       <returns>
         <see langword="true" /> if <paramref name="first" /> and <paramref name="second" /> <see cref="T:GemBox.Spreadsheet.ExcelCell" />s are not equal; otherwise, <see langword="false" />.
             </returns>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ExcelCell.Remove(GemBox.Spreadsheet.RemoveShiftDirection)">
+      <summary>
+            Removes a cell by shifting cells in the specified direction.
+            </summary>
+      <param name="direction">The shift direction.</param>
     </member>
     <member name="P:GemBox.Spreadsheet.ExcelCell.Row">
       <summary>
@@ -4138,6 +4181,14 @@
       <summary>
             Gets or sets a value indicating whether the formula address references are automatically updated.
             </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.ExcelFile.AutoSizeColumns(System.Int32,System.Int32,System.Int32)">
+      <summary>
+            Automatics the size columns.
+            </summary>
+      <param name="worksheetIndex">Index of the worksheet.</param>
+      <param name="columnStart">The column start.</param>
+      <param name="columnCount">The column count.</param>
     </member>
     <member name="M:GemBox.Spreadsheet.ExcelFile.Calculate">
       <summary>
@@ -4969,7 +5020,7 @@
     </member>
     <member name="M:GemBox.Spreadsheet.ExcelPictureCollection.Add(System.IO.MemoryStream,GemBox.Spreadsheet.PositioningMode,GemBox.Spreadsheet.AnchorCell,GemBox.Spreadsheet.ExcelPictureFormat)">
       <summary>
-        <para>This method is obsolete. Use <see cref="M:GemBox.Spreadsheet.ExcelPictureCollection.Add(System.IO.MemoryStream,GemBox.Spreadsheet.ExcelPictureFormat,GemBox.Spreadsheet.AnchorCell,System.Double,System.Double,GemBox.Spreadsheet.LengthUnit)" /> method and <see cref="P:GemBox.Spreadsheet.ExcelDrawing.Position" /> and <see cref="P:GemBox.Spreadsheet.ExcelDrawingPosition.Mode" /> properties instead. Parameters <i>width</i> and <i>height</i> can, for example, be retrieved by using <see href="http://msdn.microsoft.com/en-us/library/93z9ee4x.aspx">Image.FromStream(Stream)</see> method and <see href="http://msdn.microsoft.com/en-us/library/system.drawing.image.size.aspx">Image.Size</see> property. Note that <see cref="T:System.Drawing.Image" /> instance must be disposed.</para>
+        <para>This method is obsolete. Use <see cref="M:GemBox.Spreadsheet.ExcelPictureCollection.Add(System.IO.MemoryStream,GemBox.Spreadsheet.ExcelPictureFormat,GemBox.Spreadsheet.AnchorCell,System.Double,System.Double,GemBox.Spreadsheet.LengthUnit)" /> method and <see cref="P:GemBox.Spreadsheet.ExcelDrawing.Position" /> and <see cref="P:GemBox.Spreadsheet.ExcelDrawingPosition.Mode" /> properties instead. Parameters <i>width</i> and <i>height</i> can, for example, be retrieved by using <see href="http://msdn.microsoft.com/en-us/library/93z9ee4x.aspx">Image.FromStream(Stream)</see> method and <see href="http://msdn.microsoft.com/en-us/library/system.drawing.image.size.aspx">Image.Size</see> property. Note that image instance must be disposed.</para>
         <para>Adds the image by using defined top left anchor property and default width/height.</para>
       </summary>
       <param name="pictureStream">Stream of the image to be added.</param>
@@ -6030,6 +6081,11 @@
         <para>Gets or sets the worksheet tab color.</para>
         <para>Supported only in XLSX and HTML.</para>
       </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.ExcelWorksheet.Tables">
+      <summary>
+            Gets the collection of all <see cref="T:GemBox.Spreadsheet.Tables.Table" />s contained in this worksheet.
+            </summary>
     </member>
     <member name="P:GemBox.Spreadsheet.ExcelWorksheet.Type">
       <summary>
@@ -7815,6 +7871,21 @@
             Gets or sets the index of the first row of inserted data in <see cref="T:GemBox.Spreadsheet.ExcelWorksheet" />.
             </summary>
     </member>
+    <member name="T:GemBox.Spreadsheet.InsertShiftDirection">
+      <summary>
+            Represents the possible cell insert shift directions.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.InsertShiftDirection.Right">
+      <summary>
+            Shift cells right.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.InsertShiftDirection.Down">
+      <summary>
+            Shift cells down.
+            </summary>
+    </member>
     <member name="T:GemBox.Spreadsheet.IoOperation">
       <summary>
             Possible operations that can fire notification events.
@@ -8896,6 +8967,21 @@
             <see cref="P:GemBox.Spreadsheet.CellRange.Width">CellRange.Width</see> equal to 1.
             </summary>
     </member>
+    <member name="T:GemBox.Spreadsheet.RemoveShiftDirection">
+      <summary>
+            Represents the possible cell remove shift directions.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.RemoveShiftDirection.Left">
+      <summary>
+            Shift cells left.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.RemoveShiftDirection.Up">
+      <summary>
+            Shift cells up.
+            </summary>
+    </member>
     <member name="T:GemBox.Spreadsheet.RowColumnResolutionMethod">
       <summary>
             Defines different methods of <see cref="T:GemBox.Spreadsheet.CellStyle" /> resolution.
@@ -9622,7 +9708,7 @@
     <member name="P:GemBox.Spreadsheet.SpreadsheetHyperlink.Location">
       <summary>
             Gets or sets the location string for hyperlink.
-            </summary>
+            <remarks>URL have to be in escaped format(You can use<see cref="M:System.Uri.EscapeUriString(System.String)">System.Uri.EscapeUriString</see> method).</remarks></summary>
     </member>
     <member name="M:GemBox.Spreadsheet.SpreadsheetHyperlink.op_Equality(GemBox.Spreadsheet.SpreadsheetHyperlink,GemBox.Spreadsheet.SpreadsheetHyperlink)">
       <summary>
@@ -9902,7 +9988,7 @@
             Occurs in loading or saving <see cref="T:GemBox.Spreadsheet.ExcelFile" /> when GemBox.Spreadsheet assembly is used with <b>FREE-LIMITED-KEY</b> license key and free limit is reached.
             </summary>
     </member>
-    <member name="F:GemBox.Spreadsheet.SpreadsheetInfo.FullVersion">
+    <member name="P:GemBox.Spreadsheet.SpreadsheetInfo.FullVersion">
       <summary>
             GemBox.Spreadsheet assembly full version.
             </summary>
@@ -9913,7 +9999,7 @@
             </summary>
       <param name="serialKey">Serial key.</param>
     </member>
-    <member name="F:GemBox.Spreadsheet.SpreadsheetInfo.Title">
+    <member name="P:GemBox.Spreadsheet.SpreadsheetInfo.Title">
       <summary>
             GemBox.Spreadsheet assembly title.
             </summary>
@@ -15062,6 +15148,728 @@
     <member name="P:GemBox.Spreadsheet.PivotTables.WorksheetSource.SourceType">
       <summary>
             Gets the <see cref="F:GemBox.Spreadsheet.PivotTables.PivotCacheSourceType.Worksheet" /> value.
+            </summary>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.BuiltInTableStyleName">
+      <summary>
+            Represents a <see cref="T:GemBox.Spreadsheet.Tables.Table" /> built-in styles.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.None">
+      <summary>
+            No built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight1">
+      <summary>
+            '<b>TableStyleLight1</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight2">
+      <summary>
+            '<b>TableStyleLight2</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight3">
+      <summary>
+            '<b>TableStyleLight3</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight4">
+      <summary>
+            '<b>TableStyleLight4</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight5">
+      <summary>
+            '<b>TableStyleLight5</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight6">
+      <summary>
+            '<b>TableStyleLight6</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight7">
+      <summary>
+            '<b>TableStyleLight7</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight8">
+      <summary>
+            '<b>TableStyleLight8</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight9">
+      <summary>
+            '<b>TableStyleLight9</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight10">
+      <summary>
+            '<b>TableStyleLight10</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight11">
+      <summary>
+            '<b>TableStyleLight11</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight12">
+      <summary>
+            '<b>TableStyleLight12</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight13">
+      <summary>
+            '<b>TableStyleLight13</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight14">
+      <summary>
+            '<b>TableStyleLight14</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight15">
+      <summary>
+            '<b>TableStyleLight15</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight16">
+      <summary>
+            '<b>TableStyleLight16</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight17">
+      <summary>
+            '<b>TableStyleLight17</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight18">
+      <summary>
+            '<b>TableStyleLight18</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight19">
+      <summary>
+            '<b>TableStyleLight19</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight20">
+      <summary>
+            '<b>TableStyleLight20</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleLight21">
+      <summary>
+            '<b>TableStyleLight21</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium1">
+      <summary>
+            '<b>TableStyleMedium1</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium2">
+      <summary>
+            '<b>TableStyleMedium2</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium3">
+      <summary>
+            '<b>TableStyleMedium3</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium4">
+      <summary>
+            '<b>TableStyleMedium4</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium5">
+      <summary>
+            '<b>TableStyleMedium5</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium6">
+      <summary>
+            '<b>TableStyleMedium6</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium7">
+      <summary>
+            '<b>TableStyleMedium7</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium8">
+      <summary>
+            '<b>TableStyleMedium8</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium9">
+      <summary>
+            '<b>TableStyleMedium9</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium10">
+      <summary>
+            '<b>TableStyleMedium10</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium11">
+      <summary>
+            '<b>TableStyleMedium11</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium12">
+      <summary>
+            '<b>TableStyleMedium12</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium13">
+      <summary>
+            '<b>TableStyleMedium13</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium14">
+      <summary>
+            '<b>TableStyleMedium14</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium15">
+      <summary>
+            '<b>TableStyleMedium15</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium16">
+      <summary>
+            '<b>TableStyleMedium16</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium17">
+      <summary>
+            '<b>TableStyleMedium17</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium18">
+      <summary>
+            '<b>TableStyleMedium18</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium19">
+      <summary>
+            '<b>TableStyleMedium19</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium20">
+      <summary>
+            '<b>TableStyleMedium20</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium21">
+      <summary>
+            '<b>TableStyleMedium21</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium22">
+      <summary>
+            '<b>TableStyleMedium22</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium23">
+      <summary>
+            '<b>TableStyleMedium23</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium24">
+      <summary>
+            '<b>TableStyleMedium24</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium25">
+      <summary>
+            '<b>TableStyleMedium25</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium26">
+      <summary>
+            '<b>TableStyleMedium26</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium27">
+      <summary>
+            '<b>TableStyleMedium27</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleMedium28">
+      <summary>
+            '<b>TableStyleMedium28</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark1">
+      <summary>
+            '<b>TableStyleDark1</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark2">
+      <summary>
+            '<b>TableStyleDark2</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark3">
+      <summary>
+            '<b>TableStyleDark3</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark4">
+      <summary>
+            '<b>TableStyleDark4</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark5">
+      <summary>
+            '<b>TableStyleDark5</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark6">
+      <summary>
+            '<b>TableStyleDark6</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark7">
+      <summary>
+            '<b>TableStyleDark7</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark8">
+      <summary>
+            '<b>TableStyleDark8</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark9">
+      <summary>
+            '<b>TableStyleDark9</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark10">
+      <summary>
+            '<b>TableStyleDark10</b>' built-in style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.BuiltInTableStyleName.TableStyleDark11">
+      <summary>
+            '<b>TableStyleDark11</b>' built-in style.
+            </summary>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.Table">
+      <summary>
+            Represents a worksheet table.
+            Supported in XLSX only.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.BuiltInStyle">
+      <summary>
+            Gets or sets the built-in style used in the body of the <see cref="T:GemBox.Spreadsheet.Tables.Table" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.Columns">
+      <summary>
+            Gets the collection of table columns.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.DataRange">
+      <summary>
+            Gets the table data range.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.Table.Equals(System.Object)">
+      <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance.
+            </summary>
+      <param name="obj">The <see cref="T:System.Object" /> to compare with this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance.</param>
+      <returns>
+        <see langword="true" /> if the specified <see cref="T:System.Object" /> is a <see cref="T:GemBox.Spreadsheet.Tables.Table" /> and is equal to this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.Filter">
+      <summary>
+            Gets the table filter.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.Table.GetHashCode">
+      <summary>
+            Returns a hash code for this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance.
+            </summary>
+      <returns>
+            An integer value that specifies a hash value for this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.HasTotalsRow">
+      <summary>
+            Gets or sets a value indicating whether this table has a totals row.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.Name">
+      <summary>
+            Gets the table name.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.Range">
+      <summary>
+            Gets the table range.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.Rows">
+      <summary>
+            Gets the collection of table rows.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.Sort">
+      <summary>
+            Gets the table sort.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.Table.StyleOptions">
+      <summary>
+            Gets or sets the options to be applied to the <see cref="T:GemBox.Spreadsheet.Tables.Table" /> style.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.Table.ToString">
+      <summary>
+            Returns a <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance.
+            </summary>
+      <returns>
+            A <see cref="T:System.String" /> that represents this <see cref="T:GemBox.Spreadsheet.Tables.Table" /> instance.
+            </returns>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.TableCollection">
+      <summary>
+            A collection of <see cref="T:GemBox.Spreadsheet.Tables.Table" /> items.
+            Supported in XLSX only.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableCollection.Add(System.String,GemBox.Spreadsheet.CellRange,System.Boolean)">
+      <summary>
+            Adds a new <see cref="T:GemBox.Spreadsheet.Tables.Table" /> to the collection.
+            </summary>
+      <param name="name">The name of the <see cref="T:GemBox.Spreadsheet.Tables.Table" />.</param>
+      <param name="range">The <see cref="T:GemBox.Spreadsheet.Tables.Table" /> cell range.</param>
+      <param name="hasHeaders">Specifies whether the range contains a header row.</param>
+      <returns>
+            Newly added <see cref="T:GemBox.Spreadsheet.Tables.Table" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="range" /> is null.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="range" /> doesn't belong to the parent worksheet.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+        <see cref="T:GemBox.Spreadsheet.Tables.Table" /> or <see cref="T:GemBox.Spreadsheet.DefinedName" /> with same name already exists.
+            </exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableCollection.Add(System.String,System.String,System.Boolean)">
+      <summary>
+            Adds a new <see cref="T:GemBox.Spreadsheet.Tables.Table" /> to the collection.
+            </summary>
+      <param name="name">The name of the <see cref="T:GemBox.Spreadsheet.Tables.Table" />.</param>
+      <param name="range">The <see cref="T:GemBox.Spreadsheet.Tables.Table" /> cell range.</param>
+      <param name="hasHeaders">Specifies whether the range contains a header row.</param>
+      <returns>
+            Newly added <see cref="T:GemBox.Spreadsheet.Tables.Table" />.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableCollection.Count">
+      <summary>
+            Gets the number of <see cref="T:GemBox.Spreadsheet.Tables.Table" />s contained in the collection.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableCollection.GetEnumerator">
+      <summary>
+            Gets the collection enumerator.
+            </summary>
+      <returns>
+            The collection enumerator.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableCollection.Item(System.Int32)">
+      <summary>
+            Gets the <see cref="T:GemBox.Spreadsheet.Tables.Table" /> at the specified index.
+            </summary>
+      <param name="index">The zero-based index of the <see cref="T:GemBox.Spreadsheet.Tables.Table" />.</param>
+      <returns>
+            The <see cref="T:GemBox.Spreadsheet.Tables.Table" /> at the specified index.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableCollection.Item(System.String)">
+      <summary>
+            Gets <see cref="T:GemBox.Spreadsheet.Tables.Table" /> described by name from the collection.
+            </summary>
+      <param name="name">Name of the table.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableCollection.Remove(GemBox.Spreadsheet.Tables.Table,GemBox.Spreadsheet.RemoveShiftDirection)">
+      <summary>
+            Removes the specified <see cref="T:GemBox.Spreadsheet.Tables.Table" />.
+            </summary>
+      <param name="table">The table.</param>
+      <param name="direction">The removal shift direction.</param>
+      <returns>
+        <c>True</c> if <see cref="T:GemBox.Spreadsheet.Tables.Table" /> was removed from the collection; otherwise, <c>false</c>.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="table" /> is null.
+            </exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableCollection.RemoveAt(System.Int32,GemBox.Spreadsheet.RemoveShiftDirection)">
+      <summary>
+            Removes the <see cref="T:GemBox.Spreadsheet.Tables.Table" /> at the specified index.
+            </summary>
+      <param name="index">The table index.</param>
+      <param name="direction">The removal shift direction.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>Returns an enumerator that iterates through a collection.</summary>
+      <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.TableColumn">
+      <summary>
+            Represents a <see cref="T:GemBox.Spreadsheet.Tables.Table" /> column.
+            Supported in XLSX only.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.DataRange">
+      <summary>
+            Gets the column data range.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.Index">
+      <summary>
+            Gets the column index.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.Name">
+      <summary>
+            Gets or sets the column name.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.Parent">
+      <summary>
+            Gets the parent <see cref="T:GemBox.Spreadsheet.Tables.Table" />.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.Range">
+      <summary>
+            Gets the column range.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.TotalsRowFormula">
+      <summary>
+            Gets or sets the totals row formula.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            Parent table doesn't have totals row.
+            </exception>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumn.TotalsRowFunction">
+      <summary>
+            Gets or sets the totals row function.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            Parent table doesn't have totals row.
+            </exception>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.TableColumnCollection">
+      <summary>
+            A collection of <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> items.
+            Supported in XLSX only.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableColumnCollection.Add">
+      <summary>
+            Adds a new <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> to the collection.
+            </summary>
+      <returns>
+            Newly added <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" />.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumnCollection.Count">
+      <summary>
+            Gets the number of <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" />s contained in the collection.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableColumnCollection.GetEnumerator">
+      <summary>
+            Gets the collection enumerator.
+            </summary>
+      <returns>
+            The collection enumerator.
+            </returns>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableColumnCollection.Insert(System.Int32)">
+      <summary>
+            Inserts a new <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> at the specified index.
+            </summary>
+      <param name="index">The column index.</param>
+      <returns>
+            Newly added <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" />.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumnCollection.Item(System.Int32)">
+      <summary>
+            Gets the <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> at the specified index.
+            </summary>
+      <param name="index">The zero-based index of the <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" />.</param>
+      <returns>
+            The <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> at the specified index.
+            </returns>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableColumnCollection.Item(System.String)">
+      <summary>
+            Gets <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> described by name from the collection.
+            </summary>
+      <param name="name">Name of the table column.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableColumnCollection.Remove(GemBox.Spreadsheet.Tables.TableColumn)">
+      <summary>
+            Removes the specified <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" />.
+            </summary>
+      <param name="column">The table column.</param>
+      <returns>
+        <c>True</c> if <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> was removed from the collection; otherwise, <c>false</c>.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="column" /> is null.
+            </exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableColumnCollection.RemoveAt(System.Int32)">
+      <summary>
+            Removes the <see cref="T:GemBox.Spreadsheet.Tables.TableColumn" /> at the specified index.
+            </summary>
+      <param name="index">The column index.</param>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableColumnCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>Returns an enumerator that iterates through a collection.</summary>
+      <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.TableRowCollection">
+      <summary>
+            Represents a collection of <see cref="T:GemBox.Spreadsheet.Tables.Table" /> rows, not including header and, if enabled, totals row.
+            Supported in XLSX only.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableRowCollection.Add">
+      <summary>
+            Adds a new row to the collection.
+            </summary>
+    </member>
+    <member name="P:GemBox.Spreadsheet.Tables.TableRowCollection.Count">
+      <summary>
+            Gets the number of rows contained in the collection, not including the header row and, if enabled, totals row.
+            </summary>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableRowCollection.Insert(System.Int32)">
+      <summary>
+            Inserts a new row at the specified index.
+            </summary>
+      <param name="index">The row index.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:GemBox.Spreadsheet.Tables.TableRowCollection.RemoveAt(System.Int32)">
+      <summary>
+            Removes the row at the specified index.
+            </summary>
+      <param name="index">The row index.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.TableStyleOptions">
+      <summary>
+            Specifies which options are applied to a <see cref="T:GemBox.Spreadsheet.Tables.Table" /> style.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TableStyleOptions.None">
+      <summary>
+            Do not apply any option.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TableStyleOptions.FirstColumn">
+      <summary>
+            Show the first column.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TableStyleOptions.LastColumn">
+      <summary>
+            Show the last column.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TableStyleOptions.BandedRows">
+      <summary>
+            Show row stripe formatting for the table.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TableStyleOptions.BandedColumns">
+      <summary>
+            Show column stripe formatting for the table.
+            </summary>
+    </member>
+    <member name="T:GemBox.Spreadsheet.Tables.TotalsRowFunction">
+      <summary>
+            Total row functions.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Custom">
+      <summary>
+            Custom function.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.None">
+      <summary>
+            None.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Average">
+      <summary>
+            Average.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.CountNumber">
+      <summary>
+            Count of number cells.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Count">
+      <summary>
+            Count of number and non-empty cells.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Max">
+      <summary>
+            Maximum value.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Min">
+      <summary>
+            Minimum value.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.StdDev">
+      <summary>
+            Standard deviation.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Sum">
+      <summary>
+            Sum.
+            </summary>
+    </member>
+    <member name="F:GemBox.Spreadsheet.Tables.TotalsRowFunction.Var">
+      <summary>
+            Variance.
             </summary>
     </member>
   </members>
