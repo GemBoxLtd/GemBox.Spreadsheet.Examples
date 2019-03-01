@@ -16,7 +16,7 @@ Module Program
         worksheet.PrintOptions.PrintGridlines = True
 
         ' Print area can be used to specify custom cell range which should be exported to HTML.
-        worksheet.NamedRanges.SetPrintArea(worksheet.Cells.GetSubrange("A1", "I42"))
+        worksheet.NamedRanges.SetPrintArea(worksheet.Cells.GetSubrange("A1", "J42"))
 
         Dim options = New HtmlSaveOptions() With
         {
