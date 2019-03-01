@@ -7,16 +7,15 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = new ExcelFile();
-        ExcelWorksheet ws = ef.Worksheets.Add("Private Fonts");
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Private Fonts");
 
-        string pathToResources = "Resources";
+        // Current directory contains a font file.
+        FontSettings.FontsBaseDirectory = ".";
 
-        FontSettings.FontsBaseDirectory = pathToResources;
+        worksheet.Parent.Styles.Normal.Font.Name = "Almonte Snow";
+        worksheet.Cells[0, 0].Value = "Hello World!";
 
-        ws.Parent.Styles.Normal.Font.Name = "Almonte Snow";
-        ws.Cells[0, 0].Value = "Hello World!";
-
-        ef.Save("Private Fonts.pdf");
+        workbook.Save("Private Fonts.pdf");
     }
 }

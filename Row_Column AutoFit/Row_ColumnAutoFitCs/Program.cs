@@ -7,14 +7,14 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("SimpleTemplate.xlsx");
+        var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        var ws = ef.Worksheets[0];
+        var worksheet = workbook.Worksheets[0];
 
-        int columnCount = ws.CalculateMaxUsedColumns();
+        int columnCount = worksheet.CalculateMaxUsedColumns();
         for (int i = 0; i < columnCount; i++)
-            ws.Columns[i].AutoFit(1, ws.Rows[1], ws.Rows[ws.Rows.Count - 1]);
+            worksheet.Columns[i].AutoFit(1, worksheet.Rows[1], worksheet.Rows[worksheet.Rows.Count - 1]);
 
-        ef.Save("Row_Column AutoFit.pdf");
+        workbook.Save("Row_Column AutoFit.xlsx");
     }
 }

@@ -7,8 +7,8 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("IllustrationsAndShapes.xlsx");
+        var workbook = ExcelFile.Load("IllustrationsAndShapes.xlsx");
 
-        ef.Save("Illustrations and Shapes.xlsx");
+        workbook.Save("Illustrations and Shapes.xlsx");
     }
 }

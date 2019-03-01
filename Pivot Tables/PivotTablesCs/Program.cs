@@ -9,19 +9,19 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = new ExcelFile();
+        var workbook = new ExcelFile();
 
-        ExcelWorksheet ws1 = ef.Worksheets.Add("SourceSheet");
+        ExcelWorksheet worksheet1 = workbook.Worksheets.Add("SourceSheet");
 
         // Specify sheet formatting.
-        ws1.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        ws1.Columns[0].SetWidth(3, LengthUnit.Centimeter);
-        ws1.Columns[1].SetWidth(3, LengthUnit.Centimeter);
-        ws1.Columns[2].SetWidth(3, LengthUnit.Centimeter);
-        ws1.Columns[3].SetWidth(3, LengthUnit.Centimeter);
-        ws1.Columns[3].Style.NumberFormat = "[$$-409]#,##0.00";
+        worksheet1.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
+        worksheet1.Columns[0].SetWidth(3, LengthUnit.Centimeter);
+        worksheet1.Columns[1].SetWidth(3, LengthUnit.Centimeter);
+        worksheet1.Columns[2].SetWidth(3, LengthUnit.Centimeter);
+        worksheet1.Columns[3].SetWidth(3, LengthUnit.Centimeter);
+        worksheet1.Columns[3].Style.NumberFormat = "[$$-409]#,##0.00";
 
-        var cells = ws1.Cells;
+        var cells = worksheet1.Cells;
 
         // Specify header row.
         cells[0, 0].Value = "Departments";
@@ -43,16 +43,16 @@ class Program
         }
 
         // Create pivot cache from cell range "SourceSheet!A1:D100".
-        PivotCache cache = ef.PivotCaches.AddWorksheetSource("SourceSheet!A1:D100");
+        var cache = workbook.PivotCaches.AddWorksheetSource("SourceSheet!A1:D100");
 
         // Create new sheet for pivot table.
-        ExcelWorksheet ws2 = ef.Worksheets.Add("PivotSheet");
+        var worksheet2 = workbook.Worksheets.Add("PivotSheet");
 
         // Create pivot table "Company Profile" using the specified pivot cache and add it to the worksheet at the cell location 'A1'.
-        PivotTable table = ws2.PivotTables.Add(cache, "Company Profile", "A1");
+        var table = worksheet2.PivotTables.Add(cache, "Company Profile", "A1");
 
         // Aggregate 'Names' values into count value and show it as a percentage of row.
-        PivotField field = table.DataFields.Add("Names");
+        var field = table.DataFields.Add("Names");
         field.Function = PivotFieldCalculationType.Count;
         field.ShowDataAs = PivotFieldDisplayFormat.PercentageOfRow;
         field.Name = "% of Empl.";
@@ -80,6 +80,6 @@ class Program
         // Set pivot table style.
         table.BuiltInStyle = BuiltInPivotStyleName.PivotStyleMedium7;
 
-        ef.Save("Pivot Tables.xlsx");
+        workbook.Save("Pivot Tables.xlsx");
     }
 }

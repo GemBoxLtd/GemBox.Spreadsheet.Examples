@@ -8,33 +8,32 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("DataTable to Sheet");
 
-        ExcelFile ef = new ExcelFile();
-        ExcelWorksheet ws = ef.Worksheets.Add("DataTable to Sheet");
+        var dataTable = new DataTable();
 
-        DataTable dt = new DataTable();
+        dataTable.Columns.Add("ID", typeof(int));
+        dataTable.Columns.Add("FirstName", typeof(string));
+        dataTable.Columns.Add("LastName", typeof(string));
 
-        dt.Columns.Add("ID", typeof(int));
-        dt.Columns.Add("FirstName", typeof(string));
-        dt.Columns.Add("LastName", typeof(string));
+        dataTable.Rows.Add(new object[] { 100, "John", "Doe" });
+        dataTable.Rows.Add(new object[] { 101, "Fred", "Nurk" });
+        dataTable.Rows.Add(new object[] { 103, "Hans", "Meier" });
+        dataTable.Rows.Add(new object[] { 104, "Ivan", "Horvat" });
+        dataTable.Rows.Add(new object[] { 105, "Jean", "Dupont" });
+        dataTable.Rows.Add(new object[] { 106, "Mario", "Rossi" });
 
-        dt.Rows.Add(new object[] { 100, "John", "Doe" });
-        dt.Rows.Add(new object[] { 101, "Fred", "Nurk" });
-        dt.Rows.Add(new object[] { 103, "Hans", "Meier" });
-        dt.Rows.Add(new object[] { 104, "Ivan", "Horvat" });
-        dt.Rows.Add(new object[] { 105, "Jean", "Dupont" });
-        dt.Rows.Add(new object[] { 106, "Mario", "Rossi" });
+        worksheet.Cells[0, 0].Value = "DataTable insert example:";
 
-        ws.Cells[0, 0].Value = "DataTable insert example:";
-
-        // Insert DataTable into an Excel worksheet.
-        ws.InsertDataTable(dt,
+        // Insert DataTable to an Excel worksheet.
+        worksheet.InsertDataTable(dataTable,
             new InsertDataTableOptions()
             {
                 ColumnHeaders = true,
                 StartRow = 2
             });
 
-        ef.Save("DataTable to Sheet.xlsx");
+        workbook.Save("DataTable to Sheet.xlsx");
     }
 }

@@ -8,21 +8,21 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = new ExcelFile();
-        ExcelWorksheet ws = ef.Worksheets.Add("Filtering");
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Filtering");
 
-        int rowCount = 500;
+        int rowCount = 149;
 
         // Specify sheet formatting.
-        ws.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        ws.Columns[0].SetWidth(3, LengthUnit.Centimeter);
-        ws.Columns[1].SetWidth(3, LengthUnit.Centimeter);
-        ws.Columns[2].SetWidth(3, LengthUnit.Centimeter);
-        ws.Columns[2].Style.NumberFormat = "[$$-409]#,##0.00";
-        ws.Columns[3].SetWidth(3, LengthUnit.Centimeter);
-        ws.Columns[3].Style.NumberFormat = "yyyy-mm-dd";
+        worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
+        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
+        worksheet.Columns[1].SetWidth(3, LengthUnit.Centimeter);
+        worksheet.Columns[2].SetWidth(3, LengthUnit.Centimeter);
+        worksheet.Columns[2].Style.NumberFormat = "[$$-409]#,##0.00";
+        worksheet.Columns[3].SetWidth(3, LengthUnit.Centimeter);
+        worksheet.Columns[3].Style.NumberFormat = "yyyy-mm-dd";
 
-        var cells = ws.Cells;
+        var cells = worksheet.Cells;
 
         // Specify header row.
         cells[0, 0].Value = "Departments";
@@ -43,7 +43,7 @@ class Program
         }
 
         // Specify range which will be filtered.
-        var filterRange = ws.Cells.GetSubrangeAbsolute(0, 0, rowCount, 3);
+        var filterRange = worksheet.Cells.GetSubrangeAbsolute(0, 0, rowCount, 3);
 
         // Show only rows which satisfy following conditions:
         // - 'Departments' value is either "Legal" or "Marketing" or "Finance" and
@@ -59,6 +59,6 @@ class Program
             SortBy(2, true).
             Apply();
 
-        ef.Save("Filtering.xlsx");
+        workbook.Save("Filtering.xlsx");
     }
 }

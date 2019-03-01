@@ -9,34 +9,34 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("SimpleTemplate.xlsx");
+        var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        string searchText = "Apollo 13";
+        var searchText = "Apollo 13";
 
-        var ws = ef.Worksheets[0];
+        var worksheet = workbook.Worksheets[0];
 
-        StringBuilder sb = new StringBuilder();
+        var sb = new StringBuilder();
 
         int objectRow, objectColumn;
-        ws.Cells.FindText(searchText, false, false, out objectRow, out objectColumn);
+        worksheet.Cells.FindText(searchText, false, false, out objectRow, out objectColumn);
 
         if (objectRow == -1 || objectColumn == -1)
             sb.AppendLine("Can't find text.");
         else
         {
-            sb.AppendLine(searchText + " was launched on " + ws.Cells[objectRow, 2].Value + ".");
+            sb.AppendLine(searchText + " was launched on " + worksheet.Cells[objectRow, 2].Value.ToString() + ".");
 
-            string nationality = ws.Cells[objectRow, 1].Value as string;
+            var nationality = worksheet.Cells[objectRow, 1].Value as string;
             if (nationality != null)
             {
-                string nationalityText = nationality.Trim().ToLowerInvariant();
+                var nationalityText = nationality.Trim().ToLowerInvariant();
 
                 int nationalityCounter = 0;
 
-                CellRangeEnumerator enumerator = ws.Columns[1].Cells.GetReadEnumerator();
+                var enumerator = worksheet.Columns[1].Cells.GetReadEnumerator();
                 while (enumerator.MoveNext())
                 {
-                    ExcelCell cell = enumerator.Current;
+                    var cell = enumerator.Current;
                     var cellValue = cell.Value as string;
                     if (cellValue != null && cellValue.Trim().ToLowerInvariant() == nationalityText)
                         nationalityCounter++;

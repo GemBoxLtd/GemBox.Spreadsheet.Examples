@@ -10,18 +10,18 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("SimpleTemplate.xlsx");
+        var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        DataTable dataTable = new DataTable();
+        var dataTable = new DataTable();
 
         // Depending on the format of the input file, you need to change this:
         dataTable.Columns.Add("FirstColumn", typeof(string));
         dataTable.Columns.Add("SecondColumn", typeof(string));
 
         // Select the first worksheet from the file.
-        ExcelWorksheet ws = ef.Worksheets[0];
+        var worksheet = workbook.Worksheets[0];
 
-        ExtractToDataTableOptions options = new ExtractToDataTableOptions(0, 0, 10);
+        var options = new ExtractToDataTableOptions(0, 0, 10);
         options.ExtractDataOptions = ExtractDataOptions.StopAtFirstEmptyRow;
         options.ExcelCellToDataTableCellConverting += (sender, e) =>
         {
@@ -36,10 +36,10 @@ class Program
 
         // Extract the data from an Excel worksheet to the DataTable.
         // Data is extracted starting at first row and first column for 10 rows or until the first empty row appears.
-        ws.ExtractToDataTable(dataTable, options);
+        worksheet.ExtractToDataTable(dataTable, options);
 
-        // Write DataTable content
-        StringBuilder sb = new StringBuilder();
+        // Write DataTable content.
+        var sb = new StringBuilder();
         sb.AppendLine("DataTable content:");
         foreach (DataRow row in dataTable.Rows)
         {

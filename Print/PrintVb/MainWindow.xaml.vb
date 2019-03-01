@@ -1,11 +1,15 @@
-﻿Imports Microsoft.Win32
+﻿Imports System.Windows
+Imports System.Windows.Controls
+Imports System.Windows.Xps.Packaging
 Imports GemBox.Spreadsheet
+Imports Microsoft.Win32
 
 Class MainWindow
 
-    Dim ef As ExcelFile
+    Dim workbook As ExcelFile
 
     Public Sub New()
+
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         InitializeComponent()
@@ -19,19 +23,18 @@ Class MainWindow
         fileDialog.Filter = "XLSX files (*.xlsx, *.xlsm, *.xltx, *.xltm)|*.xlsx;*.xlsm;*.xltx;*.xltm|XLS files (*.xls, *.xlt)|*.xls;*.xlt|ODS files (*.ods, *.ots)|*.ods;*.ots|CSV files (*.csv, *.tsv)|*.csv;*.tsv|HTML files (*.html, *.htm)|*.html;*.htm"
 
         If (fileDialog.ShowDialog() = True) Then
-            Me.ef = ExcelFile.Load(fileDialog.FileName)
+
+            Me.workbook = ExcelFile.Load(fileDialog.FileName)
 
             Me.ShowPrintPreview()
             Me.EnableControls()
         End If
-
     End Sub
 
     Private Sub SimplePrint_Click(sender As Object, e As RoutedEventArgs)
 
         ' Print to default printer using default options
-        Me.ef.Print()
-
+        Me.workbook.Print()
     End Sub
 
     Private Sub AdvancedPrint_Click(sender As Object, e As RoutedEventArgs)
@@ -51,9 +54,8 @@ Class MainWindow
                 printOptions.ToPage = printDialog.PageRange.PageTo - 1
             End If
 
-            Me.ef.Print(printDialog.PrintQueue.FullName, printOptions)
+            Me.workbook.Print(printDialog.PrintQueue.FullName, printOptions)
         End If
-
     End Sub
 
     ' We can use DocumentViewer for print preview (but we don't need).
@@ -61,7 +63,7 @@ Class MainWindow
 
         ' XpsDocument needs to stay referenced so that DocumentViewer can access additional required resources.
         ' Otherwise, GC will collect/dispose XpsDocument and DocumentViewer will not work.
-        Dim xpsDocument = ef.ConvertToXpsDocument(SaveOptions.XpsDefault)
+        Dim xpsDocument = workbook.ConvertToXpsDocument(SaveOptions.XpsDefault)
         Me.DocViewer.Tag = xpsDocument
 
         Me.DocViewer.Document = xpsDocument.GetFixedDocumentSequence()
@@ -70,12 +72,10 @@ Class MainWindow
 
     Private Sub EnableControls()
 
-        Dim isEnabled As Boolean = Me.ef IsNot Nothing
+        Dim isEnabled = Me.workbook IsNot Nothing
 
         Me.DocViewer.IsEnabled = isEnabled
         Me.SimplePrintFileBtn.IsEnabled = isEnabled
         Me.AdvancedPrintFileBtn.IsEnabled = isEnabled
-
     End Sub
-
 End Class

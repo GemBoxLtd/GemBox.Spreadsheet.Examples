@@ -1,4 +1,3 @@
-using System.IO;
 using GemBox.Spreadsheet;
 
 class Program
@@ -8,18 +7,16 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = new ExcelFile();
-        ExcelWorksheet ws = ef.Worksheets.Add("Header and Footer");
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Header and Footer");
 
-        string pathToResources = "Resources";
-
-        SheetHeaderFooter headerFooter = ws.HeadersFooters;
+        var headerFooter = worksheet.HeadersFooters;
 
         // Show title only on the first page
         headerFooter.FirstPage.Header.CenterSection.Content = "Title on the first page";
 
         // Show logo
-        headerFooter.FirstPage.Header.LeftSection.AppendPicture(Path.Combine(pathToResources, "Dices.png"), 40, 40);
+        headerFooter.FirstPage.Header.LeftSection.AppendPicture("Dices.png", 40, 40);
         headerFooter.DefaultPage.Header.LeftSection = headerFooter.FirstPage.Header.LeftSection;
 
         // "Page number" of "Number of pages"
@@ -29,8 +26,8 @@ class Program
         // Fill Sheet1 with some data
         for (int i = 0; i < 140; i++)
             for (int j = 0; j < 9; j++)
-                ws.Cells[i, j].Value = i + j;
+                worksheet.Cells[i, j].Value = i + j;
 
-        ef.Save("Header and Footer.xlsx");
+        workbook.Save("Header and Footer.xlsx");
     }
 }

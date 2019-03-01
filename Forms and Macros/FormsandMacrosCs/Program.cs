@@ -7,8 +7,8 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("FormsAndMacros.xlsm");
+        var workbook = ExcelFile.Load("FormsAndMacros.xlsm");
 
-        ef.Save("Forms and Macros.xlsm");
+        workbook.Save("Forms and Macros.xlsm");
     }
 }

@@ -1,4 +1,3 @@
-using System.IO;
 using GemBox.Spreadsheet;
 
 class Program
@@ -8,30 +7,30 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = new ExcelFile();
-        ExcelWorksheet ws = ef.Worksheets.Add("Images");
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Images");
 
-        string pathToResources = "Resources";
-
-        ws.Cells[0, 0].Value = "Image examples:";
+        worksheet.Cells[0, 0].Value = "Image examples:";
 
         // Small BMP added by using rectangle.
-        ws.Pictures.Add(Path.Combine(pathToResources, "SmallImage.bmp"), 50, 50, 48, 48, LengthUnit.Pixel);
+        worksheet.Pictures.Add("SmallImage.bmp", 50, 50, 48, 48, LengthUnit.Pixel);
 
         // Large JPG added by using one anchor.
-        ws.Pictures.Add(Path.Combine(pathToResources, "FragonardReader.jpg"), "B9");
+        // Works in .NET Framework. 
+        // In .NET Standard, image size is zero because GDI+ is not available.
+        worksheet.Pictures.Add("FragonardReader.jpg", "B9");
 
         // PNG added by using two anchors.
-        ws.Pictures.Add(Path.Combine(pathToResources, "Dices.png"), "J16", "K20");
+        worksheet.Pictures.Add("Dices.png", "J16", "K20");
 
         // GIF added by using anchors. Notice that animation is lost in MS Excel.
-        ws.Pictures.Add(Path.Combine(pathToResources, "Zahnrad.gif"),
-            new AnchorCell(ws.Columns[9], ws.Rows[21], 100000, 100000),
-            new AnchorCell(ws.Columns[10], ws.Rows[23], 50000, 50000)).Position.Mode = PositioningMode.Move;
+        worksheet.Pictures.Add("Zahnrad.gif",
+            new AnchorCell(worksheet.Columns[9], worksheet.Rows[21], 100000, 100000),
+            new AnchorCell(worksheet.Columns[10], worksheet.Rows[23], 50000, 50000)).Position.Mode = PositioningMode.Move;
 
         // WMF added by using one anchor and size.
-        ws.Pictures.Add(Path.Combine(pathToResources, "Graphics1.wmf"), "J9", 250, 100, LengthUnit.Pixel).Position.Mode = PositioningMode.FreeFloating;
+        worksheet.Pictures.Add("Graphics1.wmf", "J9", 250, 100, LengthUnit.Pixel).Position.Mode = PositioningMode.FreeFloating;
 
-        ef.Save("Images.xlsx");
+        workbook.Save("Images.xlsx");
     }
 }

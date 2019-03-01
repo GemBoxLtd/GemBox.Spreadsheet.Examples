@@ -7,32 +7,34 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("NumberFormat.xlsx");
+        var workbook = ExcelFile.Load("NumberFormat.xlsx");
 
-        var ws = ef.Worksheets[0];
+        var worksheet = workbook.Worksheets[0];
 
-        ws.Cells[0, 2].Value = "ExcelCell.Value";
-        ws.Columns[2].Style.NumberFormat = "@";
+        worksheet.Cells[0, 2].Value = "ExcelCell.Value";
+        worksheet.Columns[2].Style.NumberFormat = "@";
 
-        ws.Cells[0, 3].Value = "CellStyle.NumberFormat";
-        ws.Columns[3].Style.NumberFormat = "@";
+        worksheet.Cells[0, 3].Value = "CellStyle.NumberFormat";
+        worksheet.Columns[3].Style.NumberFormat = "@";
 
-        ws.Cells[0, 4].Value = "ExcelCell.GetFormattedValue()";
-        ws.Columns[4].Style.NumberFormat = "@";
+        worksheet.Cells[0, 4].Value = "ExcelCell.GetFormattedValue()";
+        worksheet.Columns[4].Style.NumberFormat = "@";
 
-        for (int i = 1; i < ws.Rows.Count; i++)
+        for (int i = 1; i < worksheet.Rows.Count; i++)
         {
-            ExcelCell sourceCell = ws.Cells[i, 0];
+            var sourceCell = worksheet.Cells[i, 0];
 
-            ws.Cells[i, 2].Value = sourceCell.Value == null ? null : sourceCell.Value.ToString();
-            ws.Cells[i, 3].Value = sourceCell.Style.NumberFormat;
-            ws.Cells[i, 4].Value = sourceCell.GetFormattedValue();
+            worksheet.Cells[i, 2].Value = sourceCell.Value?.ToString();
+            worksheet.Cells[i, 3].Value = sourceCell.Style.NumberFormat;
+            worksheet.Cells[i, 4].Value = sourceCell.GetFormattedValue();
         }
 
-        // Auto-fit columns
-        for (int i = 0; i < 5; i++)
-            ws.Columns[i].AutoFit();
+        // Set column widths.
+        var columnWidths = new double[] { 192, double.NaN, 122, 236, 200 };
+        for (int i = 0; i < columnWidths.Length; i++)
+            if (!double.IsNaN(columnWidths[i]))
+                worksheet.Columns[i].SetWidth(columnWidths[i], LengthUnit.Pixel);
 
-        ef.Save("Number Format.xlsx");
+        workbook.Save("Number Format.xlsx");
     }
 }

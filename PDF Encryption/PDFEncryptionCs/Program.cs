@@ -7,10 +7,10 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("SimpleTemplate.xlsx");
+        var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        string password = "pass";
-        string ownerPassword = "";
+        var password = "pass";
+        var ownerPassword = "";
 
         var options = new PdfSaveOptions()
         {
@@ -19,6 +19,6 @@ class Program
             Permissions = PdfPermissions.None
         };
 
-        ef.Save("PDF Encryption.pdf", options);
+        workbook.Save("PDF Encryption.pdf", options);
     }
 }

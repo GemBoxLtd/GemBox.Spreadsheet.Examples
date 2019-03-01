@@ -1,2 +1,0 @@
-﻿Class Application
-End Class

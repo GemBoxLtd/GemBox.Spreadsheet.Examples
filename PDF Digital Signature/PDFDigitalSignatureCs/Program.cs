@@ -1,4 +1,3 @@
-using System.IO;
 using GemBox.Spreadsheet;
 
 class Program
@@ -8,19 +7,17 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        ExcelFile ef = ExcelFile.Load("SimpleTemplate.xlsx");
-
-        string pathToResources = "Resources";
+        var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
         var options = new PdfSaveOptions()
         {
             DigitalSignature =
             {
-                CertificatePath = Path.Combine(pathToResources, "GemBoxSampleExplorer.pfx"),
+                CertificatePath = "GemBoxExampleExplorer.pfx",
                 CertificatePassword = "GemBoxPassword"
             }
         };
 
-        ef.Save("PDF Digital Signature.pdf", options);
+        workbook.Save("PDF Digital Signature.pdf", options);
     }
 }
