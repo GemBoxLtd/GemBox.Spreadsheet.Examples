@@ -1,4 +1,4 @@
-﻿Imports System
+Imports System
 Imports System.Windows.Forms
 Imports GemBox.Spreadsheet
 Imports GemBox.Spreadsheet.WinFormsUtilities

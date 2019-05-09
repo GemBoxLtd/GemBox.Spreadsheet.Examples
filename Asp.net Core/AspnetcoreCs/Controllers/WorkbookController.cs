@@ -1,4 +1,4 @@
-﻿using GemBox.Spreadsheet;
+using GemBox.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
