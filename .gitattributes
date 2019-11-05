@@ -1,5 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Linguist overrides
-*/*/My?Project/*.vb linguist-generated
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+*/*/*/*.vb linguist-detectable=false

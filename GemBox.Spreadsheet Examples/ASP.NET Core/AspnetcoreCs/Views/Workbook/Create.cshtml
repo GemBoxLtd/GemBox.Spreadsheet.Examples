@@ -1,0 +1,85 @@
+﻿@model Spreadsheet.Samples.Core.Controllers.WorkbookModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <title>Create an Excel Workbook</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        thead tr {
+            text-align: center;
+        }
+
+        .table th {
+            color: white;
+            background-color: rgb(242, 101, 34);
+            padding: 0.5rem;
+        }
+
+        .table td {
+            padding: 0.5rem;
+        }
+
+        .table input {
+            font-size: 0.9rem;
+            padding: 0.3rem 0.35rem;
+        }
+
+        .first-column {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="padding:20px; font-size: 0.9rem">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <table class="table table-bordered table-condensed">
+            <colgroup>
+                <col style="width: 10%" />
+                <col style="width: 45%" />
+                <col style="width: 45%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Items.Count; i++)
+                {
+                    <tr>
+                        <td><input asp-for="Items[i].Id" type="text" class="form-control-plaintext first-column" readonly /></td>
+                        <td><input asp-for="Items[i].FirstName" type="text" class="form-control" /></td>
+                        <td><input asp-for="Items[i].LastName" type="text" class="form-control" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            <h4>Output format:</h4>
+            <div class="form-check">
+                <input id="XLSX" name="SelectedFormat" type="radio" class="form-check-input" checked value="XLSX" />
+                <label for="XLSX" class="form-check-label">XLSX</label>
+            </div>
+            <div class="form-check">
+                <input id="XLS" name="SelectedFormat" type="radio" class="form-check-input" value="XLS" />
+                <label for="XLS" class="form-check-label">XLS</label>
+            </div>
+            <div class="form-check">
+                <input id="ODS" name="SelectedFormat" type="radio" class="form-check-input" value="ODS" />
+                <label for="ODS" class="form-check-label">ODS</label>
+            </div>
+            <div class="form-check">
+                <input id="CSV" name="SelectedFormat" type="radio" class="form-check-input" value="CSV" />
+                <label for="CSV" class="form-check-label">CSV</label>
+            </div>
+        </div>
+        <hr />
+        <button type="submit" class="btn btn-default">Export</button>
+    </form>
+</body>
+</html>
