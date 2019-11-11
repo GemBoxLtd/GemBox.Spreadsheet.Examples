@@ -1,6 +1,6 @@
 # GemBox.Spreadsheet
 
-<img src="https://www.gemboxsoftware.com/images/NugetGbs.png" alt="GemBox.Spreadsheet logo" style="float:left;margin:1rem;" />
+<img src="https://www.gemboxsoftware.com/images/NugetGbs.png" alt="GemBox.Spreadsheet logo" align="left" />
 
 GemBox.Spreadsheet is a .NET component which enables developers to read, write, convert and print spreadsheet files (XLSX, XLS, ODS, CSV, HTML, PDF or XPS) from .NET applications using one simple and efficient API.
 
