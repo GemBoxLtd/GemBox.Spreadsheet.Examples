@@ -1,3 +1,4 @@
+using System;
 using GemBox.Spreadsheet;
 
 class Program
@@ -7,6 +8,12 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
+        Example1();
+        Example2();
+    }
+
+    public static void Example1()
+    {
         var workbook = ExcelFile.Load("NumberFormat.xlsx");
 
         var worksheet = workbook.Worksheets[0];
@@ -36,5 +43,47 @@ class Program
                 worksheet.Columns[i].SetWidth(columnWidths[i], LengthUnit.Pixel);
 
         workbook.Save("Number Format.xlsx");
+    }
+
+    public static void Example2()
+    {
+        var workbook = new ExcelFile();
+
+        var worksheet = workbook.Worksheets.Add("sheet");
+
+        worksheet.Columns[0].SetWidth(200, LengthUnit.Pixel);
+
+        // Show the value as a number with two decimal places and thousands separator.
+        worksheet.Cells[0, 0].Style.NumberFormat
+            = NumberFormatBuilder.Number(2, useThousandsSeparator: true);
+        worksheet.Cells[0, 0].Value = 2500.333;
+
+        // Show the value in Euros and display negative values in parentheses.
+        worksheet.Cells[1, 0].Style.NumberFormat
+            = NumberFormatBuilder.Currency("€", 2, useParenthesesToDisplayNegativeValue: true);
+        worksheet.Cells[1, 0].Value = -50;
+
+        // Show the value in accounting format with three decimal places.
+        worksheet.Cells[2, 0].Style.NumberFormat
+            = NumberFormatBuilder.Accounting(3, currencySymbol: "$");
+        worksheet.Cells[2, 0].Value = -50;
+
+        // Show the value in ISO 8061 date format.
+        worksheet.Cells[3, 0].Style.NumberFormat = NumberFormatBuilder.DateTimeIso8061();
+        worksheet.Cells[3, 0].Value = DateTime.Now;
+
+        // Show the value as percentage.
+        worksheet.Cells[4, 0].Style.NumberFormat = NumberFormatBuilder.Percentage(2);
+        worksheet.Cells[4, 0].Value = 1 / 3d;
+
+        // Show the value as fraction with 100 as a denominator.
+        worksheet.Cells[5, 0].Style.NumberFormat = NumberFormatBuilder.FractionWithPreciseDenominator(100);
+        worksheet.Cells[5, 0].Value = 1 / 3d;
+
+        // Show the value in scientific notation using two decimal places.
+        worksheet.Cells[6, 0].Style.NumberFormat = NumberFormatBuilder.Scientific(2);
+        worksheet.Cells[6, 0].Value = Math.Pow(Math.PI, 10);
+
+        workbook.Save("Number Format Builder.docx");
     }
 }
