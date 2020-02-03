@@ -25,6 +25,27 @@ This repository contains the source code of GemBox.Spreadsheet example projects 
 * [Referencing Excel cell and range in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-excel-range/204)
 * [Excel Formula Calculation in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/excel-formula-calculation/901)
 
+## Examples
+
+| | |
+| --- | --- |
+| Hello World | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Hello%20World), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Hello%20World) |
+| Common Uses | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Common%20Uses), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Common%20Uses) |
+| Basic Features | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Basic%20Features), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Basic%20Features) |
+| Advanced Features | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Advanced%20Features) |
+| Charts | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Charts), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Charts) |
+| Calculation Engine | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Calculation%20Engine), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Calculation%20Engine) |
+| Import/Export DataTable | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Import_Export%20DataTable), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Import_Export%20DataTable) |
+| Protection | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Protection), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Protection) |
+| Preservation | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Preservation), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Preservation) |
+| WPF | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/WPF), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/WPF) |
+| Linux / macOS | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Linux_macOS) |
+| COM | [PYTHON](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
+| ASP.NET | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/ASP.NET), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/ASP.NET) |
+| ASP.NET Core | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/ASP.NET%20Core) |
+| Windows Forms | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Windows%20Forms), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Windows%20Forms) |
+| Performance | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Performance), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Performance) |
+
 ## System Requirement
 
 * .NET Framework 3.5 - 4.8
@@ -37,11 +58,8 @@ You can download GemBox.Spreadsheet from [BugFixes](https://www.gemboxsoftware.c
 
 Or from [NuGet](https://www.nuget.org/packages/GemBox.Spreadsheet/) 📦
 
-```powershell
-Install-Package GemBox.Spreadsheet
-```
-
 ## Resources
+
 * [Overview](https://www.gemboxsoftware.com/spreadsheet)
 * [Documentation](https://www.gemboxsoftware.com/spreadsheet/help/html/Introduction.htm)
 * [Support](https://www.gemboxsoftware.com/spreadsheet/support)
