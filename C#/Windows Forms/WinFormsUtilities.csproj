@@ -32,11 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GemBox.Spreadsheet, Version=45.0.35.1084, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\packages\GemBox.Spreadsheet.45.0.0.1084\lib\net35\GemBox.Spreadsheet.dll</HintPath>
+    <Reference Include="GemBox.Spreadsheet, Version=45.0.35.1094, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\packages\GemBox.Spreadsheet.45.0.0.1094\lib\net35\GemBox.Spreadsheet.dll</HintPath>
     </Reference>
-    <Reference Include="GemBox.Spreadsheet.WinFormsUtilities, Version=45.0.35.1084, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\packages\GemBox.Spreadsheet.WinFormsUtilities.45.0.0.1084\lib\net35\GemBox.Spreadsheet.WinFormsUtilities.dll</HintPath>
+    <Reference Include="GemBox.Spreadsheet.WinFormsUtilities, Version=45.0.35.1094, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\packages\GemBox.Spreadsheet.WinFormsUtilities.45.0.0.1094\lib\net35\GemBox.Spreadsheet.WinFormsUtilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="WinFormsUtilitiesExample.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -89,7 +89,8 @@ Public Class _Default
         Dim people As DataTable = Session("people")
 
         For i = 1 To people.Columns.Count
-            Dim editTextBox As TextBox = TryCast(Me.GridView1.Rows(rowIndex).Cells(i).Controls(0), TextBox)
+            Dim editTextBox = TryCast(Me.GridView1.Rows(rowIndex).Cells(i).Controls(0),
+                System.Web.UI.WebControls.TextBox)
 
             If Not (editTextBox Is Nothing) Then
                 people.Rows(rowIndex)(i - 1) = editTextBox.Text

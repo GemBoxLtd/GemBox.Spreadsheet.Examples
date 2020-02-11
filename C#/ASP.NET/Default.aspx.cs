@@ -89,7 +89,8 @@ namespace MediumTrust
 
             for (i = 1; i <= people.Columns.Count; i++)
             {
-                TextBox editTextBox = this.GridView1.Rows[rowIndex].Cells[i].Controls[0] as TextBox;
+                var editTextBox = this.GridView1.Rows[rowIndex].Cells[i].Controls[0] as
+                    System.Web.UI.WebControls.TextBox;
 
                 if (editTextBox != null)
                     people.Rows[rowIndex][i - 1] = editTextBox.Text;

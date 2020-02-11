@@ -64,7 +64,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="45.0.0.1084" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="45.0.0.1094" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="Application.xaml">

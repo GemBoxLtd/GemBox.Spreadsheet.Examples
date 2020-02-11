@@ -169,6 +169,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance", "Performance\Performance.csproj", "{1402B8EE-8EF6-4A72-9C47-BD14E9C63712}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextBoxes", "Basic Features\Text Boxes\TextBoxes.csproj", "{2909736A-FD91-4454-8C14-BB6264547859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -713,6 +715,14 @@ Global
 		{1402B8EE-8EF6-4A72-9C47-BD14E9C63712}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1402B8EE-8EF6-4A72-9C47-BD14E9C63712}.Release|x86.ActiveCfg = Release|Any CPU
 		{1402B8EE-8EF6-4A72-9C47-BD14E9C63712}.Release|x86.Build.0 = Release|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Debug|x86.Build.0 = Debug|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Release|x86.ActiveCfg = Release|Any CPU
+		{2909736A-FD91-4454-8C14-BB6264547859}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -786,6 +796,7 @@ Global
 		{DABF0434-5406-447B-888C-EDA6A9CA2773} = {FB75B3D2-ACD4-492B-8C8B-FCD71389C4BB}
 		{2324496B-5104-4FF9-B850-97F8F020E8CC} = {E796C9D1-C7E4-4D8B-9503-C2489E1B6942}
 		{1402B8EE-8EF6-4A72-9C47-BD14E9C63712} = {2F8C43BA-AF58-489B-B1D2-B6592F4539A7}
+		{2909736A-FD91-4454-8C14-BB6264547859} = {1B96E082-CAEF-49BB-8526-21C0C23FBD1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {186A9BA6-6C07-4B96-A8A0-5AA2687D13C0}

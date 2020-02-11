@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="45.0.0.1084" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="45.0.0.1094" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">

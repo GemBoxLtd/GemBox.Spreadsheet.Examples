@@ -157,9 +157,11 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormsUtilities", "Window
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{5039145D-F7F1-4AAC-B3AE-CFAB55F4D60D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportToImageSource", "WPF\Export To Image Source\ExportToImageSource.vbproj", "{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportToImageSource", "WPF\Export To ImageSource\ExportToImageSource.vbproj", "{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportToXpsDocument", "WPF\Export To Xps Document\ExportToXpsDocument.vbproj", "{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportToXpsDocument", "WPF\Export To XpsDocument\ExportToXpsDocument.vbproj", "{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TextBoxes", "Basic Features\Text Boxes\TextBoxes.vbproj", "{EB811626-EB07-435D-98AC-840271E12B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -689,6 +691,14 @@ Global
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.ActiveCfg = Release|Any CPU
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.Build.0 = Release|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|x86.Build.0 = Debug|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Release|x86.ActiveCfg = Release|Any CPU
+		{EB811626-EB07-435D-98AC-840271E12B54}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -760,6 +770,7 @@ Global
 		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674} = {6FC919E6-1970-4B6C-8762-85F5BF4BE3CA}
 		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8} = {5039145D-F7F1-4AAC-B3AE-CFAB55F4D60D}
 		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E} = {5039145D-F7F1-4AAC-B3AE-CFAB55F4D60D}
+		{EB811626-EB07-435D-98AC-840271E12B54} = {8432637F-68BD-47F9-8713-B4D1644898C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB9BEFC-A1E4-47B6-9F56-8AFBD9F3F8D8}
