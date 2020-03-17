@@ -30,6 +30,8 @@ namespace AspNetCore.Controllers
                     return SaveOptions.OdsDefault;
                 case "CSV":
                     return SaveOptions.CsvDefault;
+                case "PDF":
+                    return SaveOptions.PdfDefault;
                 default:
                     throw new NotSupportedException("Format '" + format + "' is not supported.");
             }

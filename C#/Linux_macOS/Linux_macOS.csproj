@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="GemBox.Spreadsheet" Version="*" />
-    <PackageReference Include="System.Security.Permissions" Version="*" />
+    <PackageReference Include="System.Drawing.Common" Version="*" />
   </ItemGroup>
 
 </Project>

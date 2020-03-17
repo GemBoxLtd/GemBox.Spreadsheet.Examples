@@ -25,5 +25,6 @@ class Program
         worksheet.Cells.GetSubrangeAbsolute(4, 0, 4, 7).Merged = true;
 
         workbook.Save("Output.xlsx");
+        workbook.Save("Output.pdf");
     }
 }
