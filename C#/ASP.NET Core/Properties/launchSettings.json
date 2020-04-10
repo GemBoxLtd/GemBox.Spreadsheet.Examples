@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AspNetCore": {
+    "SpreadsheetCore": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
