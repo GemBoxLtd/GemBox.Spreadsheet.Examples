@@ -16,8 +16,6 @@ class Program
         worksheet.Pictures.Add("SmallImage.bmp", 50, 50, 48, 48, LengthUnit.Pixel);
 
         // Large JPG added by using one anchor.
-        // Works in .NET Framework. 
-        // In .NET Standard, image size is zero because GDI+ is not available.
         worksheet.Pictures.Add("FragonardReader.jpg", "B9");
 
         // PNG added by using two anchors.
