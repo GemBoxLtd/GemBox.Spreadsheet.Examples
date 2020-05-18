@@ -2,15 +2,24 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="*" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="45.0.1173-hotfix" />
+    <PackageReference Include="GemBox.Pdf" Version="13.0.1114-hotfix" />
+    <PackageReference Include="System.Drawing.Common" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
+    <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
+    <PackageReference Include="BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="Portable.BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="GemBoxExampleExplorer.pfx">
+    <None Update="GemBoxECDsa521.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxSignature.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="SimpleTemplate.xlsx">
