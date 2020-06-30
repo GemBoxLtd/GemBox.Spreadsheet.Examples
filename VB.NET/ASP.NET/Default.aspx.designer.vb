@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class _Default
-    
+
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-    
+
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-    
+
     '''<summary>
     '''RadioButtonList1 control.
     '''</summary>
@@ -39,13 +39,22 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents RadioButtonList1 As Global.System.Web.UI.WebControls.RadioButtonList
-    
+
     '''<summary>
-    '''Export control.
+    '''ExportData control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Export As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ExportData As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ExportDataAndFormatting control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ExportDataAndFormatting As Global.System.Web.UI.WebControls.Button
 End Class
