@@ -1,10 +1,10 @@
-using GemBox.Spreadsheet;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.AspNetCore.Mvc;
+using GemBox.Spreadsheet;
 
-namespace AspNetCore.Controllers
+namespace SpreadsheetCore.Controllers
 {
     public class WorkbookController : Controller
     {
@@ -18,49 +18,29 @@ namespace AspNetCore.Controllers
             new WorkbookItemModel() { Id = 105, FirstName = "Mario", LastName = "Rossi"},
         };
 
-        private static SaveOptions GetSaveOptions(string format)
-        {
-            switch (format.ToUpperInvariant())
-            {
-                case "XLSX":
-                    return SaveOptions.XlsxDefault;
-                case "XLS":
-                    return SaveOptions.XlsDefault;
-                case "ODS":
-                    return SaveOptions.OdsDefault;
-                case "CSV":
-                    return SaveOptions.CsvDefault;
-                default:
-                    throw new NotSupportedException("Format '" + format + "' is not supported.");
-            }
-        }
-
-        private static byte[] GetBytes(ExcelFile file, SaveOptions options)
-        {
-            using (MemoryStream stream = new MemoryStream())
-            {
-                file.Save(stream, options);
-                return stream.ToArray();
-            }
-        }
-
-        public IActionResult Create()
-        {
-            return View(new WorkbookModel() { Items = data, SelectedFormat = "XLSX" });
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(WorkbookModel model)
+        static WorkbookController()
         {
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+        }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View(new WorkbookModel()
+            {
+                Items = data,
+                SelectedFormat = "XLSX"
+            });
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult Create(WorkbookModel model)
+        {
             if (!ModelState.IsValid)
                 return View(model);
 
-            SaveOptions options = GetSaveOptions(model.SelectedFormat);
-            ExcelFile book = new ExcelFile();
-            ExcelWorksheet sheet = book.Worksheets.Add("Sheet1");
+            var book = new ExcelFile();
+            var sheet = book.Worksheets.Add("Sheet1");
 
             CellStyle style = sheet.Rows[0].Style;
             style.Font.Weight = ExcelFont.BoldWeight;
@@ -82,8 +62,45 @@ namespace AspNetCore.Controllers
                 sheet.Cells[r, 1].Value = item.FirstName;
                 sheet.Cells[r, 2].Value = item.LastName;
             }
-            
-            return File(GetBytes(book, options), options.ContentType, "Create." + model.SelectedFormat.ToLowerInvariant());
+
+            SaveOptions options = GetSaveOptions(model.SelectedFormat);
+
+            using (var stream = new MemoryStream())
+            {
+                book.Save(stream, options);
+                return File(stream.ToArray(), options.ContentType, "Create." + model.SelectedFormat.ToLower());
+            }
+        }
+
+        private static SaveOptions GetSaveOptions(string format)
+        {
+            switch (format.ToUpper())
+            {
+                case "XLSX":
+                    return SaveOptions.XlsxDefault;
+                case "XLS":
+                    return SaveOptions.XlsDefault;
+                case "ODS":
+                    return SaveOptions.OdsDefault;
+                case "CSV":
+                    return SaveOptions.CsvDefault;
+                case "HTML":
+                    return SaveOptions.HtmlDefault;
+                case "PDF":
+                    return SaveOptions.PdfDefault;
+
+                case "XPS":
+                case "PNG":
+                case "JPG":
+                case "GIF":
+                case "TIF":
+                case "BMP":
+                case "WMP":
+                    throw new InvalidOperationException("To enable saving to XPS or image format, add 'Microsoft.WindowsDesktop.App' framework reference.");
+
+                default:
+                    throw new NotSupportedException();
+            }
         }
     }
 

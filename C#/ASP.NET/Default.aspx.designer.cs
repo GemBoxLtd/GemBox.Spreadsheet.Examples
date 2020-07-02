@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MediumTrust {
-    
-    
-    public partial class _Default {
-        
+namespace MediumTrust
+{
+
+
+    public partial class _Default
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MediumTrust {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MediumTrust {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
+
         /// <summary>
         /// RadioButtonList1 control.
         /// </summary>
@@ -38,14 +40,23 @@ namespace MediumTrust {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
-        
+
         /// <summary>
-        /// Export control.
+        /// ExportData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Export;
+        protected global::System.Web.UI.WebControls.Button ExportData;
+
+        /// <summary>
+        /// ExportDataAndFormatting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ExportDataAndFormatting;
     }
 }
