@@ -43,6 +43,7 @@ This repository contains the source code of GemBox.Spreadsheet example projects 
 | COM | [PYTHON](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
 | ASP.NET | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/ASP.NET), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/ASP.NET) |
 | ASP.NET Core | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/ASP.NET%20Core) |
+| Azure | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Azure), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Azure) |
 | Windows Forms | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Windows%20Forms), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Windows%20Forms) |
 | Performance | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/C%23/Performance), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Performance) |
 
