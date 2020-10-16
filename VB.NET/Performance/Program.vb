@@ -1,60 +1,59 @@
 Imports System
-Imports System.Diagnostics
+Imports System.Collections.Generic
+Imports System.IO
+Imports BenchmarkDotNet.Attributes
+Imports BenchmarkDotNet.Engines
+Imports BenchmarkDotNet.Jobs
+Imports BenchmarkDotNet.Running
 Imports GemBox.Spreadsheet
 
-Module Program
+<SimpleJob(RuntimeMoniker.Net48)>
+<SimpleJob(RuntimeMoniker.NetCoreApp31)>
+Public Class Program
 
-    Sub Main()
+    Private workbook As ExcelFile
+    Private ReadOnly consumer As Consumer = New Consumer()
 
+    Public Shared Sub Main()
+        BenchmarkRunner.Run(Of Program)()
+    End Sub
+
+    <GlobalSetup>
+    Public Sub SetLicense()
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        ' If example exceeds Free version limitations then continue as trial version:
-        ' https://www.gemboxsoftware.com/spreadsheet/help/html/Evaluation_and_Licensing.htm
-        AddHandler SpreadsheetInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
+        ' If using Free version and example exceeds its limitations, use Trial or Time Limited version:
+        ' https://www.gemboxsoftware.com/spreadsheet/examples/free-trial-professional-modes/1001
 
-        Dim rowCount As Integer = 100000
-        Dim columnCount As Integer = 10
-        Dim fileFormat = "XLSX"
-
-        Console.WriteLine("Performance example:")
-        Console.WriteLine()
-        Console.WriteLine("Row count: " & rowCount)
-        Console.WriteLine("Column count: " & columnCount)
-        Console.WriteLine("File format: " & fileFormat)
-        Console.WriteLine()
-
-        Dim stopwatch = New Stopwatch()
-        stopwatch.Start()
-
-        Dim workbook = New ExcelFile()
-        Dim worksheet = workbook.Worksheets.Add("Performance")
-
-        For row As Integer = 0 To rowCount - 1
-            For column As Integer = 0 To columnCount - 1
-                worksheet.Cells(row, column).Value = row.ToString() & "_" & column
-            Next
-        Next
-
-        Console.WriteLine("Generate file (seconds): " & stopwatch.Elapsed.TotalSeconds)
-
-        stopwatch.Reset()
-        stopwatch.Start()
-
-        Dim cellsCount As Integer = 0
-        For Each row As ExcelRow In worksheet.Rows
-            For Each cell As ExcelCell In row.AllocatedCells
-                cellsCount += 1
-            Next
-        Next
-
-        Console.WriteLine("Iterate through " & cellsCount & " cells (seconds): " & stopwatch.Elapsed.TotalSeconds)
-
-        stopwatch.Reset()
-        stopwatch.Start()
-
-        workbook.Save("Report." & fileFormat.ToLower())
-
-        Console.WriteLine("Save file (seconds): " & stopwatch.Elapsed.TotalSeconds)
+        Me.workbook = ExcelFile.Load("RandomSheets.xlsx")
     End Sub
-End Module
+
+    <Benchmark>
+    Public Function Reading() As ExcelFile
+        Return ExcelFile.Load("RandomSheets.xlsx")
+    End Function
+
+    <Benchmark>
+    Public Sub Writing()
+        Using stream = New MemoryStream()
+            Me.workbook.Save(stream, New XlsxSaveOptions())
+        End Using
+    End Sub
+
+    <Benchmark>
+    Public Sub Iterating()
+        Me.LoopThroughAllCells().Consume(Me.consumer)
+    End Sub
+
+    Public Iterator Function LoopThroughAllCells() As IEnumerable(Of Object)
+        For Each worksheet In Me.workbook.Worksheets
+            For Each row In worksheet.Rows
+                For Each cell In row.AllocatedCells
+                    Yield cell.Value
+                Next
+            Next
+        Next
+    End Function
+
+End Class

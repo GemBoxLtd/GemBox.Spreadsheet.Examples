@@ -38,7 +38,7 @@ Module Program
     Sub Example2()
         Dim workbook = ExcelFile.Load("HtmlExport.xlsx")
 
-        ' Specify exporting of Excel data as HTML table with embedded images.
+        ' Specify exporting of Excel data as an HTML table with embedded images.
         Dim options As New HtmlSaveOptions() With
         {
             .EmbedImages = True,
@@ -51,7 +51,7 @@ Module Program
             writer.WriteStartElement("html")
             writer.WriteStartElement("body")
 
-            ' Write Excel sheets to single HTML file in reverse order.
+            ' Write Excel sheets to a single HTML file in reverse order.
             For Each worksheet In workbook.Worksheets.Reverse()
                 writer.WriteElementString("h1", worksheet.Name)
 

@@ -1,0 +1,130 @@
+﻿Artificial objects count,,,Total mass (lb),Total mass (kg),,
+=COUNTA(A5:A100),,,=SUM(D5:D100),=SUM(E5:E100),,
+,,,,,,
+Artificial object,Country,Year,Mass (lb),Mass (kg),Status,Location
+Luna 2,Soviet Union,1959,860,390,Intentionally crashed,29.1°N 0°E
+"Luna 2
+Third stage of Vostok rocket",Soviet Union,1959,"20,100","9,100",Intentionally crashed,29.1°N 0°E
+Ranger 4,United States,1962,730,331,Intentionally crashed,15.5°S 130.7°W
+Ranger 6,United States,1964,840,381,Intentionally crashed,9.358°N 21.480°E
+Ranger 7,United States,1964,805,365,Intentionally crashed,10.63°S 20.60°W
+Luna 5,Soviet Union,1965,"3,250","1,474",Crashed,8°N 23°W
+Luna 7,Soviet Union,1965,"3,316","1,504",Crashed,9.8°N 47.8°W
+Luna 8,Soviet Union,1965,220,100,Crashed,9.1°N 63.3°W
+Ranger 8,United States,1965,809,367,Intentionally crashed,2.638°N 24.787°E
+Ranger 9,United States,1965,809,367,Intentionally crashed,12.828°S 2.387°W
+Luna 9,Soviet Union,1966,220,100,Landed,7.08°N 64.37°W
+Luna 10,Soviet Union,1966,"3,500","1,600","Crashed
+(post-mission)",Unknown
+Luna 11,Soviet Union,1966,"3,620","1,640",Crashed,Unknown
+Luna 12,Soviet Union,1966,"3,680","1,670",Crashed,Unknown
+Surveyor 1,United States,1966,600,270,Landed,2.474°S 43.339°W
+Luna 13,Soviet Union,1966,"3,700","1,700",Landed,18.87°N 62.05°W
+Lunar Orbiter 1,United States,1966,851,386,"Crashed
+(post-mission)",6.70°N 162°E
+Surveyor 2,United States,1966,644,292,Crashed,5.5°S 12°W
+Lunar Orbiter 2,United States,1966,849,385,"Crashed
+(post-mission)",3.0°N 119°E
+Lunar Orbiter 3,United States,1966,851,386,"Crashed
+(post-mission)",14.3°N 97.7°W
+Surveyor 3,United States,1967,619,281,Landed,3.015°S 23.418°W
+Lunar Orbiter 4,United States,1967,851,386,"Crashed
+(post-mission)",Unknown
+Surveyor 4,United States,1967,624,283,Crashed,0.4°N 1.33°W
+Explorer 35,United States,1967,229,104,"Crashed
+(post mission)",Unknown
+Lunar Orbiter 5,United States,1967,851,386,"Crashed
+(post-mission)",3°S 83°W
+Surveyor 5,United States,1967,619,281,Landed,1.461°N 23.195°E
+Surveyor 6,United States,1967,622,282,Landed,0.49°N 1.40°W
+Surveyor 7,United States,1968,640,290,Landed,40.86°S 11.47°W
+Luna 14,Soviet Union,1968,"3,680","1,670",Crashed,Unknown
+"Apollo 10
+LM-4 Snoopy descent stage",United States,1969,"4,874","2,211","Crashed
+(post-mission)",Unknown
+"Apollo 11
+LM-5 Eagle descent stage",United States,1969,"4,484","2,034",Landed,0.6741°N 23.4730°E
+Luna 15,Soviet Union,1969,"5,992","2,718",Crashed,Unknown
+"Apollo 11
+LM-5 Eagle ascent stage",United States,1969,"4,815","2,184","Crashed
+(post-mission)",Unknown
+"Apollo 12
+LM-6 Intrepid descent stage",United States,1969,"4,874","2,211",Landed,3.0124°S 23.4216°W
+"Apollo 12
+LM-6 Intrepid ascent stage",United States,1969,"4,771","2,164","Crashed
+(post-mission)",3.94°S 21.20°W
+Luna 16 descent stage,Soviet Union,1970,"3,040","1,380",Landed,0.68°S 56.3°E
+Luna 17 and Lunokhod 1,Soviet Union,1970,"12,300","5,600",Landed,38.28°N 35.0°W
+"Apollo 13
+S-IVB (S-IVB-508)",United States,1970,"29,661","13,454",Intentionally crashed,2.75°S 27.86°W
+Luna 18,Soviet Union,1971,"4,140","1,880",Crashed,3.57°N 56.5°E
+Luna 19,Soviet Union,1971,"4,140","1,880",Crashed,Unknown
+"Apollo 14
+S-IVB (S-IVB-509)",United States,1971,"30,900","14,016",Intentionally crashed,8.09°S 26.02°W
+"Apollo 14
+LM-8 Antares descent stage",United States,1971,"4,727","2,144",Landed,3.6453°S 17.4714°W
+"Apollo 14
+LM-8 Antares ascent stage",United States,1971,"4,705","2,132","Crashed
+(post-mission)",3.42°S 19.67°W
+"Apollo 15
+S-IVB (S-IVB-510)",United States,1971,"30,944","14,036",Intentionally crashed,1.51°S 11.81°W
+"Apollo 15
+LM-10 Falcon descent stage",United States,1971,"6,193","2,809",Landed,26.1322°N 3.6339°E
+"Apollo 15
+Lunar Roving Vehicle (LRV-1)",United States,1971,460,210,Landed,26.08°N 3.66°E
+"Apollo 15
+LM-10 Falcon ascent stage",United States,1971,"4,700","2,132","Crashed
+(post-mission)",26.36°N 0.25°E
+Apollo 15 subsatellite,United States,1971,79,36,"Crashed
+(post-mission)",Unknown
+Luna 20 descent stage,Soviet Union,1972,"12,626","5,727",Landed,3.57°N 56.5°E
+"Apollo 16
+S-IVB (S-IVB-511)",United States,1972,"30,869","14,002",Intentionally crashed,1.921°N 24.623°W
+"Apollo 16
+LM-11 Orion descent stage",United States,1972,"6,096","2,765",Landed,8.9730°S 15.5002°E
+"Apollo 16
+Lunar Roving Vehicle (LRV-2)",United States,1972,460,210,Landed,8.97°S 15.51°E
+"Apollo 16
+LM-11 Orion ascent stage",United States,1972,"4,713","2,138","Crashed
+(post-mission)",Unknown
+Apollo 16 subsatellite,United States,1972,79,36,"Crashed
+(post-mission)",Unknown
+"Apollo 17
+S-IVB (S-IVB-512)",United States,1972,"30,780","13,960",Intentionally crashed,4.21°S 12.31°W
+"Apollo 17
+LM-12 Challenger descent stage",United States,1972,"6,169","2,798",Landed,20.1908°N 30.7717°E
+"Apollo 17
+Lunar Roving Vehicle (LRV-3)",United States,1972,460,210,Landed,20.17°N 30.77°E
+"Apollo 17
+LM-12 Challenger ascent stage",United States,1972,"4,740","2,150","Crashed
+(post-mission)",19.96°N 30.50°E
+Luna 21 and Lunokhod 2,Soviet Union,1973,"10,690","4,850",Landed,25.85°N 30.45°E
+Explorer 49 (RAE-B),United States,1973,723,328,Crashed,Unknown
+Luna 22,Soviet Union,1974,"8,800","4,000",Crashed,Unknown
+Luna 23,Soviet Union,1974,"12,300","5,600",Landed,12.75°N 62.20°E
+Luna 24 descent stage,Soviet Union,1976,"12,787","5,800",Landed,12.75°N 62.20°E
+"Hagoromo
+Hiten",Japan,1990,26,12,"Crashed
+(not confirmed)",Unknown
+Hiten,Japan,1993,315,143,Intentionally crashed,34.3°S 55.6°E
+Lunar Prospector,United States,1998,278,126,Intentionally crashed,87.7°S 42.35°E
+SMART-1,Various,2006,677,307,Intentionally crashed,34.262°S 46.193°W
+"Moon Impact Probe (MIP)
+Chandrayaan-1",India,2008,77,35,Intentionally crashed,89.76°S 39.40°W
+SELENE Rstar (Okina),Japan,2009,117,53,Crashed,28.213°N 159.033°W
+Chang'e 1,China,2009,"4,400","2,000",Intentionally crashed,1.50°S 52.36°E
+SELENE (Kaguya) main orbiter,Japan,2009,"4,374","1,984",Intentionally crashed,65.5°S 80.5°E
+LCROSS Shepherding Spacecraft,United States,2009,"1,500",700,Intentionally crashed,84.729°S 49.36°W
+LCROSS Centaur,United States,2009,"5,000","2,270",Intentionally crashed,84.675°S 48.725°W
+GRAIL,United States,2012,293,133,"Crashed
+(post-mission)",75.62°N 26.63°W
+"Chang'e 3
+Yutu rover",China,2013,"2,600","1,200",Operational,44.12°N 19.51°W
+LADEE,United States,2014,547,248,Intentionally crashed,10.8°N 91.6°W
+"Chang'e 4
+Yutu-2 rover",China,2019,"2,600","1,200",Operational,45.5°S 177.6°E
+Beresheet,Israel,2019,330,150,Crashed,32.5956°N 19.3496°E
+Longjiang-2,China,2019,104,47,Intentionally crashed,16.6956°N 159.5170°E
+"Chandrayaan-2
+Vikram lander
+Pragyan rover",India,2019,"3,243","1,471",Crashed,70.8810°S 22.7840°E

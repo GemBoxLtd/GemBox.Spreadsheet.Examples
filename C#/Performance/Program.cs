@@ -1,56 +1,60 @@
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
+using System.IO;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Engines;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Running;
 using GemBox.Spreadsheet;
 
-class Program
+[SimpleJob(RuntimeMoniker.Net48)]
+[SimpleJob(RuntimeMoniker.NetCoreApp31)]
+public class Program
 {
-    static void Main()
+    private ExcelFile workbook;
+    private readonly Consumer consumer = new Consumer();
+
+    public static void Main()
+    {
+        BenchmarkRunner.Run<Program>();
+    }
+
+    [GlobalSetup]
+    public void SetLicense()
     {
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        // If example exceeds Free version limitations then continue as Trial version:
-        // https://www.gemboxsoftware.com/spreadsheet/help/html/Evaluation_and_Licensing.htm
-        SpreadsheetInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
+        // If using Free version and example exceeds its limitations, use Trial or Time Limited version:
+        // https://www.gemboxsoftware.com/spreadsheet/examples/free-trial-professional-modes/1001
 
-        int rowCount = 100000;
-        int columnCount = 10;
-        var fileFormat = "XLSX";
+        this.workbook = ExcelFile.Load("RandomSheets.xlsx");
+    }
 
-        Console.WriteLine("Performance example:");
-        Console.WriteLine();
-        Console.WriteLine("Row count: " + rowCount);
-        Console.WriteLine("Column count: " + columnCount);
-        Console.WriteLine("File format: " + fileFormat);
-        Console.WriteLine();
+    [Benchmark]
+    public ExcelFile Reading()
+    {
+        return ExcelFile.Load("RandomSheets.xlsx");
+    }
 
-        var stopwatch = new Stopwatch();
-        stopwatch.Start();
+    [Benchmark]
+    public void Writing()
+    {
+        using (var stream = new MemoryStream())
+            this.workbook.Save(stream, new XlsxSaveOptions());
+    }
 
-        var workbook = new ExcelFile();
-        var worksheet = workbook.Worksheets.Add("Performance");
+    [Benchmark]
+    public void Iterating()
+    {
+        this.LoopThroughAllCells().Consume(this.consumer);
+    }
 
-        for (int row = 0; row < rowCount; row++)
-            for (int column = 0; column < columnCount; column++)
-                worksheet.Cells[row, column].Value = row.ToString() + "_" + column;
-
-        Console.WriteLine("Generate file (seconds): " + stopwatch.Elapsed.TotalSeconds);
-
-        stopwatch.Reset();
-        stopwatch.Start();
-
-        int cellsCount = 0;
-        foreach (var row in worksheet.Rows)
-            foreach (var cell in row.AllocatedCells)
-                ++cellsCount;
-
-        Console.WriteLine("Iterate through " + cellsCount + " cells (seconds): " + stopwatch.Elapsed.TotalSeconds);
-
-        stopwatch.Reset();
-        stopwatch.Start();
-
-        workbook.Save("Report." + fileFormat.ToLower());
-
-        Console.WriteLine("Save file (seconds): " + stopwatch.Elapsed.TotalSeconds);
+    public IEnumerable<object> LoopThroughAllCells()
+    {
+        foreach (var worksheet in this.workbook.Worksheets)
+            foreach (var row in worksheet.Rows)
+                foreach (var cell in row.AllocatedCells)
+                    yield return cell.Value;
     }
 }

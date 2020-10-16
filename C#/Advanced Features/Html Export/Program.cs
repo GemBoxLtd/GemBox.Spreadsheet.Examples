@@ -39,7 +39,7 @@ class Program
     {
         var workbook = ExcelFile.Load("HtmlExport.xlsx");
 
-        // Specify exporting of Excel data as HTML table with embedded images.
+        // Specify exporting of Excel data as an HTML table with embedded images.
         var options = new HtmlSaveOptions()
         {
             EmbedImages = true,
@@ -52,7 +52,7 @@ class Program
             writer.WriteStartElement("html");
             writer.WriteStartElement("body");
 
-            // Write Excel sheets to single HTML file in reverse order.
+            // Write Excel sheets to a single HTML file in reverse order.
             foreach (var worksheet in workbook.Worksheets.Reverse())
             {
                 writer.WriteElementString("h1", worksheet.Name);
