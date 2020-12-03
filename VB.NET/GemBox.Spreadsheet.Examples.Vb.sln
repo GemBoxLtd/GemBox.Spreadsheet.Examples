@@ -21,7 +21,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FixedColumnsWidthText", "Ad
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormulaUtilityMethods", "Advanced Features\Formula Utility Methods\FormulaUtilityMethods.vbproj", "{935B85BD-4183-482E-AFE8-1D466840D659}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreezeOrSplitPanes", "Advanced Features\Freeze Or Split Panes\FreezeOrSplitPanes.vbproj", "{90D648CE-1BF2-4700-8E8E-5114522B0C2F}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreezeOrSplitPanes", "Advanced Features\Freeze or Split Panes\FreezeOrSplitPanes.vbproj", "{90D648CE-1BF2-4700-8E8E-5114522B0C2F}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Grouping", "Advanced Features\Grouping\Grouping.vbproj", "{FBAAEAC6-2D55-4B8D-8E07-1C5B426BDBBA}"
 EndProject
@@ -29,19 +29,19 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HtmlExport", "Advanced Feat
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PivotTables", "Advanced Features\Pivot Tables\PivotTables.vbproj", "{2AA5D70D-E850-41BB-8F43-5D11B5CC2BA0}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintAndViewOptions", "Advanced Features\Print And View Options\PrintAndViewOptions.vbproj", "{3E5F2AFF-C3C7-4105-B040-B8C437241022}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintAndViewOptions", "Advanced Features\Print and View Options\PrintAndViewOptions.vbproj", "{3E5F2AFF-C3C7-4105-B040-B8C437241022}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintTitlesAndArea", "Advanced Features\Print Titles And Area\PrintTitlesAndArea.vbproj", "{74E8CC15-56BB-4919-9322-8BBEF4131D3C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintTitlesAndArea", "Advanced Features\Print Titles and Area\PrintTitlesAndArea.vbproj", "{74E8CC15-56BB-4919-9322-8BBEF4131D3C}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrivateFonts", "Advanced Features\Private Fonts\PrivateFonts.vbproj", "{13C44473-068C-4E52-AF8F-F4C523637E4B}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RightToLeftText", "Advanced Features\Right To Left Text\RightToLeftText.vbproj", "{61ED92E1-6C84-4D5C-940A-5A9EF9A46062}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RightToLeftText", "Advanced Features\Right to Left Text\RightToLeftText.vbproj", "{61ED92E1-6C84-4D5C-940A-5A9EF9A46062}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Row_ColumnAutoFit", "Advanced Features\Row_Column AutoFit\Row_ColumnAutoFit.vbproj", "{0041AFF7-F397-4A42-B1C1-DFC70A2CB98F}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RowAndColumnAutoFit", "Advanced Features\Row and Column AutoFit\RowAndColumnAutoFit.vbproj", "{0041AFF7-F397-4A42-B1C1-DFC70A2CB98F}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Searching", "Advanced Features\Searching\Searching.vbproj", "{F54BAC60-2234-45EF-8DB4-07938A25C409}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SheetCopying_Deleting", "Advanced Features\Sheet Copying_Deleting\SheetCopying_Deleting.vbproj", "{32994E1F-A0EC-43B2-8462-0CD243A6206B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SheetCopyingAndDeleting", "Advanced Features\Sheet Copying and Deleting\SheetCopyingAndDeleting.vbproj", "{32994E1F-A0EC-43B2-8462-0CD243A6206B}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Sorting", "Advanced Features\Sorting\Sorting.vbproj", "{3987AA5E-581C-41A3-AD85-2CA90910355E}"
 EndProject
@@ -49,21 +49,17 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Tables", "Advanced Features
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UnitConversion", "Advanced Features\Unit Conversion\UnitConversion.vbproj", "{E53B4A45-CCB1-49B9-9A55-E41DA1AA7ADB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Progress Reporting And Cancellation", "Progress Reporting And Cancellation", "{891E8CE8-C1AE-403A-913E-B5B21A027E42}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Progress Reporting and Cancellation", "Progress Reporting and Cancellation", "{891E8CE8-C1AE-403A-913E-B5B21A027E42}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CancellationInConsole", "Advanced Features\Progress Reporting And Cancellation\CancellationInConsole\CancellationInConsole.vbproj", "{73A9BA70-F7B1-4AE7-A187-3E4F0FDAC338}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CancellationInConsole", "Advanced Features\Progress Reporting and Cancellation\Cancellation in Console\CancellationInConsole.vbproj", "{73A9BA70-F7B1-4AE7-A187-3E4F0FDAC338}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CancellationInWpf", "Advanced Features\Progress Reporting And Cancellation\CancellationInWpf\CancellationInWpf.vbproj", "{DD8E6270-16F0-4686-B4B5-23B319258511}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CancellationInWpf", "Advanced Features\Progress Reporting and Cancellation\Cancellation in WPF\CancellationInWpf.vbproj", "{DD8E6270-16F0-4686-B4B5-23B319258511}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ProgressReportingInConsole", "Advanced Features\Progress Reporting And Cancellation\ProgressReportingInConsole\ProgressReportingInConsole.vbproj", "{DA77FD36-DADD-471A-9BCC-EBCD2DD687A9}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ProgressReportingInConsole", "Advanced Features\Progress Reporting and Cancellation\Progress Reporting in Console\ProgressReportingInConsole.vbproj", "{DA77FD36-DADD-471A-9BCC-EBCD2DD687A9}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWindowsForms", "Advanced Features\Progress Reporting And Cancellation\ProgressReportingInWindowsForms\ProgressReportingInWindowsForms.vbproj", "{F739C5F2-A529-4381-AB93-93662F64404C}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWindowsForms", "Advanced Features\Progress Reporting and Cancellation\Progress Reporting in WindowsForms\ProgressReportingInWindowsForms.vbproj", "{F739C5F2-A529-4381-AB93-93662F64404C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWpf", "Advanced Features\Progress Reporting And Cancellation\ProgressReportingInWpf\ProgressReportingInWpf.vbproj", "{5FC557FB-0756-4A27-9498-B08A31CE9D26}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET", "ASP.NET", "{AA85044C-1D6E-4077-A384-FB19E779866F}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MediumTrust", "ASP.NET\MediumTrust.vbproj", "{A622566D-7E31-4BB6-8098-A690FA4D1543}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWpf", "Advanced Features\Progress Reporting and Cancellation\Progress Reporting in WPF\ProgressReportingInWpf.vbproj", "{5FC557FB-0756-4A27-9498-B08A31CE9D26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic Features", "Basic Features", "{8432637F-68BD-47F9-8713-B4D1644898C5}"
 EndProject
@@ -75,7 +71,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DataTypes", "Basic Features
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Formula", "Basic Features\Formula\Formula.vbproj", "{57B99608-115E-4F45-B46C-CC93B444B8EA}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HeaderAndFooter", "Basic Features\Header And Footer\HeaderAndFooter.vbproj", "{1F8E15A5-A8E5-44F6-AE1A-83CDEF3C1D06}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HeadersAndFooters", "Basic Features\Headers and Footers\HeadersAndFooters.vbproj", "{1F8E15A5-A8E5-44F6-AE1A-83CDEF3C1D06}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Hyperlinks", "Basic Features\Hyperlinks\Hyperlinks.vbproj", "{D17E7351-B0F8-488B-BC14-603BF40126BD}"
 EndProject
@@ -87,7 +83,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "NumberFormat", "Basic Featu
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Shapes", "Basic Features\Shapes\Shapes.vbproj", "{5CF31CF4-9754-4795-8F9D-ED368AE7D74A}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "StylesAndFormatting", "Basic Features\Styles And Formatting\StylesAndFormatting.vbproj", "{B72B5D08-AA89-4DF7-8231-6024CCD1AE49}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "StylesAndFormatting", "Basic Features\Styles and Formatting\StylesAndFormatting.vbproj", "{B72B5D08-AA89-4DF7-8231-6024CCD1AE49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculation Engine", "Calculation Engine", "{A9EED2F6-2434-410E-A87E-6B9C3511D7F4}"
 EndProject
@@ -119,13 +115,13 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TemplateUse", "Common Uses\
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Writing", "Common Uses\Writing\Writing.vbproj", "{E4A56681-A20B-4690-A790-B1F9D02F9616}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Import_Export DataTable", "Import_Export DataTable", "{A983C3CB-3522-49D6-A414-FCD31E4A8FDC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Import and Export DataTable", "Import and Export DataTable", "{A983C3CB-3522-49D6-A414-FCD31E4A8FDC}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CreateDataTableFromSheet", "Import_Export DataTable\Create DataTable From Sheet\CreateDataTableFromSheet.vbproj", "{19553A53-A976-4A42-BACD-26D3FFBFA243}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CreateDataTableFromSheet", "Import and Export DataTable\Create DataTable from Sheet\CreateDataTableFromSheet.vbproj", "{19553A53-A976-4A42-BACD-26D3FFBFA243}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DataTableToSheet", "Import_Export DataTable\DataTable To Sheet\DataTableToSheet.vbproj", "{CE3FC825-54DD-4C7E-9983-1CE4C166ED2B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DataTableToSheet", "Import and Export DataTable\DataTable to Sheet\DataTableToSheet.vbproj", "{CE3FC825-54DD-4C7E-9983-1CE4C166ED2B}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SheetToDataTable", "Import_Export DataTable\Sheet To DataTable\SheetToDataTable.vbproj", "{D45D1B33-2B1A-429C-AA46-3F64C3E87330}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SheetToDataTable", "Import and Export DataTable\Sheet to DataTable\SheetToDataTable.vbproj", "{D45D1B33-2B1A-429C-AA46-3F64C3E87330}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{28DD6895-32E2-469E-AEA5-592BE4BBFD12}"
 EndProject
@@ -135,41 +131,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Preservation", "Preservatio
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ExcelSpecificFeatures", "Preservation\Excel Specific Features\ExcelSpecificFeatures.vbproj", "{302A2672-C7CE-4A1F-8765-B7A08FABF3C0}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormsAndMacros", "Preservation\Forms And Macros\FormsAndMacros.vbproj", "{66B6DD2C-E284-46B8-A86E-6AF0278CC0C4}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormsAndMacros", "Preservation\Forms and Macros\FormsAndMacros.vbproj", "{66B6DD2C-E284-46B8-A86E-6AF0278CC0C4}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Illustrations", "Preservation\Illustrations\Illustrations.vbproj", "{56F0AD86-2455-41A0-9FCE-F62B0AAA5A0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protection", "Protection", "{DFF1F3F4-50F9-44D0-AD14-02D9250695C2}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PDFDigitalSignature", "Protection\PDF Digital Signature\PDFDigitalSignature.vbproj", "{CF301AD6-CD2E-4EBD-BE81-026F33199598}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PdfDigitalSignature", "Protection\PDF Digital Signature\PdfDigitalSignature.vbproj", "{CF301AD6-CD2E-4EBD-BE81-026F33199598}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PDFEncryption", "Protection\PDF Encryption\PDFEncryption.vbproj", "{BBDD06F6-DB9F-4943-AC21-C2C68D63A693}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PdfEncryption", "Protection\PDF Encryption\PdfEncryption.vbproj", "{BBDD06F6-DB9F-4943-AC21-C2C68D63A693}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SheetProtection", "Protection\Sheet Protection\SheetProtection.vbproj", "{E9BE310B-B005-44C7-93AA-854D42B9AC3A}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "WorkbookProtection", "Protection\Workbook Protection\WorkbookProtection.vbproj", "{16385976-97CE-42D1-A3E0-C31D4A508002}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "XLSXEncryption", "Protection\XLSX Encryption\XLSXEncryption.vbproj", "{E435E734-66B7-4809-A406-0E4928364181}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Forms", "Windows Forms", "{6FC919E6-1970-4B6C-8762-85F5BF4BE3CA}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormsUtilities", "Windows Forms\WinFormsUtilities.vbproj", "{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{5039145D-F7F1-4AAC-B3AE-CFAB55F4D60D}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportToImageSource", "WPF\Export To ImageSource\ExportToImageSource.vbproj", "{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExportToXpsDocument", "WPF\Export To XpsDocument\ExportToXpsDocument.vbproj", "{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "XlsxEncryption", "Protection\XLSX Encryption\XlsxEncryption.vbproj", "{E435E734-66B7-4809-A406-0E4928364181}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TextBoxes", "Basic Features\Text Boxes\TextBoxes.vbproj", "{EB811626-EB07-435D-98AC-840271E12B54}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{7D7DF89C-B12F-4131-9A6E-76A400DC446C}"
-EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AzureFunction", "Azure\AzureFunction.vbproj", "{6391B362-BF18-4AAB-9C84-54A3F5065B83}"
-EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "MergeCells", "Basic Features\Merge Cells\MergeCells.vbproj", "{1546760B-AEFF-4AFC-95BE-A6965EECF774}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CsvImportAndExport", "Advanced Features\Csv Import And Export\CsvImportAndExport.vbproj", "{7AE0777B-5A4D-4A84-916B-1BA6992E8968}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CsvImportAndExport", "Advanced Features\Csv Import and Export\CsvImportAndExport.vbproj", "{7AE0777B-5A4D-4A84-916B-1BA6992E8968}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "XlsxDigitalSignature", "Protection\XLSX Digital Signature\XlsxDigitalSignature.vbproj", "{9CD712EF-13FB-4608-8AD7-01DA56959476}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{C253E48F-FB30-45C1-857A-02675C184BD8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridViewInAspNet", "Platforms\ASP.NET\GridViewInAspNet.vbproj", "{A622566D-7E31-4BB6-8098-A690FA4D1543}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AzureFunction", "Platforms\Azure\AzureFunction.vbproj", "{3AAC7454-4B77-41E3-B999-501DB2857631}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridViewInWindowsForms", "Platforms\DataGridView in WindowsForms\GridViewInWindowsForms.vbproj", "{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SpreadsheetDocker", "Platforms\Docker\SpreadsheetDocker.vbproj", "{A42D1513-B64F-4791-9774-A6CF98601634}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WpfExportToImageSource", "Platforms\Export to ImageSource\WpfExportToImageSource.vbproj", "{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WpfExportToXpsDocument", "Platforms\Export to XpsDocument\WpfExportToXpsDocument.vbproj", "{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -387,14 +385,6 @@ Global
 		{5FC557FB-0756-4A27-9498-B08A31CE9D26}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5FC557FB-0756-4A27-9498-B08A31CE9D26}.Release|x86.ActiveCfg = Release|Any CPU
 		{5FC557FB-0756-4A27-9498-B08A31CE9D26}.Release|x86.Build.0 = Release|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|x86.Build.0 = Debug|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|x86.ActiveCfg = Release|Any CPU
-		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|x86.Build.0 = Release|Any CPU
 		{ED96712A-686B-4D6C-B793-6D2349801EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED96712A-686B-4D6C-B793-6D2349801EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED96712A-686B-4D6C-B793-6D2349801EBE}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -675,30 +665,6 @@ Global
 		{E435E734-66B7-4809-A406-0E4928364181}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E435E734-66B7-4809-A406-0E4928364181}.Release|x86.ActiveCfg = Release|Any CPU
 		{E435E734-66B7-4809-A406-0E4928364181}.Release|x86.Build.0 = Release|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|x86.Build.0 = Debug|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|x86.ActiveCfg = Release|Any CPU
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|x86.Build.0 = Release|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|x86.Build.0 = Debug|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|x86.ActiveCfg = Release|Any CPU
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|x86.Build.0 = Release|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|x86.Build.0 = Debug|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.ActiveCfg = Release|Any CPU
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.Build.0 = Release|Any CPU
 		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB811626-EB07-435D-98AC-840271E12B54}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -707,14 +673,6 @@ Global
 		{EB811626-EB07-435D-98AC-840271E12B54}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB811626-EB07-435D-98AC-840271E12B54}.Release|x86.ActiveCfg = Release|Any CPU
 		{EB811626-EB07-435D-98AC-840271E12B54}.Release|x86.Build.0 = Release|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Debug|x86.Build.0 = Debug|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Release|x86.ActiveCfg = Release|Any CPU
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83}.Release|x86.Build.0 = Release|Any CPU
 		{1546760B-AEFF-4AFC-95BE-A6965EECF774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1546760B-AEFF-4AFC-95BE-A6965EECF774}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1546760B-AEFF-4AFC-95BE-A6965EECF774}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -731,6 +689,62 @@ Global
 		{7AE0777B-5A4D-4A84-916B-1BA6992E8968}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7AE0777B-5A4D-4A84-916B-1BA6992E8968}.Release|x86.ActiveCfg = Release|Any CPU
 		{7AE0777B-5A4D-4A84-916B-1BA6992E8968}.Release|x86.Build.0 = Release|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Debug|x86.Build.0 = Debug|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Release|x86.ActiveCfg = Release|Any CPU
+		{9CD712EF-13FB-4608-8AD7-01DA56959476}.Release|x86.Build.0 = Release|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Debug|x86.Build.0 = Debug|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|x86.ActiveCfg = Release|Any CPU
+		{A622566D-7E31-4BB6-8098-A690FA4D1543}.Release|x86.Build.0 = Release|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Debug|x86.Build.0 = Debug|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Release|x86.ActiveCfg = Release|Any CPU
+		{3AAC7454-4B77-41E3-B999-501DB2857631}.Release|x86.Build.0 = Release|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Debug|x86.Build.0 = Debug|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|x86.ActiveCfg = Release|Any CPU
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674}.Release|x86.Build.0 = Release|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Debug|x86.Build.0 = Debug|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Release|x86.ActiveCfg = Release|Any CPU
+		{A42D1513-B64F-4791-9774-A6CF98601634}.Release|x86.Build.0 = Release|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8}.Release|x86.Build.0 = Release|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Debug|x86.Build.0 = Debug|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.ActiveCfg = Release|Any CPU
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -763,7 +777,6 @@ Global
 		{DA77FD36-DADD-471A-9BCC-EBCD2DD687A9} = {891E8CE8-C1AE-403A-913E-B5B21A027E42}
 		{F739C5F2-A529-4381-AB93-93662F64404C} = {891E8CE8-C1AE-403A-913E-B5B21A027E42}
 		{5FC557FB-0756-4A27-9498-B08A31CE9D26} = {891E8CE8-C1AE-403A-913E-B5B21A027E42}
-		{A622566D-7E31-4BB6-8098-A690FA4D1543} = {AA85044C-1D6E-4077-A384-FB19E779866F}
 		{ED96712A-686B-4D6C-B793-6D2349801EBE} = {8432637F-68BD-47F9-8713-B4D1644898C5}
 		{E246B102-8E95-4181-BB1D-41FEBFACA421} = {8432637F-68BD-47F9-8713-B4D1644898C5}
 		{81355DC9-041B-41A5-80FB-5FAF1626A01D} = {8432637F-68BD-47F9-8713-B4D1644898C5}
@@ -799,13 +812,16 @@ Global
 		{E9BE310B-B005-44C7-93AA-854D42B9AC3A} = {DFF1F3F4-50F9-44D0-AD14-02D9250695C2}
 		{16385976-97CE-42D1-A3E0-C31D4A508002} = {DFF1F3F4-50F9-44D0-AD14-02D9250695C2}
 		{E435E734-66B7-4809-A406-0E4928364181} = {DFF1F3F4-50F9-44D0-AD14-02D9250695C2}
-		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674} = {6FC919E6-1970-4B6C-8762-85F5BF4BE3CA}
-		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8} = {5039145D-F7F1-4AAC-B3AE-CFAB55F4D60D}
-		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E} = {5039145D-F7F1-4AAC-B3AE-CFAB55F4D60D}
 		{EB811626-EB07-435D-98AC-840271E12B54} = {8432637F-68BD-47F9-8713-B4D1644898C5}
-		{6391B362-BF18-4AAB-9C84-54A3F5065B83} = {7D7DF89C-B12F-4131-9A6E-76A400DC446C}
 		{1546760B-AEFF-4AFC-95BE-A6965EECF774} = {8432637F-68BD-47F9-8713-B4D1644898C5}
 		{7AE0777B-5A4D-4A84-916B-1BA6992E8968} = {5A993262-1815-4FDA-B9FB-83199254C894}
+		{9CD712EF-13FB-4608-8AD7-01DA56959476} = {DFF1F3F4-50F9-44D0-AD14-02D9250695C2}
+		{A622566D-7E31-4BB6-8098-A690FA4D1543} = {C253E48F-FB30-45C1-857A-02675C184BD8}
+		{3AAC7454-4B77-41E3-B999-501DB2857631} = {C253E48F-FB30-45C1-857A-02675C184BD8}
+		{F41E57DD-1BF6-4FFA-80C2-51A104CBE674} = {C253E48F-FB30-45C1-857A-02675C184BD8}
+		{A42D1513-B64F-4791-9774-A6CF98601634} = {C253E48F-FB30-45C1-857A-02675C184BD8}
+		{7C430C0E-3039-4353-97BE-8EEEDCF14CB8} = {C253E48F-FB30-45C1-857A-02675C184BD8}
+		{E47B163C-8E69-44F1-A2D4-1BFABE2F176E} = {C253E48F-FB30-45C1-857A-02675C184BD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB9BEFC-A1E4-47B6-9F56-8AFBD9F3F8D8}

@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <None Update="RandomSheets.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

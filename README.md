@@ -35,22 +35,17 @@ This repository contains the source code of GemBox.Spreadsheet example projects 
 | Advanced Features | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Advanced%20Features) |
 | Charts | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Charts), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Charts) |
 | Calculation Engine | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Calculation%20Engine), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Calculation%20Engine) |
-| Import/Export DataTable | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Import_Export%20DataTable), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Import_Export%20DataTable) |
+| Import and Export DataTable | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/Import%20and%20Export%20DataTable), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Import%20and%20Export%20DataTable) |
 | Protection | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Protection), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Protection) |
+| Platforms | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Platforms), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Platforms) |
 | Preservation | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Preservation), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Preservation) |
-| WPF | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/WPF), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/WPF) |
-| Linux / macOS | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Linux_macOS) |
-| COM | [PYTHON](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.py), [PHP](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.php), [VBSCRIPT](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.asp) |
-| ASP.NET | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/ASP.NET), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/ASP.NET) |
-| ASP.NET Core | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/ASP.NET%20Core) |
-| Azure | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Azure), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Azure) |
-| Windows Forms | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Windows%20Forms), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Windows%20Forms) |
 | Performance | [C#](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/C%23/Performance), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Performance) |
+| COM | [PYTHON](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.py), [PHP](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.php), [VBSCRIPT](https://github.com/GemBox-d-o-o/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.asp) |
 
 ## System Requirement
 
 * .NET Framework 3.5 - 4.8
-* .NET Core 3.0
+* .NET Core 3.1
 * Or platforms that implement .NET Standard 2.0 or higher.
 
 ## Installation
