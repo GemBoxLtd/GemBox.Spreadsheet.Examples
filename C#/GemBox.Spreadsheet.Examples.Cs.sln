@@ -167,9 +167,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewInWindowsForms", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpreadsheetDocker", "Platforms\Docker\SpreadsheetDocker.csproj", "{8C97852D-2951-4D9D-AD8B-868F7F3FC239}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExportToImageSource", "Platforms\Export to ImageSource\WpfExportToImageSource.csproj", "{2ADAA6E2-7CD0-4941-AB6A-E8056A525B25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExportToImageSource", "Platforms\Export to ImageSource in WPF\WpfExportToImageSource.csproj", "{2ADAA6E2-7CD0-4941-AB6A-E8056A525B25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExportToXpsDocument", "Platforms\Export to XpsDocument\WpfExportToXpsDocument.csproj", "{DBE794A9-4F7F-4F41-BF7C-12383330146A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExportToXpsDocument", "Platforms\Export to XpsDocument in WPF\WpfExportToXpsDocument.csproj", "{DBE794A9-4F7F-4F41-BF7C-12383330146A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linux_macOS", "Platforms\Linux_macOS\Linux_macOS.csproj", "{42474731-044A-4CC8-8257-DAD7D95A10AE}"
 EndProject
