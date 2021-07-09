@@ -1,6 +1,6 @@
 # GemBox.Spreadsheet
 
-![NuGet version](https://img.shields.io/nuget/v/GemBox.Spreadsheet?style=for-the-badge) • ![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Spreadsheet?style=for-the-badge) • ![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxSpreadsheet?style=for-the-badge)
+![NuGet version](https://img.shields.io/nuget/v/GemBox.Spreadsheet?style=for-the-badge) ![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Spreadsheet?style=for-the-badge) ![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxSpreadsheet?style=for-the-badge)
 
 <img src="https://www.gemboxsoftware.com/images/NugetGbs.png" alt="GemBox.Spreadsheet logo" align="left" />
 
