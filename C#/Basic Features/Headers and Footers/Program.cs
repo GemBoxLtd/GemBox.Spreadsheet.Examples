@@ -8,26 +8,38 @@ class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = new ExcelFile();
-        var worksheet = workbook.Worksheets.Add("Header and Footer");
+        var worksheet = workbook.Worksheets.Add("HeadersFooters");
 
-        var headerFooter = worksheet.HeadersFooters;
+        SheetHeaderFooter sheetHeadersFooters = worksheet.HeadersFooters;
 
-        // Show title only on the first page
-        headerFooter.FirstPage.Header.CenterSection.Content = "Title on the first page";
+        HeaderFooterPage firstHeaderFooter = sheetHeadersFooters.FirstPage;
+        HeaderFooterPage defaultHeaderFooter = sheetHeadersFooters.DefaultPage;
 
-        // Show logo
-        headerFooter.FirstPage.Header.LeftSection.AppendPicture("Dices.png", 40, 40);
-        headerFooter.DefaultPage.Header.LeftSection = headerFooter.FirstPage.Header.LeftSection;
+        // Set title text on the center of the first page header.
+        firstHeaderFooter.Header.CenterSection
+            .Append("Title on the first page",
+                new ExcelFont() { Name = "Arial Black", Size = 18 * 20 });
 
-        // "Page number" of "Number of pages"
-        headerFooter.FirstPage.Footer.RightSection.Append("Page ").Append(HeaderFooterFieldType.PageNumber).Append(" of ").Append(HeaderFooterFieldType.NumberOfPages);
-        headerFooter.DefaultPage.Footer = headerFooter.FirstPage.Footer;
+        // Set image on the left of the first and default page headers.
+        firstHeaderFooter.Header.LeftSection
+            .AppendPicture("Dices.png", 40, 30);
+        defaultHeaderFooter.Header.LeftSection = firstHeaderFooter.Header.LeftSection;
 
-        // Fill Sheet1 with some data
-        for (int i = 0; i < 140; i++)
-            for (int j = 0; j < 9; j++)
-                worksheet.Cells[i, j].Value = i + j;
+        // Set page number on the right of the first and default page footer.
+        firstHeaderFooter.Footer.RightSection
+            .Append("Page ")
+            .Append(HeaderFooterFieldType.PageNumber)
+            .Append(" of ")
+            .Append(HeaderFooterFieldType.NumberOfPages);
+        defaultHeaderFooter.Footer = firstHeaderFooter.Footer;
 
-        workbook.Save("Header and Footer.xlsx");
+        worksheet.Cells[0, 0].Value = "First page";
+        worksheet.Cells[0, 5].Value = "Second page";
+        worksheet.Cells[0, 10].Value = "Third page";
+
+        worksheet.VerticalPageBreaks.Add(5);
+        worksheet.VerticalPageBreaks.Add(10);
+
+        workbook.Save("Headers and Footers.xlsx");
     }
 }

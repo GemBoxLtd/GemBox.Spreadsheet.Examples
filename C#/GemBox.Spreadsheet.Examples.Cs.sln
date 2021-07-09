@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comments", "Basic Features\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTypes", "Basic Features\Data Types\DataTypes.csproj", "{30297719-5C7B-40DA-A518-AC8D1F790DCA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula", "Basic Features\Formula\Formula.csproj", "{0A3E88E5-EEBB-4FBD-B763-59D92FF4ABB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formulas", "Basic Features\Formulas\Formulas.csproj", "{0A3E88E5-EEBB-4FBD-B763-59D92FF4ABB8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperlinks", "Basic Features\Hyperlinks\Hyperlinks.csproj", "{4691F932-BA29-4B1C-95CE-8C7B3E3AA2B4}"
 EndProject
@@ -184,6 +184,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "Platforms\ASP.NET Core MVC\AspNetCoreMvc.csproj", "{56F83882-EE08-48AF-8F99-A4B88883B807}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePages", "Platforms\ASP.NET Core Razor Pages\AspNetCorePages.csproj", "{9E389ADD-041C-41B7-B3EE-00C5660082CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefinedNames", "Basic Features\Defined Names\DefinedNames.csproj", "{E208EC73-F900-4120-BEC4-216C8CC71E17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -817,6 +819,14 @@ Global
 		{9E389ADD-041C-41B7-B3EE-00C5660082CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E389ADD-041C-41B7-B3EE-00C5660082CD}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E389ADD-041C-41B7-B3EE-00C5660082CD}.Release|x86.Build.0 = Release|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Debug|x86.Build.0 = Debug|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Release|x86.ActiveCfg = Release|Any CPU
+		{E208EC73-F900-4120-BEC4-216C8CC71E17}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -902,6 +912,7 @@ Global
 		{53BBA524-0710-42BF-A927-93BA4E7670AC} = {150328BE-4393-4B43-9E1F-9E7AD37C77FA}
 		{56F83882-EE08-48AF-8F99-A4B88883B807} = {5A5ACAE6-2EBB-4830-BD67-0F618A6443F9}
 		{9E389ADD-041C-41B7-B3EE-00C5660082CD} = {5A5ACAE6-2EBB-4830-BD67-0F618A6443F9}
+		{E208EC73-F900-4120-BEC4-216C8CC71E17} = {1B96E082-CAEF-49BB-8526-21C0C23FBD1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {186A9BA6-6C07-4B96-A8A0-5AA2687D13C0}

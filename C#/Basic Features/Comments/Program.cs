@@ -10,32 +10,53 @@ class Program
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Comments");
 
-        worksheet.Cells[0, 0].Value = "Comment examples:";
+        // Add hidden comments (hover over an indicator to view it).
+        ExcelCell cell = worksheet.Cells["B2"];
+        cell.Value = "Hidden comment";
+        ExcelComment comment = cell.Comment;
+        comment.Text = "Comment with hidden text.";
 
-        worksheet.Cells[2, 1].Comment.Text = "Empty cell.";
+        comment = worksheet.Cells["B4"].Comment;
+        comment.Text = "Another comment with hidden text.";
 
-        worksheet.Cells[4, 1].Value = 5;
-        worksheet.Cells[4, 1].Comment.Text = "Cell with a number.";
-
-        worksheet.Cells["B7"].Value = "Cell B7";
-
-        var comment = worksheet.Cells["B7"].Comment;
-        comment.Text = "Some formatted text.\nComment is:\na) multiline,\nb) large,\nc) visible, and \nd) formatted.";
+        // Add visible comments.
+        cell = worksheet.Cells["B6"];
+        cell.Value = "Visible comment";
+        comment = cell.Comment;
+        comment.Text = "Comment with specified position and size.";
         comment.IsVisible = true;
-        comment.TopLeftCell = new AnchorCell(worksheet.Columns[3], worksheet.Rows[4], true);
-        comment.BottomRightCell = new AnchorCell(worksheet.Columns[5], worksheet.Rows[10], false);
+        comment.TopLeftCell = new AnchorCell(worksheet.Cells["D5"], true);
+        comment.BottomRightCell = new AnchorCell(worksheet.Cells["E12"], false);
 
-        // Get first 20 characters of a string.
-        var characters = comment.GetCharacters(0, 20);
+        comment = worksheet.Cells["B8"].Comment;
+        comment.Text = "Comment with specified start position.";
+        comment.IsVisible = true;
+        comment.TopLeftCell = new AnchorCell(worksheet.Columns["A"], worksheet.Rows["10"], 20, 10, LengthUnit.Pixel);
 
-        // Apply color, italic and size to selected characters.
+        // Add visible comment with formatted individual characters.
+        comment = worksheet.Cells["F3"].Comment;
+        comment.Text = "Comment with rich formatted text.\nComment is:\n a) multiline,\n b) large,\n c) visible, \n d) formatted, and \n e) autofitted.";
+        comment.IsVisible = true;
+        var characters = comment.GetCharacters(0, 33);
         characters.Font.Color = SpreadsheetColor.FromName(ColorName.Orange);
-        characters.Font.Italic = true;
+        characters.Font.Weight = ExcelFont.BoldWeight;
         characters.Font.Size = 300;
+        comment.GetCharacters(13, 4).Font.Color = SpreadsheetColor.FromName(ColorName.Blue);
+        comment.AutoFit();
 
-        // Apply color to 'formatted' part of text.
-        comment.GetCharacters(5, 9).Font.Color = SpreadsheetColor.FromName(ColorName.Red);
+        // Read and update comment.
+        cell = worksheet.Cells["B8"];
+        if (cell.Comment.Exists)
+        {
+            cell.Comment.Text = cell.Comment.Text.Replace(".", " and modified text.");
+            cell.Value = "Updated comment.";
+        }
 
-        workbook.Save("Comments.xlsx");
+        // Delete comment.
+        cell = worksheet.Cells["B4"];
+        cell.Comment = null;
+        cell.Value = "Deleted comment.";
+
+        workbook.Save("Cell Comments.xlsx");
     }
 }

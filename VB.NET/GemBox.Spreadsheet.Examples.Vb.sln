@@ -69,7 +69,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Comments", "Basic Features\
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DataTypes", "Basic Features\Data Types\DataTypes.vbproj", "{81355DC9-041B-41A5-80FB-5FAF1626A01D}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Formula", "Basic Features\Formula\Formula.vbproj", "{57B99608-115E-4F45-B46C-CC93B444B8EA}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Formulas", "Basic Features\Formulas\Formulas.vbproj", "{57B99608-115E-4F45-B46C-CC93B444B8EA}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HeadersAndFooters", "Basic Features\Headers and Footers\HeadersAndFooters.vbproj", "{1F8E15A5-A8E5-44F6-AE1A-83CDEF3C1D06}"
 EndProject
@@ -178,6 +178,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintInWpf", "Common Uses\Print\Print in WPF\PrintInWpf.vbproj", "{7373C27D-2732-4C39-9272-BCD3355905E2}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "XlsDecryption", "Protection\XLS Decryption\XlsDecryption.vbproj", "{BD41BAAA-4DBC-44D5-9111-E6ECF6925432}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DefinedNames", "Basic Features\Defined Names\DefinedNames.vbproj", "{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -787,6 +789,14 @@ Global
 		{BD41BAAA-4DBC-44D5-9111-E6ECF6925432}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BD41BAAA-4DBC-44D5-9111-E6ECF6925432}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD41BAAA-4DBC-44D5-9111-E6ECF6925432}.Release|x86.Build.0 = Release|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Debug|x86.Build.0 = Debug|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Release|x86.ActiveCfg = Release|Any CPU
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -869,6 +879,7 @@ Global
 		{523769AE-9A52-43F5-8120-02E857821B1D} = {1A1B55CB-E757-4C18-A92D-8968F3240119}
 		{7373C27D-2732-4C39-9272-BCD3355905E2} = {1A1B55CB-E757-4C18-A92D-8968F3240119}
 		{BD41BAAA-4DBC-44D5-9111-E6ECF6925432} = {DFF1F3F4-50F9-44D0-AD14-02D9250695C2}
+		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58} = {8432637F-68BD-47F9-8713-B4D1644898C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB9BEFC-A1E4-47B6-9F56-8AFBD9F3F8D8}

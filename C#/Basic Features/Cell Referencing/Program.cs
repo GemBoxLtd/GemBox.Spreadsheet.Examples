@@ -8,50 +8,43 @@ class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = new ExcelFile();
-        var worksheet = workbook.Worksheets.Add("Cell Referencing");
+        var worksheet = workbook.Worksheets.Add("Referencing");
 
-        worksheet.Cells[0].Value = "Cell referencing examples:";
+        // Referencing cells from sheet using cell names and indexes.
+        worksheet.Cells["A1"].Value = "Cell A1.";
+        worksheet.Cells[1, 0].Value = "Cell in 2nd row and 1st column [A2].";
 
-        worksheet.Cells["B2"].Value = "Cell B2.";
-        worksheet.Cells[6, 0].Value = "Cell in row 7 and column A.";
+        // Referencing cells from row using cell names and indexes.
+        worksheet.Rows["4"].Cells["B"].Value = "Cell in row 4 and column B [B4].";
+        worksheet.Rows[4].Cells[1].Value = "Cell in 5th row and 2nd column [B5].";
 
-        worksheet.Rows[2].Cells[0].Value = "Cell in row 3 and column A.";
-        worksheet.Rows["4"].Cells["B"].Value = "Cell in row 4 and column B.";
+        // Referencing cells from column using cell names and indexes.
+        worksheet.Columns["C"].Cells["7"].Value = "Cell in column C and row 7 [C7].";
+        worksheet.Columns[2].Cells[7].Value = "Cell in 3rd column and 8th row [C8].";
 
-        worksheet.Columns[2].Cells[4].Value = "Cell in column C and row 5.";
-        worksheet.Columns["AA"].Cells["6"].Value = "Cell in AA column and row 6.";
+        // Referencing cell range using A1 notation [G2:N12].
+        var range = worksheet.Cells.GetSubrange("G2:N12");
+        range[0].Value = $"From {range.StartPosition} to {range.EndPosition}";
+        range[1, 0].Value = $"From ({range.FirstRowIndex},{range.FirstColumnIndex}) to ({range.LastRowIndex},{range.LastColumnIndex})";
+        range.Style.Borders.SetBorders(MultipleBorders.Outside,
+            SpreadsheetColor.FromName(ColorName.Red),
+            LineStyle.Thick);
 
-        // Referencing Excel row's cell range.
-        var cellRange = worksheet.Rows[7].Cells;
+        // Referencing cell range using absolute position [I5:M11].
+        range = range.GetSubrangeAbsolute(4, 8, 10, 12);
+        range[0].Value = $"From {range.StartPosition} to {range.EndPosition}";
+        range[1, 0].Value = $"From ({range.FirstRowIndex},{range.FirstColumnIndex}) to ({range.LastRowIndex},{range.LastColumnIndex})";
+        range.Style.Borders.SetBorders(MultipleBorders.Outside,
+            SpreadsheetColor.FromName(ColorName.Green),
+            LineStyle.Medium);
 
-        cellRange[0].Value = cellRange.IndexingMode.ToString();
-        cellRange[3].Value = "D8";
-        cellRange["B"].Value = "B8";
-
-        // Referencing Excel column's cell range.
-        cellRange = worksheet.Columns[7].Cells;
-
-        cellRange[0].Value = cellRange.IndexingMode.ToString();
-        cellRange[2].Value = "H3";
-        cellRange["5"].Value = "H5";
-
-        // Referencing arbitrary Excel cell range.
-        cellRange = worksheet.Cells.GetSubrange("I2", "L8");
-        cellRange.Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromArgb(0, 0, 128), LineStyle.Dashed);
-
-        cellRange["J7"].Value = cellRange.IndexingMode.ToString();
-        cellRange[0, 0].Value = "I2";
-        cellRange["J3"].Value = "J3";
-        cellRange[4].Value = "I3"; // Cell range width is 4 (I J K L).
-
-        // Set column widths and some print options (for better look when exporting to PDF, XPS and printing).
-        var columnWidths = new double[] { 175, 174, 174, 24, double.NaN, double.NaN, double.NaN, 54, 19, 81 };
-        for (int i = 0; i < columnWidths.Length; i++)
-            if (!double.IsNaN(columnWidths[i]))
-                worksheet.Columns[i].SetWidth(columnWidths[i], LengthUnit.Pixel);
-
-        worksheet.PrintOptions.PrintGridlines = true;
-        worksheet.PrintOptions.PrintHeadings = true;
+        // Referencing cell range using relative position [K8:L10].
+        range = range.GetSubrangeRelative(3, 2, 2, 2);
+        range[0].Value = $"From {range.StartPosition} to {range.EndPosition}";
+        range[1, 0].Value = $"From ({range.FirstRowIndex},{range.FirstColumnIndex}) to ({range.LastRowIndex},{range.LastColumnIndex})";
+        range.Style.Borders.SetBorders(MultipleBorders.Outside,
+            SpreadsheetColor.FromName(ColorName.Blue),
+            LineStyle.Thin);
 
         workbook.Save("Cell Referencing.xlsx");
     }

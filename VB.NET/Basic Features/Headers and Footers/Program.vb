@@ -7,29 +7,40 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
-        Dim worksheet = workbook.Worksheets.Add("Header and Footer")
+        Dim workbook As New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("HeadersFooters")
 
-        Dim headerFooter = worksheet.HeadersFooters
+        Dim sheetHeadersFooters As SheetHeaderFooter = worksheet.HeadersFooters
 
-        ' Show title only on the first page
-        headerFooter.FirstPage.Header.CenterSection.Content = "Title on the first page"
+        Dim firstHeaderFooter As HeaderFooterPage = sheetHeadersFooters.FirstPage
+        Dim defaultHeaderFooter As HeaderFooterPage = sheetHeadersFooters.DefaultPage
 
-        ' Show logo
-        headerFooter.FirstPage.Header.LeftSection.AppendPicture("Dices.png", 40, 40)
-        headerFooter.DefaultPage.Header.LeftSection = headerFooter.FirstPage.Header.LeftSection
+        ' Set title text on the center of the first page header.
+        firstHeaderFooter.Header.CenterSection _
+            .Append("Title on the first page",
+                New ExcelFont() With {.Name = "Arial Black", .Size = 18 * 20})
 
-        ' "Page number" of "Number of pages"
-        headerFooter.FirstPage.Footer.RightSection.Append("Page ").Append(HeaderFooterFieldType.PageNumber).Append(" of ").Append(HeaderFooterFieldType.NumberOfPages)
-        headerFooter.DefaultPage.Footer = headerFooter.FirstPage.Footer
+        ' Set image on the left of the first and default page headers.
+        firstHeaderFooter.Header.LeftSection _
+            .AppendPicture("Dices.png", 40, 30)
+        defaultHeaderFooter.Header.LeftSection = firstHeaderFooter.Header.LeftSection
 
-        ' Fill Sheet1 with some data
-        For i As Integer = 0 To 139
-            For j As Integer = 0 To 8
-                worksheet.Cells(i, j).Value = i + j
-            Next
-        Next
+        ' Set page number on the right of the first and default page footer.
+        firstHeaderFooter.Footer.RightSection _
+            .Append("Page ") _
+            .Append(HeaderFooterFieldType.PageNumber) _
+            .Append(" of ") _
+            .Append(HeaderFooterFieldType.NumberOfPages)
+        defaultHeaderFooter.Footer = firstHeaderFooter.Footer
+
+        worksheet.Cells(0, 0).Value = "First page"
+        worksheet.Cells(0, 5).Value = "Second page"
+        worksheet.Cells(0, 10).Value = "Third page"
+
+        worksheet.VerticalPageBreaks.Add(5)
+        worksheet.VerticalPageBreaks.Add(10)
 
         workbook.Save("Header and Footer.xlsx")
+
     End Sub
 End Module

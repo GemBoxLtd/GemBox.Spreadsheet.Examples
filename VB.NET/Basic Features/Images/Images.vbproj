@@ -16,7 +16,7 @@
     <None Update="FragonardReader.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Graphics1.wmf">
+    <None Update="Graphics1.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="SmallImage.bmp">

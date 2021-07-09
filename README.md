@@ -1,5 +1,7 @@
 # GemBox.Spreadsheet
 
+![NuGet version](https://img.shields.io/nuget/v/GemBox.Spreadsheet?style=for-the-badge) • ![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Spreadsheet?style=for-the-badge) • ![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxSpreadsheet?style=for-the-badge)
+
 <img src="https://www.gemboxsoftware.com/images/NugetGbs.png" alt="GemBox.Spreadsheet logo" align="left" />
 
 GemBox.Spreadsheet is a .NET component which enables developers to read, write, convert and print spreadsheet files (XLSX, XLS, ODS, CSV, HTML, PDF or XPS) from .NET applications using one simple and efficient API.
@@ -51,17 +53,15 @@ This repository contains the source code of GemBox.Spreadsheet example projects 
 
 ## Installation
 
-You can download GemBox.Spreadsheet from [BugFixes](https://www.gemboxsoftware.com/spreadsheet/downloads/bugfixes.html) 🛠️
+You can download GemBox.Spreadsheet from [BugFixes 🛠️](https://www.gemboxsoftware.com/spreadsheet/downloads/bugfixes.html) or from [NuGet 📦](https://www.nuget.org/packages/GemBox.Spreadsheet/).
 
-Or from [NuGet](https://www.nuget.org/packages/GemBox.Spreadsheet/) 📦
+## Support
 
-## Resources
-
-* [Overview](https://www.gemboxsoftware.com/spreadsheet)
-* [Documentation](https://www.gemboxsoftware.com/spreadsheet/docs/introduction.html)
-* [Support](https://www.gemboxsoftware.com/spreadsheet/support)
+* [Contact Us](https://support.gemboxsoftware.com/new-ticket?ticket%5Bdepartment%5D=1&ticket%5Bproduct%5D=1)
+* [Forum](https://forum.gemboxsoftware.com/c/gembox-spreadsheet/5)
 * [Blog](https://www.gemboxsoftware.com/gembox-spreadsheet)
+* [API Reference](https://www.gemboxsoftware.com/spreadsheet/docs/introduction.html)
 
 ## License
 
-You can download GemBox.Spreadsheet's license agreement from [EULA.rtf](https://www.gemboxsoftware.com/EULA.rtf) 📝
+You can download GemBox.Spreadsheet's license agreement from [EULA.rtf 📝](https://www.gemboxsoftware.com/EULA.rtf)
