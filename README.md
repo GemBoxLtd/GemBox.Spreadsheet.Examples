@@ -64,4 +64,4 @@ You can download GemBox.Spreadsheet from [BugFixes 🛠️](https://www.gemboxso
 
 ## License
 
-You can download GemBox.Spreadsheet's license agreement from [EULA.rtf 📝](https://www.gemboxsoftware.com/EULA.rtf)
+You can download GemBox.Spreadsheet's license agreement from [EULA.rtf 📝](https://www.gemboxsoftware.com/EULA.rtf).
