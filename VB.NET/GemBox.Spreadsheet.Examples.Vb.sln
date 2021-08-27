@@ -127,9 +127,9 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Performance", "Performance\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Preservation", "Preservation", "{47514E8A-6EE8-4DAB-BE91-2494B975B601}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ExcelSpecificFeatures", "Preservation\Excel Specific Features\ExcelSpecificFeatures.vbproj", "{302A2672-C7CE-4A1F-8765-B7A08FABF3C0}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SparklinesAndSlicers", "Preservation\Sparklines and Slicers\SparklinesAndSlicers.vbproj", "{302A2672-C7CE-4A1F-8765-B7A08FABF3C0}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormsAndMacros", "Preservation\Forms and Macros\FormsAndMacros.vbproj", "{66B6DD2C-E284-46B8-A86E-6AF0278CC0C4}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Macros", "Preservation\Macros\Macros.vbproj", "{66B6DD2C-E284-46B8-A86E-6AF0278CC0C4}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Illustrations", "Preservation\Illustrations\Illustrations.vbproj", "{56F0AD86-2455-41A0-9FCE-F62B0AAA5A0C}"
 EndProject

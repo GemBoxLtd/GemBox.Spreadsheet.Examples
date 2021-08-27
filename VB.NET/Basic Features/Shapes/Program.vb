@@ -8,7 +8,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = new ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Shapes")
 
         Dim shape = worksheet.Shapes.Add(ShapeType.Oval, 100, 100, 200, 150, LengthUnit.Point)
@@ -27,9 +27,6 @@ Module Program
 
         Dim line = worksheet.Shapes.Add(ShapeType.Line, "B12", "B15")
         line.Outline.Width = Length.From(10, LengthUnit.Pixel)
-
-        worksheet.PrintOptions.PrintGridlines = true
-        worksheet.PrintOptions.PrintHeadings = true
 
         workbook.Save("Shapes.xlsx")
     End Sub
