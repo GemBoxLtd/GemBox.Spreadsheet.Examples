@@ -9,10 +9,10 @@ class Program
 
         // Load Excel file with preservation feature enabled.
         var loadOptions = new XlsxLoadOptions() { PreserveUnsupportedFeatures = true };
-        var workbook = ExcelFile.Load("Macros.xlsm", loadOptions);
+        var workbook = ExcelFile.Load("SmartArts.xlsx", loadOptions);
 
         // Save Excel file to output file of same format together with
         // preserved information (unsupported features) from input file.
-        workbook.Save("Preserved Output.xlsm");
+        workbook.Save("Preserved Output.xlsx");
     }
 }

@@ -131,7 +131,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SparklinesAndSlicers", "Pre
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Macros", "Preservation\Macros\Macros.vbproj", "{66B6DD2C-E284-46B8-A86E-6AF0278CC0C4}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Illustrations", "Preservation\Illustrations\Illustrations.vbproj", "{56F0AD86-2455-41A0-9FCE-F62B0AAA5A0C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SmartArts", "Preservation\SmartArts\SmartArts.vbproj", "{56F0AD86-2455-41A0-9FCE-F62B0AAA5A0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protection", "Protection", "{DFF1F3F4-50F9-44D0-AD14-02D9250695C2}"
 EndProject

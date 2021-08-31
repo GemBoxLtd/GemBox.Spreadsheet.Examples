@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ExcelSpecific.xlsx">
+    <None Update="SparklinesAndSlicers.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

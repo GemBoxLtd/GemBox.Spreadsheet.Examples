@@ -131,7 +131,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SparklinesAndSlicers", "Pre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macros", "Preservation\Macros\Macros.csproj", "{1C77195C-1828-4FC0-895C-AB5DFD527F96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Illustrations", "Preservation\Illustrations\Illustrations.csproj", "{C23E8FDF-5388-49CB-A2BD-CA857AF6096E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartArts", "Preservation\SmartArts\SmartArts.csproj", "{C23E8FDF-5388-49CB-A2BD-CA857AF6096E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{2F8C43BA-AF58-489B-B1D2-B6592F4539A7}"
 EndProject
