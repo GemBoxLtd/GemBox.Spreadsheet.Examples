@@ -7,39 +7,65 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
-        Dim worksheet = workbook.Worksheets.Add("Inline Text Formatting")
+        Example1()
+        Example2()
+    End Sub
 
-        worksheet.Cells(0, 0).Value = "Inline text formatting examples:"
-        worksheet.PrintOptions.PrintGridlines = True
+    Sub Example1()
+        Dim workbook As New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("InlineTextFormatting")
 
-        ' Column width of 20 characters.
-        worksheet.Columns(0).Width = 20 * 256
+        worksheet.Columns(0).Width = 50 * 256
 
-        worksheet.Cells(2, 0).Value = "This is big and red text!"
+        Dim cell = worksheet.Cells("A1")
+        cell.Value = "This is big and red text!"
 
-        ' Apply size to 'big and red' part of text
-        worksheet.Cells(2, 0).GetCharacters(8, 11).Font.Size = 400
+        ' Apply the size to "big and red" part of the text.
+        cell.GetCharacters(8, 11).Font.Size = 400
 
-        ' Apply color to 'red' part of text
-        worksheet.Cells(2, 0).GetCharacters(16, 3).Font.Color = SpreadsheetColor.FromName(ColorName.Red)
+        ' Apply the color to "red" part of the text.
+        cell.GetCharacters(16, 3).Font.Color = SpreadsheetColor.FromName(ColorName.Red)
 
-        ' Format cell content
-        worksheet.Cells(4, 0).Value = "Formatting selected characters with GemBox.Spreadsheet component."
-        worksheet.Cells(4, 0).Style.Font.Color = SpreadsheetColor.FromName(ColorName.Blue)
-        worksheet.Cells(4, 0).Style.Font.Italic = True
-        worksheet.Cells(4, 0).Style.WrapText = True
+        cell = worksheet.Cells("A3")
+        cell.Value = "Formatting selected characters with GemBox.Spreadsheet component."
 
-        ' Get characters from index 36 to the end of string
-        Dim characters = worksheet.Cells(4, 0).GetCharacters(36)
+        ' Apply formatting on the whole cell content.
+        cell.Style.Font.Color = SpreadsheetColor.FromName(ColorName.Blue)
+        cell.Style.Font.Italic = True
+        cell.Style.WrapText = True
 
-        ' Apply color and underline to selected characters
+        ' Get characters from index 36 to the end of string,
+        ' e.g. the "GemBox.Spreadsheet component." part of the text.
+        Dim characters = cell.GetCharacters(36)
+
+        ' Apply the color and underline to selected characters.
         characters.Font.Color = SpreadsheetColor.FromName(ColorName.Orange)
         characters.Font.UnderlineStyle = UnderlineStyle.Single
 
-        ' Write selected characters
-        worksheet.Cells(6, 0).Value = "Selected characters: " + characters.Text
+        ' Write selected characters.
+        worksheet.Cells("A5").Value = "Selected characters: " & characters.Text
 
         workbook.Save("Inline Text Formatting.xlsx")
     End Sub
+    Sub Example2()
+        Dim workbook As New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("HtmlTextFormatting")
+
+        worksheet.Columns(0).Width = 50 * 256
+
+        Dim htmlOptions As New HtmlLoadOptions()
+        Dim html = "<h1 style='background:#DDEBF7'>HTML formatted text!</h1>"
+
+        worksheet.Cells("A1").SetValue(html, htmlOptions)
+
+        html = "<div style='font:11pt Calibri'>
+<p>This is <span style='font-size:20pt'>big and <span style='color:red'>red</span></span> text!</p>
+<p>This is <sub>subscript</sub>, <sup>superscript</sup>, <strike>strike</strike>, and <u>underline</u> text.</p>
+</div>"
+
+        worksheet.Cells("A3").SetValue(html, htmlOptions)
+
+        workbook.Save("Html Text Formatting.xlsx")
+    End Sub
+
 End Module

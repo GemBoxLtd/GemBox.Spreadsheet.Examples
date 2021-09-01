@@ -28,9 +28,6 @@ class Program
         var line = worksheet.Shapes.Add(ShapeType.Line, "B12", "B15");
         line.Outline.Width = Length.From(10, LengthUnit.Pixel);
 
-        worksheet.PrintOptions.PrintGridlines = true;
-        worksheet.PrintOptions.PrintHeadings = true;
-
         workbook.Save("Shapes.xlsx");
     }
 }

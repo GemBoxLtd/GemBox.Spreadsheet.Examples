@@ -40,7 +40,7 @@ Module Program
         worksheet.VerticalPageBreaks.Add(5)
         worksheet.VerticalPageBreaks.Add(10)
 
-        workbook.Save("Header and Footer.xlsx")
+        workbook.Save("Headers and Footers.xlsx")
 
     End Sub
 End Module

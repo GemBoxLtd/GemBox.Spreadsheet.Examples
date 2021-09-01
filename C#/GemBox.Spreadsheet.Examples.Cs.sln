@@ -127,11 +127,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XlsxXEncryption", "Protecti
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Preservation", "Preservation", "{52011AA7-0168-409D-8F77-FAE3D5BE9E8A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelSpecificFeatures", "Preservation\Excel Specific Features\ExcelSpecificFeatures.csproj", "{BA5DE100-E228-4FBA-9432-5B95C7AD373A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SparklinesAndSlicers", "Preservation\Sparklines and Slicers\SparklinesAndSlicers.csproj", "{BA5DE100-E228-4FBA-9432-5B95C7AD373A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsAndMacros", "Preservation\Forms and Macros\FormsAndMacros.csproj", "{1C77195C-1828-4FC0-895C-AB5DFD527F96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macros", "Preservation\Macros\Macros.csproj", "{1C77195C-1828-4FC0-895C-AB5DFD527F96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Illustrations", "Preservation\Illustrations\Illustrations.csproj", "{C23E8FDF-5388-49CB-A2BD-CA857AF6096E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartArts", "Preservation\SmartArts\SmartArts.csproj", "{C23E8FDF-5388-49CB-A2BD-CA857AF6096E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance", "Performance", "{2F8C43BA-AF58-489B-B1D2-B6592F4539A7}"
 EndProject
