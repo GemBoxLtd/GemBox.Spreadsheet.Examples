@@ -155,7 +155,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersAndFooters", "Basic 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{5A5ACAE6-2EBB-4830-BD67-0F618A6443F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewInAspNet", "Platforms\ASP.NET\GridViewInAspNet.csproj", "{F53CF78D-D0F4-4985-81F3-68615D84BE1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewInAspNet", "Platforms\GridView in ASP.NET Web Forms\GridViewInAspNet.csproj", "{F53CF78D-D0F4-4985-81F3-68615D84BE1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunction", "Platforms\Azure\AzureFunction.csproj", "{547E0015-75C9-404C-B698-5A949350829E}"
 EndProject
@@ -181,9 +181,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintInWpf", "Common Uses\P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XlsDecryption", "Protection\XLS Decryption\XlsDecryption.csproj", "{53BBA524-0710-42BF-A927-93BA4E7670AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "Platforms\ASP.NET Core MVC\AspNetCoreMvc.csproj", "{56F83882-EE08-48AF-8F99-A4B88883B807}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "Platforms\ASP.NET Core\MVC\AspNetCoreMvc.csproj", "{56F83882-EE08-48AF-8F99-A4B88883B807}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePages", "Platforms\ASP.NET Core Razor Pages\AspNetCorePages.csproj", "{9E389ADD-041C-41B7-B3EE-00C5660082CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePages", "Platforms\ASP.NET Core\Razor Pages\AspNetCorePages.csproj", "{9E389ADD-041C-41B7-B3EE-00C5660082CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefinedNames", "Basic Features\Defined Names\DefinedNames.csproj", "{E208EC73-F900-4120-BEC4-216C8CC71E17}"
 EndProject
