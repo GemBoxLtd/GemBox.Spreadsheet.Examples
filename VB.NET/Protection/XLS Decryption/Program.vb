@@ -9,8 +9,10 @@ Module Program
 
         Dim inputPassword = "inpass"
 
-        Dim workbook = ExcelFile.Load("XlsDecryption.xls", New XlsLoadOptions With {.Password = inputPassword})
+        Dim workbook = ExcelFile.Load("XlsDecryption.xls",
+            New XlsLoadOptions With {.Password = inputPassword})
 
         workbook.Save("Decrypted File.xlsx")
+
     End Sub
 End Module

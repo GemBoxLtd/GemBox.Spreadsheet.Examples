@@ -155,7 +155,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "XlsxDigitalSignature", "Pro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{C253E48F-FB30-45C1-857A-02675C184BD8}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridViewInAspNet", "Platforms\ASP.NET\GridViewInAspNet.vbproj", "{A622566D-7E31-4BB6-8098-A690FA4D1543}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GridViewInAspNet", "Platforms\GridView in ASP.NET Web Forms\GridViewInAspNet.vbproj", "{A622566D-7E31-4BB6-8098-A690FA4D1543}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AzureFunction", "Platforms\Azure\AzureFunction.vbproj", "{3AAC7454-4B77-41E3-B999-501DB2857631}"
 EndProject

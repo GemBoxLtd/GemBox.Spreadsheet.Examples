@@ -10,8 +10,11 @@ Module Program
         Dim inputPassword = "inpass"
         Dim outputPassword = "outpass"
 
-        Dim workbook = ExcelFile.Load("XlsxEncryption.xlsx", New XlsxLoadOptions With {.Password = inputPassword})
+        Dim workbook = ExcelFile.Load("XlsxEncryption.xlsx",
+            New XlsxLoadOptions With {.Password = inputPassword})
 
-        workbook.Save("XLSX Encryption.xlsx", New XlsxSaveOptions With {.Password = outputPassword})
+        workbook.Save("XLSX Encryption.xlsx",
+            New XlsxSaveOptions With {.Password = outputPassword})
+
     End Sub
 End Module

@@ -9,7 +9,8 @@ class Program
 
         var inputPassword = "inpass";
 
-        var workbook = ExcelFile.Load("XlsDecryption.xls", new XlsLoadOptions() { Password = inputPassword });
+        var workbook = ExcelFile.Load("XlsDecryption.xls",
+            new XlsLoadOptions() { Password = inputPassword });
 
         workbook.Save("Decrypted File.xlsx");
     }

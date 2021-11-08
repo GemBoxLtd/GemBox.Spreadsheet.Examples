@@ -10,8 +10,10 @@ class Program
         var inputPassword = "inpass";
         var outputPassword = "outpass";
 
-        var workbook = ExcelFile.Load("XlsxEncryption.xlsx", new XlsxLoadOptions() { Password = inputPassword });
+        var workbook = ExcelFile.Load("XlsxEncryption.xlsx",
+            new XlsxLoadOptions() { Password = inputPassword });
 
-        workbook.Save("XLSX Encryption.xlsx", new XlsxSaveOptions() { Password = outputPassword });
+        workbook.Save("XLSX Encryption.xlsx",
+            new XlsxSaveOptions() { Password = outputPassword });
     }
 }
