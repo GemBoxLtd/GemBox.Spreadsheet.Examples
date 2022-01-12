@@ -1,6 +1,5 @@
 using System;
 using System.Data;
-using System.Text;
 using GemBox.Spreadsheet;
 
 class Program
@@ -25,15 +24,27 @@ class Program
             Resolution = ColumnTypeResolution.AutoPreferStringCurrentCulture
         });
 
-        // Write DataTable content
-        var sb = new StringBuilder();
-        sb.AppendLine("DataTable content:");
+        // Write DataTable columns.
+        foreach (DataColumn column in dataTable.Columns)
+            Console.Write(column.ColumnName.PadRight(20));
+        Console.WriteLine();
+        foreach (DataColumn column in dataTable.Columns)
+            Console.Write($"[{column.DataType}]".PadRight(20));
+        Console.WriteLine();
+        foreach (DataColumn column in dataTable.Columns)
+            Console.Write(new string('-', column.ColumnName.Length).PadRight(20));
+        Console.WriteLine();
+
+        // Write DataTable rows.
         foreach (DataRow row in dataTable.Rows)
         {
-            sb.AppendFormat("{0}\t{1}\t{2}\t{3}\t{4}", row[0], row[1], row[2], row[3], row[4]);
-            sb.AppendLine();
+            foreach (object item in row.ItemArray)
+            {
+                string value = item.ToString();
+                value = value.Length > 20 ? value.Remove(19) + "…" : value;
+                Console.Write(value.PadRight(20));
+            }
+            Console.WriteLine();
         }
-
-        Console.WriteLine(sb.ToString());
     }
 }

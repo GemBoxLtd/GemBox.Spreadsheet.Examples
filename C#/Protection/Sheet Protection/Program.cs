@@ -21,7 +21,6 @@ class Program
 
         worksheet.Protected = true;
 
-        // ProtectionSettings class is supported only for XLSX file format.
         worksheet.Cells[2, 2].Value = "Inserting columns is allowed (only supported for XLSX file format).";
         var protectionSettings = worksheet.ProtectionSettings;
         protectionSettings.AllowInsertingColumns = true;

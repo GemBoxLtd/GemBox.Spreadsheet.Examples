@@ -10,34 +10,38 @@ class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Data");
 
-        int numberOfEmployees = 4;
+        // Add data which will be used by the Excel chart.
+        worksheet.Cells["A1"].Value = "Name";
+        worksheet.Cells["A2"].Value = "John Doe";
+        worksheet.Cells["A3"].Value = "Fred Nurk";
+        worksheet.Cells["A4"].Value = "Hans Meier";
+        worksheet.Cells["A5"].Value = "Ivan Horvat";
 
-        var worksheet = workbook.Worksheets.Add("SourceSheet");
-
-        // Add data which is used by the Excel chart.
-        var names = new string[] { "John Doe", "Fred Nurk", "Hans Meier", "Ivan Horvat" };
-        var random = new Random();
-        for (int i = 0; i < numberOfEmployees; i++)
-        {
-            worksheet.Cells[i + 1, 0].Value = names[i % names.Length] + (i < names.Length ? string.Empty : ' ' + (i / names.Length + 1).ToString());
-            worksheet.Cells[i + 1, 1].SetValue(random.Next(1000, 5000));
-        }
+        worksheet.Cells["B1"].Value = "Salary";
+        worksheet.Cells["B2"].Value = 3600;
+        worksheet.Cells["B3"].Value = 2580;
+        worksheet.Cells["B4"].Value = 3200;
+        worksheet.Cells["B5"].Value = 4100;
 
         // Set header row and formatting.
-        worksheet.Cells[0, 0].Value = "Name";
-        worksheet.Cells[0, 1].Value = "Salary";
-        worksheet.Cells[0, 0].Style.Font.Weight = worksheet.Cells[0, 1].Style.Font.Weight = ExcelFont.BoldWeight;
+        worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
         worksheet.Columns[0].Width = (int)LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart);
         worksheet.Columns[1].Style.NumberFormat = "\"$\"#,##0";
 
+        // Make entire sheet print on a single page.
+        worksheet.PrintOptions.FitWorksheetWidthToPages = 1;
+        worksheet.PrintOptions.FitWorksheetHeightToPages = 1;
+
         // Create Excel chart sheet.
-        var chartsheet = workbook.Worksheets.Add(SheetType.Chart, "ChartSheet");
+        var chartsheet = workbook.Worksheets.Add(SheetType.Chart, "Chart");
+        workbook.Worksheets.ActiveWorksheet = chartsheet;
 
         // Create Excel chart and select data for it.
         // You cannot set the size of the chart area when the chart is located on a chart sheet, it will snap to maximum size on the chart sheet.
-        var chart = chartsheet.Charts.Add(ChartType.Bar, 0, 0, 0, 0, LengthUnit.Centimeter);
-        chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, numberOfEmployees, 1), true);
+        var chart = chartsheet.Charts.Add(%ChartType%, 0, 0, 0, 0, LengthUnit.Centimeter);
+        chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, 4, 1), true);
 
         workbook.Save("Chart Sheet.xlsx");
     }

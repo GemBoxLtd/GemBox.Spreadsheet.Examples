@@ -1,6 +1,5 @@
 Imports System
 Imports System.Data
-Imports System.Text
 Imports GemBox.Spreadsheet
 
 Module Program
@@ -25,15 +24,29 @@ Module Program
             .Resolution = ColumnTypeResolution.AutoPreferStringCurrentCulture
         })
 
-        ' Write DataTable content
-        Dim sb = New StringBuilder()
-        sb.AppendLine("DataTable content:")
-        For Each row As DataRow In dataTable.Rows
+        ' Write DataTable columns.
+        For Each column As DataColumn In dataTable.Columns
+            Console.Write(column.ColumnName.PadRight(20))
+        Next
+        Console.WriteLine()
+        For Each column As DataColumn In dataTable.Columns
+            Console.Write($"[{column.DataType}]".PadRight(20))
+        Next
+        Console.WriteLine()
+        For Each column As DataColumn In dataTable.Columns
+            Console.Write(New String("-"c, column.ColumnName.Length).PadRight(20))
+        Next
+        Console.WriteLine()
 
-            sb.AppendFormat("{0}" & vbTab & "{1}" & vbTab & "{2}" & vbTab & "{3}" & vbTab & "{4}", row(0), row(1), row(2), row(3), row(4))
-            sb.AppendLine()
+        ' Write DataTable rows.
+        For Each row As DataRow In dataTable.Rows
+            For Each item In row.ItemArray
+                Dim value As String = item.ToString()
+                value = If(value.Length > 20, value.Remove(19) & "…", value)
+                Console.Write(value.PadRight(20))
+            Next
+            Console.WriteLine()
         Next
 
-        Console.WriteLine(sb.ToString())
     End Sub
 End Module

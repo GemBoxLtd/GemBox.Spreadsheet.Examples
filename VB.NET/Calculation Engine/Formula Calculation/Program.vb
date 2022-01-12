@@ -7,7 +7,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Formula Calculation")
 
         ' Some formatting.
@@ -54,5 +54,6 @@ Module Program
         worksheet.Parent.Calculate()
 
         workbook.Save("Formula Calculation.xlsx")
+
     End Sub
 End Module

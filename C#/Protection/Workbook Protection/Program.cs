@@ -10,7 +10,6 @@ class Program
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Workbook Protection");
 
-        // ProtectionSettings class is supported only for XLSX file format.
         var protectionSettings = workbook.ProtectionSettings;
         protectionSettings.ProtectStructure = true;
 

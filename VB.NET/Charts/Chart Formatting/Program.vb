@@ -10,7 +10,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Chart")
 
         ' Add data which is used by the Excel chart.
@@ -28,9 +28,9 @@ Module Program
         worksheet.Cells("A12").Value = "November"
         worksheet.Cells("A13").Value = "December"
 
-        ' Fill the values
+        ' Fill the values.
         worksheet.Cells("B1").Value = "Sales"
-        Dim random = New Random()
+        Dim random As New Random()
 
         For i As Integer = 1 To 12
             worksheet.Cells(i, 1).SetValue(random.Next(2000, 5000))
@@ -38,7 +38,7 @@ Module Program
 
         ' Set header row and formatting.
         worksheet.Rows(0).Style.Font.Weight = ExcelFont.BoldWeight
-        worksheet.Columns(0).Width = CInt(LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart))
+        worksheet.Columns(0).SetWidth(3, LengthUnit.Centimeter)
         worksheet.Columns(1).Style.NumberFormat = """$""#,##0"
 
         ' Make entire sheet print on a single page.
@@ -49,58 +49,58 @@ Module Program
         Dim chart = worksheet.Charts.Add(Of LineChart)("D2", "P25")
         chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, 12, 1), True)
 
-        ' Define colors
+        ' Define colors.
         Dim backgroundColor = DrawingColor.FromName(DrawingColorName.RoyalBlue)
         Dim seriesColor = DrawingColor.FromName(DrawingColorName.Green)
         Dim textColor = DrawingColor.FromName(DrawingColorName.White)
         Dim borderColor = DrawingColor.FromName(DrawingColorName.Black)
 
-        ' Format chart
+        ' Format chart.
         chart.Fill.SetSolid(backgroundColor)
 
         Dim outline = chart.Outline
         outline.Width = Length.From(2, LengthUnit.Point)
         outline.Fill.SetSolid(borderColor)
 
-        ' Format plot area
+        ' Format plot area.
         chart.PlotArea.Fill.SetSolid(DrawingColor.FromName(DrawingColorName.White))
 
         outline = chart.PlotArea.Outline
         outline.Width = Length.From(1.5, LengthUnit.Point)
         outline.Fill.SetSolid(borderColor)
 
-        ' Format chart title 
+        ' Format chart title.
         Dim textFormat = chart.Title.TextFormat
         textFormat.Size = Length.From(20, LengthUnit.Point)
         textFormat.Font = "Arial"
         textFormat.Fill.SetSolid(textColor)
 
-        ' Format vertical axis
+        ' Format vertical axis.
         textFormat = chart.Axes.Vertical.TextFormat
         textFormat.Fill.SetSolid(textColor)
         textFormat.Italic = True
 
-        ' Format horizontal axis
+        ' Format horizontal axis.
         textFormat = chart.Axes.Horizontal.TextFormat
         textFormat.Fill.SetSolid(textColor)
         textFormat.Size = Length.From(12, LengthUnit.Point)
         textFormat.Bold = True
 
-        ' Format vertical major gridlines
+        ' Format vertical major gridlines.
         chart.Axes.Vertical.MajorGridlines.Outline.Width = Length.From(0.5, LengthUnit.Point)
 
-        ' Format series
+        ' Format series.
         Dim series = chart.Series(0)
         outline = series.Outline
         outline.Width = Length.From(3, LengthUnit.Point)
         outline.Fill.SetSolid(seriesColor)
 
-        ' Format series markers
+        ' Format series markers.
         series.Marker.MarkerType = MarkerType.Circle
         series.Marker.Size = 10
         series.Marker.Fill.SetSolid(textColor)
         series.Marker.Outline.Fill.SetSolid(seriesColor)
 
-        workbook.Save("Formatting.xlsx")
+        workbook.Save("Chart Formatting.xlsx")
     End Sub
 End Module

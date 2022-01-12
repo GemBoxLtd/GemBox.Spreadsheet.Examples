@@ -9,27 +9,54 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        int numberOfEmployees = 4;
-        int numberOfYears = 4;
-
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Chart");
 
+        int numberOfYears = 4;
+
+        // Add data which is used by the chart.
+        worksheet.Cells["A1"].Value = "Name";
+        worksheet.Cells["A2"].Value = "John Doe";
+        worksheet.Cells["A3"].Value = "Fred Nurk";
+        worksheet.Cells["A4"].Value = "Hans Meier";
+        worksheet.Cells["A5"].Value = "Ivan Horvat";
+
+        // Generate column titles.
+        for (int i = 0; i < numberOfYears; i++)
+            worksheet.Cells[0, i + 1].Value = DateTime.Now.Year - numberOfYears + i;
+
+        var random = new Random();
+        var range = worksheet.Cells.GetSubrangeAbsolute(1, 1, 4, numberOfYears);
+
+        // Fill the values.
+        foreach (var cell in range)
+        {
+            cell.SetValue(random.Next(1000, 5000));
+            cell.Style.NumberFormat = "\"$\"#,##0";
+        }
+
+        // Set header row and formatting.
+        worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
+        worksheet.Rows[0].Style.HorizontalAlignment = HorizontalAlignmentStyle.Center;
+        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
+
         // Create chart and select data for it.
-        var chart = (ColumnChart)worksheet.Charts.Add(ChartType.Column, "B7", "O27");
-        chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, numberOfEmployees, numberOfYears));
+        var chart = worksheet.Charts.Add<ColumnChart>(ChartGrouping.Clustered, "B7", "O27");
+        chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, 4, numberOfYears));
 
         // Set chart title.
-        chart.Title.Text = "Clustered Column Chart";
+        chart.Title.Text = "Column Chart";
+
+        // Set chart legend.
+        chart.Legend.IsVisible = true;
+        chart.Legend.Position = ChartLegendPosition.Right;
 
         // Set axis titles.
         chart.Axes.Horizontal.Title.Text = "Years";
         chart.Axes.Vertical.Title.Text = "Salaries";
 
-        // For all charts (except Pie and Bar) value axis is vertical.
-        var valueAxis = chart.Axes.VerticalValue;
-
         // Set value axis scaling, units, gridlines and tick marks.
+        var valueAxis = chart.Axes.VerticalValue;
         valueAxis.Minimum = 0;
         valueAxis.Maximum = 6000;
         valueAxis.MajorUnit = 1000;
@@ -39,33 +66,13 @@ class Program
         valueAxis.MajorTickMarkType = TickMarkType.Outside;
         valueAxis.MinorTickMarkType = TickMarkType.Cross;
 
-        // Add data which is used by the chart.
-        var names = new string[] { "John Doe", "Fred Nurk", "Hans Meier", "Ivan Horvat" };
-        var random = new Random();
-        for (int i = 0; i < numberOfEmployees; ++i)
-        {
-            worksheet.Cells[i + 1, 0].Value = names[i % names.Length] + (i < names.Length ? string.Empty : ' ' + (i / names.Length + 1).ToString());
-
-            for (int j = 0; j < numberOfYears; ++j)
-                worksheet.Cells[i + 1, j + 1].SetValue(random.Next(1000, 5000));
-        }
-
-        // Set header row and formatting.
-        worksheet.Cells[0, 0].Value = "Name";
-        worksheet.Cells[0, 0].Style.Font.Weight = ExcelFont.BoldWeight;
-        worksheet.Columns[0].Width = (int)LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart);
-        for (int i = 0, startYear = DateTime.Now.Year - numberOfYears; i < numberOfYears; ++i)
-        {
-            worksheet.Cells[0, i + 1].SetValue(startYear + i);
-            worksheet.Cells[0, i + 1].Style.Font.Weight = ExcelFont.BoldWeight;
-            worksheet.Cells[0, i + 1].Style.NumberFormat = "General";
-            worksheet.Columns[i + 1].Style.NumberFormat = "\"$\"#,##0";
-        }
-
         // Make entire sheet print horizontally centered on a single page with headings and gridlines.
         var printOptions = worksheet.PrintOptions;
-        printOptions.HorizontalCentered = printOptions.PrintHeadings = printOptions.PrintGridlines = true;
-        printOptions.FitWorksheetWidthToPages = printOptions.FitWorksheetHeightToPages = 1;
+        printOptions.HorizontalCentered = true;
+        printOptions.PrintHeadings = true;
+        printOptions.PrintGridlines = true;
+        printOptions.FitWorksheetWidthToPages = 1;
+        printOptions.FitWorksheetHeightToPages = 1;
 
         workbook.Save("Chart Components.xlsx");
     }

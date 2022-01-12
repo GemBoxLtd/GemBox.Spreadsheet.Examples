@@ -1,6 +1,5 @@
 Imports System
 Imports System.Data
-Imports System.Text
 Imports GemBox.Spreadsheet
 
 Module Program
@@ -12,41 +11,52 @@ Module Program
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
-        Dim dataTable = New DataTable
-
-        ' Depending on the format of the input file, you need to change this:
-        dataTable.Columns.Add("FirstColumn", GetType(String))
-        dataTable.Columns.Add("SecondColumn", GetType(String))
+        ' Create DataTable with specified columns.
+        Dim dataTable As New DataTable()
+        dataTable.Columns.Add("First_Column", GetType(String))
+        dataTable.Columns.Add("Second_Column", GetType(String))
+        dataTable.Columns.Add("Third_Column", GetType(Integer))
+        dataTable.Columns.Add("Fourth_Column", GetType(Double))
 
         ' Select the first worksheet from the file.
         Dim worksheet = workbook.Worksheets(0)
 
-        Dim options = New ExtractToDataTableOptions(0, 0, 10)
-        options.ExtractDataOptions = ExtractDataOptions.StopAtFirstEmptyRow
+        ' Extract the data from an Excel worksheet to the DataTable.
+        Dim options As New ExtractToDataTableOptions(0, 0, 20)
         AddHandler options.ExcelCellToDataTableCellConverting,
             Sub(sender, e)
                 If Not e.IsDataTableValueValid Then
-
-                    ' GemBox.Spreadsheet doesn't automatically convert numbers to strings in ExtractToDataTable() method because of culture issues; 
-                    ' someone would expect the number 12.4 as "12.4" and someone else as "12,4".
-                    e.DataTableValue = If(e.ExcelCell.Value Is Nothing, Nothing, e.ExcelCell.Value.ToString())
-                    e.Action = ExtractDataEventAction.Continue
+                    ' Convert ExcelCell value to string.
+                    e.DataTableValue = If(e.DataTableColumnType = GetType(String),
+                        e.ExcelCell.Value?.ToString(),
+                        DBNull.Value)
                 End If
             End Sub
-
-        ' Extract the data from an Excel worksheet to the DataTable.
-        ' Data is extracted starting at first row and first column for 10 rows or until the first empty row appears.
         worksheet.ExtractToDataTable(dataTable, options)
 
-        ' Write DataTable content.
-        Dim sb = New StringBuilder
-        sb.AppendLine("DataTable content:")
-        For Each row As DataRow In dataTable.Rows
+        ' Write DataTable columns.
+        For Each column As DataColumn In dataTable.Columns
+            Console.Write(column.ColumnName.PadRight(20))
+        Next
+        Console.WriteLine()
+        For Each column As DataColumn In dataTable.Columns
+            Console.Write($"[{column.DataType}]".PadRight(20))
+        Next
+        Console.WriteLine()
+        For Each column As DataColumn In dataTable.Columns
+            Console.Write(New String("-"c, column.ColumnName.Length).PadRight(20))
+        Next
+        Console.WriteLine()
 
-            sb.AppendFormat("{0}    {1}", row(0), row(1))
-            sb.AppendLine()
+        ' Write DataTable rows.
+        For Each row As DataRow In dataTable.Rows
+            For Each item In row.ItemArray
+                Dim value As String = item.ToString()
+                value = If(value.Length > 20, value.Remove(19) & "…", value)
+                Console.Write(value.PadRight(20))
+            Next
+            Console.WriteLine()
         Next
 
-        Console.WriteLine(sb.ToString())
     End Sub
 End Module

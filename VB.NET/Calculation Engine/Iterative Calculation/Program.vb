@@ -7,7 +7,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
 
         ' Set calculation options.
         workbook.CalculationOptions.MaximumIterations = 10
@@ -34,5 +34,6 @@ Module Program
         worksheet.Calculate()
 
         workbook.Save("Iterative Calculation.xlsx")
+
     End Sub
 End Module

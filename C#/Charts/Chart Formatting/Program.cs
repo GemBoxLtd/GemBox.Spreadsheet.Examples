@@ -28,7 +28,7 @@ class Program
         worksheet.Cells["A12"].Value = "November";
         worksheet.Cells["A13"].Value = "December";
 
-        // Fill the values
+        // Fill the values.
         worksheet.Cells["B1"].Value = "Sales";
         var random = new Random();
 
@@ -37,7 +37,7 @@ class Program
 
         // Set header row and formatting.
         worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        worksheet.Columns[0].Width = (int)LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart);
+        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
         worksheet.Columns[1].Style.NumberFormat = "\"$\"#,##0";
 
         // Make entire sheet print on a single page.
@@ -48,58 +48,58 @@ class Program
         var chart = worksheet.Charts.Add<LineChart>("D2", "P25");
         chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, 12, 1), true);
 
-        // Define colors
+        // Define colors.
         var backgroundColor = DrawingColor.FromName(DrawingColorName.RoyalBlue);
         var seriesColor = DrawingColor.FromName(DrawingColorName.Green);
         var textColor = DrawingColor.FromName(DrawingColorName.White);
         var borderColor = DrawingColor.FromName(DrawingColorName.Black);
 
-        // Format chart
+        // Format chart.
         chart.Fill.SetSolid(backgroundColor);
 
         var outline = chart.Outline;
         outline.Width = Length.From(2, LengthUnit.Point);
         outline.Fill.SetSolid(borderColor);
 
-        // Format plot area
+        // Format plot area.
         chart.PlotArea.Fill.SetSolid(DrawingColor.FromName(DrawingColorName.White));
 
         outline = chart.PlotArea.Outline;
         outline.Width = Length.From(1.5, LengthUnit.Point);
         outline.Fill.SetSolid(borderColor);
 
-        // Format chart title 
+        // Format chart title.
         var textFormat = chart.Title.TextFormat;
         textFormat.Size = Length.From(20, LengthUnit.Point);
         textFormat.Font = "Arial";
         textFormat.Fill.SetSolid(textColor);
 
-        // Format vertical axis
+        // Format vertical axis.
         textFormat = chart.Axes.Vertical.TextFormat;
         textFormat.Fill.SetSolid(textColor);
         textFormat.Italic = true;
 
-        // Format horizontal axis
+        // Format horizontal axis.
         textFormat = chart.Axes.Horizontal.TextFormat;
         textFormat.Fill.SetSolid(textColor);
         textFormat.Size = Length.From(12, LengthUnit.Point);
         textFormat.Bold = true;
 
-        // Format vertical major gridlines
+        // Format vertical major gridlines.
         chart.Axes.Vertical.MajorGridlines.Outline.Width = Length.From(0.5, LengthUnit.Point);
 
-        // Format series
+        // Format series.
         var series = chart.Series[0];
         outline = series.Outline;
         outline.Width = Length.From(3, LengthUnit.Point);
         outline.Fill.SetSolid(seriesColor);
 
-        // Format series markers
+        // Format series markers.
         series.Marker.MarkerType = MarkerType.Circle;
         series.Marker.Size = 10;
         series.Marker.Fill.SetSolid(textColor);
         series.Marker.Outline.Fill.SetSolid(seriesColor);
 
-        workbook.Save("Formatting.xlsx");
+        workbook.Save("Chart Formatting.xlsx");
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Data;
-using System.Text;
 using GemBox.Spreadsheet;
 
 class Program
@@ -12,41 +11,52 @@ class Program
 
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
+        // Create DataTable with specified columns.
         var dataTable = new DataTable();
-
-        // Depending on the format of the input file, you need to change this:
-        dataTable.Columns.Add("FirstColumn", typeof(string));
-        dataTable.Columns.Add("SecondColumn", typeof(string));
+        dataTable.Columns.Add("First_Column", typeof(string));
+        dataTable.Columns.Add("Second_Column", typeof(string));
+        dataTable.Columns.Add("Third_Column", typeof(int));
+        dataTable.Columns.Add("Fourth_Column", typeof(double));
 
         // Select the first worksheet from the file.
         var worksheet = workbook.Worksheets[0];
 
-        var options = new ExtractToDataTableOptions(0, 0, 10);
-        options.ExtractDataOptions = ExtractDataOptions.StopAtFirstEmptyRow;
+        // Extract the data from an Excel worksheet to the DataTable.
+        var options = new ExtractToDataTableOptions(0, 0, 20);
         options.ExcelCellToDataTableCellConverting += (sender, e) =>
         {
             if (!e.IsDataTableValueValid)
             {
-                // GemBox.Spreadsheet doesn't automatically convert numbers to strings in ExtractToDataTable() method because of culture issues; 
-                // someone would expect the number 12.4 as "12.4" and someone else as "12,4".
-                e.DataTableValue = e.ExcelCell.Value == null ? null : e.ExcelCell.Value.ToString();
-                e.Action = ExtractDataEventAction.Continue;
+                // Convert ExcelCell value to string.
+                if (e.DataTableColumnType == typeof(string))
+                    e.DataTableValue = e.ExcelCell.Value?.ToString();
+                else
+                    e.DataTableValue = DBNull.Value;
             }
         };
-
-        // Extract the data from an Excel worksheet to the DataTable.
-        // Data is extracted starting at first row and first column for 10 rows or until the first empty row appears.
         worksheet.ExtractToDataTable(dataTable, options);
 
-        // Write DataTable content.
-        var sb = new StringBuilder();
-        sb.AppendLine("DataTable content:");
+        // Write DataTable columns.
+        foreach (DataColumn column in dataTable.Columns)
+            Console.Write(column.ColumnName.PadRight(20));
+        Console.WriteLine();
+        foreach (DataColumn column in dataTable.Columns)
+            Console.Write($"[{column.DataType}]".PadRight(20));
+        Console.WriteLine();
+        foreach (DataColumn column in dataTable.Columns)
+            Console.Write(new string('-', column.ColumnName.Length).PadRight(20));
+        Console.WriteLine();
+
+        // Write DataTable rows.
         foreach (DataRow row in dataTable.Rows)
         {
-            sb.AppendFormat("{0}    {1}", row[0], row[1]);
-            sb.AppendLine();
+            foreach (object item in row.ItemArray)
+            {
+                string value = item.ToString();
+                value = value.Length > 20 ? value.Remove(19) + "…" : value;
+                Console.Write(value.PadRight(20));
+            }
+            Console.WriteLine();
         }
-
-        Console.WriteLine(sb.ToString());
     }
 }
