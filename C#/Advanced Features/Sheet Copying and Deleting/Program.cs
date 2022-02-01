@@ -8,7 +8,7 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        var workbook = ExcelFile.Load("TemplateUse.xlsx");
+        var workbook = ExcelFile.Load("Template.xlsx");
 
         // Get template sheet.
         var templateSheet = workbook.Worksheets[0];
@@ -20,12 +20,6 @@ class Program
         // Delete template sheet.
         workbook.Worksheets.Remove(0);
 
-        var startTime = DateTime.Now;
-
-        // Go to the first Monday from today.
-        while (startTime.DayOfWeek != DayOfWeek.Monday)
-            startTime = startTime.AddDays(1);
-
         var random = new Random();
 
         // For each sheet.
@@ -34,32 +28,26 @@ class Program
             // Get sheet.
             var worksheet = workbook.Worksheets[i];
 
-            // Set some fields.
-            worksheet.Cells["J5"].SetValue(14 + i);
-            worksheet.Cells["J6"].SetValue(DateTime.Now);
-            worksheet.Cells["J6"].Style.NumberFormat = "m/dd/yyyy";
+            // Write sheet's cells.
+            worksheet.Cells["C6"].Value = "ACME Corp";
+            worksheet.Cells["C7"].Value = "240 Old Country Road, Springfield, IL";
 
-            worksheet.Cells["D12"].Value = "ACME Corp";
-            worksheet.Cells["D13"].Value = "240 Old Country Road, Springfield, IL";
-            worksheet.Cells["D14"].Value = "USA";
-            worksheet.Cells["D15"].Value = "Joe Smith";
+            DateTime startDate = DateTime.Today;
+            int itemsCount = random.Next(5, 20);
+            worksheet.Cells["C11"].SetValue(startDate);
+            worksheet.Cells["C12"].SetValue(startDate.AddDays(itemsCount - 1));
 
-            worksheet.Cells["E18"].Value = String.Format(startTime.ToShortDateString() + " until " + startTime.AddDays(11).ToShortDateString());
+            // Copy template row.
+            int row = 17;
+            worksheet.Rows.InsertCopy(row + 1, itemsCount - 1, worksheet.Rows[row]);
 
-            for (int j = 0; j < 10; j++)
+            // Write row's cells.
+            for (int j = 0; j < itemsCount; j++)
             {
-                worksheet.Cells[21 + j, 1].SetValue(startTime); // Set date.
-                worksheet.Cells[21 + j, 1].Style.NumberFormat = "dddd, mmmm dd, yyyy";
-                worksheet.Cells[21 + j, 4].SetValue(random.Next(6, 9)); // Work hours.
-
-                // Skip Saturday and Sunday.
-                startTime = startTime.AddDays(j == 4 ? 3 : 1);
+                var currentRow = worksheet.Rows[row + j];
+                currentRow.Cells[1].SetValue(startDate.AddDays(j));
+                currentRow.Cells[2].SetValue(random.Next(6, 9));
             }
-
-            // Skip Saturday and Sunday.
-            startTime = startTime.AddDays(2);
-
-            worksheet.Cells["B36"].Value = "Payment via check.";
         }
 
         workbook.Save("Sheet Copying_Deleting.xlsx");

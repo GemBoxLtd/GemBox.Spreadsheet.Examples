@@ -7,7 +7,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Grouping")
 
         worksheet.Cells(0).Value = "Cell grouping examples:"

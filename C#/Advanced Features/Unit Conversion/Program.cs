@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using GemBox.Spreadsheet;
 
 class Program
@@ -9,26 +8,20 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        var workbook = ExcelFile.Load("IllustrationsAndShapes.xlsx");
-
-        var sb = new StringBuilder();
-
+        var workbook = ExcelFile.Load("Template.xlsx");
         var worksheet = workbook.Worksheets[0];
+        var cell = worksheet.Cells["A1"];
 
-        sb.AppendFormat("Sheet left margin is: {0} pixels.", Math.Round(LengthUnitConverter.Convert(worksheet.PrintOptions.LeftMargin, LengthUnit.Inch, LengthUnit.Pixel)));
-        sb.AppendLine();
+        double widthInZeroCharacterWidth256thPart = cell.Column.Width;
+        double heightInTwip = cell.Row.Height;
 
-        sb.AppendFormat("Width of column A is: {0} pixels.", Math.Round(LengthUnitConverter.Convert(worksheet.Columns[0].Width, LengthUnit.ZeroCharacterWidth256thPart, LengthUnit.Pixel)));
-        sb.AppendLine();
+        Console.WriteLine("A1 cell's size in different units:");
 
-        sb.AppendFormat("Height of row 1 is: {0} pixels.", Math.Round(LengthUnitConverter.Convert(worksheet.Rows[0].Height, LengthUnit.Twip, LengthUnit.Pixel)));
-        sb.AppendLine();
-
-        var picture = worksheet.Pictures[1];
-        sb.AppendFormat("Image width x height is: {0} centimeters x {1} centimeters.",
-            Math.Round(picture.Position.GetWidth(LengthUnit.Centimeter), 2),
-            Math.Round(picture.Position.GetHeight(LengthUnit.Centimeter), 2));
-
-        Console.WriteLine(sb.ToString());
+        foreach (LengthUnit unit in Enum.GetValues(typeof(LengthUnit)))
+        {
+            double convertedWidth = LengthUnitConverter.Convert(widthInZeroCharacterWidth256thPart, LengthUnit.ZeroCharacterWidth256thPart, unit);
+            double convertedHeight = LengthUnitConverter.Convert(heightInTwip, LengthUnit.Twip, unit);
+            Console.WriteLine($"{convertedWidth:0.###} x {convertedHeight:0.###} {unit}");
+        }
     }
 }

@@ -21,7 +21,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FixedColumnsWidthText", "Ad
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormulaUtilityMethods", "Advanced Features\Formula Utility Methods\FormulaUtilityMethods.vbproj", "{935B85BD-4183-482E-AFE8-1D466840D659}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreezeOrSplitPanes", "Advanced Features\Freeze or Split Panes\FreezeOrSplitPanes.vbproj", "{90D648CE-1BF2-4700-8E8E-5114522B0C2F}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreezeAndSplitPanes", "Advanced Features\Freeze and Split Panes\FreezeAndSplitPanes.vbproj", "{90D648CE-1BF2-4700-8E8E-5114522B0C2F}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Grouping", "Advanced Features\Grouping\Grouping.vbproj", "{FBAAEAC6-2D55-4B8D-8E07-1C5B426BDBBA}"
 EndProject

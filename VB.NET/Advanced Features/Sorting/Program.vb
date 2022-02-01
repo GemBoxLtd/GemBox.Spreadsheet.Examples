@@ -8,10 +8,10 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Sorting")
 
-        Dim random = New Random()
+        Dim random As New Random()
 
         worksheet.Cells(0, 0).Value = "Sorted numbers"
         For i = 1 To 10 Step 1
@@ -30,7 +30,6 @@ Module Program
 
         worksheet.Cells(0, 4).Value = "Sorted by column E and after that by column F"
         For i = 1 To 10 Step 1
-
             worksheet.Cells(i, 4).SetValue(random.Next(1, 4))
             worksheet.Cells(i, 5).SetValue(random.Next(0, 10))
         Next

@@ -8,8 +8,8 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        var ef = new ExcelFile();
-        var worksheet = ef.Worksheets.Add("Tables");
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Tables");
 
         // Add some data.
         var data = new object[5, 3]
@@ -52,6 +52,6 @@ class Program
         // Set table style.
         table.BuiltInStyle = BuiltInTableStyleName.TableStyleMedium2;
 
-        ef.Save("Tables.xlsx");
+        workbook.Save("Tables.xlsx");
     }
 }

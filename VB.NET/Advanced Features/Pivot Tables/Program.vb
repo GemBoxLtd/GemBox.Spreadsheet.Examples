@@ -9,8 +9,13 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Example1()
+        Example2()
 
+    End Sub
+
+    Sub Example1()
+        Dim workbook As New ExcelFile()
         Dim worksheet1 = workbook.Worksheets.Add("SourceSheet")
 
         ' Specify sheet formatting.
@@ -30,12 +35,11 @@ Module Program
         cells(0, 3).Value = "Salaries"
 
         ' Insert random data to sheet.
-        Dim random = New Random()
+        Dim random As New Random()
         Dim departments = New String() {"Legal", "Marketing", "Finance", "Planning", "Purchasing"}
         Dim names = New String() {"John Doe", "Fred Nurk", "Hans Meier", "Ivan Horvat"}
         Dim years = New String() {"1-10", "11-20", "21-30", "over 30"}
         For i As Integer = 0 To 100
-
             cells(i + 1, 0).Value = departments(random.Next(departments.Length))
             cells(i + 1, 1).Value = names(random.Next(names.Length)) + " "c + (i + 1).ToString()
             cells(i + 1, 2).Value = years(random.Next(years.Length))
@@ -78,8 +82,46 @@ Module Program
         table.RowGrandTotals = False
 
         ' Set pivot table style.
-        table.BuiltInStyle = BuiltInPivotStyleName.PivotStyleMedium7
+        table.BuiltInStyle = BuiltInPivotStyleName.PivotStyleMedium10
 
         workbook.Save("Pivot Tables.xlsx")
     End Sub
+
+    Sub Example2()
+        Dim workbook = ExcelFile.Load("PivotTableSource.xlsx")
+        Dim sourceSheet = workbook.Worksheets("SourceSheet")
+        Dim pivotSheet = workbook.Worksheets("PivotSheet")
+        Dim pivotTable = pivotSheet.PivotTables(0)
+
+        ' Calculate the pivot table with existing values in the pivot cache.
+        pivotTable.Calculate()
+
+        Console.WriteLine("Pivot table values before:")
+        For Each row In pivotSheet.Rows
+            For Each cell In row.AllocatedCells
+                Console.Write(cell.GetFormattedValue().PadRight(30))
+            Next
+            Console.WriteLine()
+        Next
+
+        ' Change the values in the source sheet.
+        sourceSheet.Cells("D2").Value = 15300
+        sourceSheet.Cells("D4").Value = 13300
+        sourceSheet.Cells("D7").Value = 18500
+
+        ' Refresh the pivot cache.
+        pivotTable.PivotCache.Refresh()
+        ' Calculate the pivot table.
+        pivotTable.Calculate()
+
+        Console.WriteLine("-------------------------------------")
+        Console.WriteLine("Pivot table values after:")
+        For Each row In pivotSheet.Rows
+            For Each cell In row.AllocatedCells
+                Console.Write(cell.GetFormattedValue().PadRight(30))
+            Next
+            Console.WriteLine()
+        Next
+    End Sub
+
 End Module

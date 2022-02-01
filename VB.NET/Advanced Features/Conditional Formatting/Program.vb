@@ -9,7 +9,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Conditional Formatting")
 
         Dim rowCount As Integer = 20
@@ -34,11 +34,10 @@ Module Program
         cells(0, 4).Value = "Deadlines"
 
         ' Insert random data to sheet.
-        Dim random = New Random()
+        Dim random As New Random()
         Dim departments = New String() {"Legal", "Marketing", "Finance", "Planning", "Purchasing"}
         Dim names = New String() {"John Doe", "Fred Nurk", "Hans Meier", "Ivan Horvat"}
         For i As Integer = 0 To rowCount - 1
-
             cells(i + 1, 0).Value = departments(random.Next(departments.Length))
             cells(i + 1, 1).Value = names(random.Next(names.Length)) + " "c + (i + 1).ToString()
             cells(i + 1, 2).SetValue(random.Next(1, 31))
@@ -47,10 +46,10 @@ Module Program
         Next
 
         ' Apply shading to alternate rows in a worksheet using 'Formula' based conditional formatting.
-        worksheet.ConditionalFormatting.AddFormula(worksheet.Cells.Name, "MOD(ROW(),2)=0").
-            Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Accent1Lighter40Pct)
-        worksheet.ConditionalFormatting.AddFormula(worksheet.Cells.Name, "MOD(ROW(),2)=1").
-            Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Accent5Lighter80Pct)
+        worksheet.ConditionalFormatting.AddFormula(worksheet.Cells.Name, "MOD(ROW(),2)=0") _
+            .Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Accent1Lighter40Pct)
+        worksheet.ConditionalFormatting.AddFormula(worksheet.Cells.Name, "MOD(ROW(),2)=1") _
+            .Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Accent5Lighter80Pct)
 
         ' Apply '2-Color Scale' conditional formatting to 'Years of Service' column.
         worksheet.ConditionalFormatting.Add2ColorScale("C2:C" & (rowCount + 1))
@@ -65,28 +64,28 @@ Module Program
         worksheet.ConditionalFormatting.AddIconSet("C2:C" & (rowCount + 1)).IconStyle = SpreadsheetIconStyle.FourTrafficLights
 
         ' Apply green font color to cells in a 'Years of Service' column which have values between 15 and 20.
-        worksheet.ConditionalFormatting.AddContainValue("C2:C" & (rowCount + 1), ContainValueOperator.Between, 15, 20).
-            Style.Font.Color = SpreadsheetColor.FromName(ColorName.Green)
+        worksheet.ConditionalFormatting.AddContainValue("C2:C" & (rowCount + 1), ContainValueOperator.Between, 15, 20) _
+            .Style.Font.Color = SpreadsheetColor.FromName(ColorName.Green)
 
         ' Apply double red border to cells in a 'Names' column which contain text 'Doe'.
-        worksheet.ConditionalFormatting.AddContainText("B2:B" & (rowCount + 1), ContainTextOperator.Contains, "Doe").
-            Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromName(ColorName.Red), LineStyle.Double)
+        worksheet.ConditionalFormatting.AddContainText("B2:B" & (rowCount + 1), ContainTextOperator.Contains, "Doe") _
+            .Style.Borders.SetBorders(MultipleBorders.Outside, SpreadsheetColor.FromName(ColorName.Red), LineStyle.Double)
 
         ' Apply red shading to cells in a 'Deadlines' column which are equal to yesterday's date.
-        worksheet.ConditionalFormatting.AddContainDate("E2:E" & (rowCount + 1), ContainDateOperator.Yesterday).
-            Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Red)
+        worksheet.ConditionalFormatting.AddContainDate("E2:E" & (rowCount + 1), ContainDateOperator.Yesterday) _
+            .Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Red)
 
         ' Apply bold font weight to cells in a 'Salaries' column which have top 10 values.
-        worksheet.ConditionalFormatting.AddTopOrBottomRanked("D2:D" & (rowCount + 1), False, 10).
-            Style.Font.Weight = ExcelFont.BoldWeight
+        worksheet.ConditionalFormatting.AddTopOrBottomRanked("D2:D" & (rowCount + 1), False, 10) _
+            .Style.Font.Weight = ExcelFont.BoldWeight
 
         ' Apply double underline to cells in a 'Years of Service' column which have below average value.
-        worksheet.ConditionalFormatting.AddAboveOrBelowAverage("C2:C" & (rowCount + 1), True).
-            Style.Font.UnderlineStyle = UnderlineStyle.Double
+        worksheet.ConditionalFormatting.AddAboveOrBelowAverage("C2:C" & (rowCount + 1), True) _
+            .Style.Font.UnderlineStyle = UnderlineStyle.Double
 
         ' Apply italic font style to cells in a 'Departments' column which have duplicate values.
-        worksheet.ConditionalFormatting.AddUniqueOrDuplicate("A2:A" & (rowCount + 1), True).
-            Style.Font.Italic = True
+        worksheet.ConditionalFormatting.AddUniqueOrDuplicate("A2:A" & (rowCount + 1), True) _
+            .Style.Font.Italic = True
 
         workbook.Save("Conditional Formatting.xlsx")
     End Sub

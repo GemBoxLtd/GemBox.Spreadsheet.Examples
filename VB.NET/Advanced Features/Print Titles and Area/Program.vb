@@ -7,7 +7,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
 
         ' Always print 1st row.
         Dim worksheet1 = workbook.Worksheets.Add("Sheet1")
@@ -26,7 +26,7 @@ Module Program
 
         ' Fill Sheet1 with some data
         For i As Integer = 0 To 8
-            worksheet1.Cells(0, i).Value = "Column " + ExcelColumnCollection.ColumnIndexToName(i)
+            worksheet1.Cells(0, i).Value = "Column " & ExcelColumnCollection.ColumnIndexToName(i)
         Next
 
         For i As Integer = 1 To 119

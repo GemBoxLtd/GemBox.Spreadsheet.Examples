@@ -14,6 +14,8 @@ class Program
         FontSettings.FontsBaseDirectory = ".";
 
         worksheet.Parent.Styles.Normal.Font.Name = "Almonte Snow";
+        worksheet.Parent.Styles.Normal.Font.Size = 48 * 20;
+
         worksheet.Cells[0, 0].Value = "Hello World!";
 
         workbook.Save("Private Fonts.pdf");

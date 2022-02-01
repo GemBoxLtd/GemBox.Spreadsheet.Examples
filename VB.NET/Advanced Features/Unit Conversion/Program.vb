@@ -1,5 +1,4 @@
 Imports System
-Imports System.Text
 Imports GemBox.Spreadsheet
 
 Module Program
@@ -9,26 +8,22 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = ExcelFile.Load("IllustrationsAndShapes.xlsx")
-
-        Dim sb = New StringBuilder()
-
+        Dim workbook = ExcelFile.Load("Template.xlsx")
         Dim worksheet = workbook.Worksheets(0)
+        Dim cell = worksheet.Cells("A1")
 
-        sb.AppendFormat("Sheet left margin is: {0} pixels.", Math.Round(LengthUnitConverter.Convert(worksheet.PrintOptions.LeftMargin, LengthUnit.Inch, LengthUnit.Pixel)))
-        sb.AppendLine()
+        Dim widthInZeroCharacterWidth256thPart As Double = cell.Column.Width
+        Dim heightInTwip As Double = cell.Row.Height
 
-        sb.AppendFormat("Width of column A is: {0} pixels.", Math.Round(LengthUnitConverter.Convert(worksheet.Columns(0).Width, LengthUnit.ZeroCharacterWidth256thPart, LengthUnit.Pixel)))
-        sb.AppendLine()
+        Console.WriteLine("A1 cell's size in different units:")
 
-        sb.AppendFormat("Height of row 1 is: {0} pixels.", Math.Round(LengthUnitConverter.Convert(worksheet.Rows(0).Height, LengthUnit.Twip, LengthUnit.Pixel)))
-        sb.AppendLine()
+        For Each unit As LengthUnit In [Enum].GetValues(GetType(LengthUnit))
 
-        Dim picture = worksheet.Pictures(1)
-        sb.AppendFormat("Image width x height is: {0} centimeters x {1} centimeters.",
-            Math.Round(picture.Position.GetWidth(LengthUnit.Centimeter), 2),
-            Math.Round(picture.Position.GetHeight(LengthUnit.Centimeter), 2))
+            Dim convertedWidth As Double = LengthUnitConverter.Convert(widthInZeroCharacterWidth256thPart, LengthUnit.ZeroCharacterWidth256thPart, unit)
+            Dim convertedHeight As Double = LengthUnitConverter.Convert(heightInTwip, LengthUnit.Twip, unit)
+            Console.WriteLine($"{convertedWidth:0.###} x {convertedHeight:0.###} {unit}")
 
-        Console.WriteLine(sb.ToString())
+        Next
+
     End Sub
 End Module

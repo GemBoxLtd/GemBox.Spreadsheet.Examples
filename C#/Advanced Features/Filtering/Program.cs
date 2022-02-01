@@ -51,13 +51,13 @@ class Program
         // - 'Salaries' value is in the top 20 percent of all 'Salaries' values and
         // - 'Deadlines' value is today's date.
         // Shown rows are then sorted by 'Salaries' values in the descending order.
-        filterRange.Filter().
-            ByValues(0, "Legal", "Marketing", "Finance").
-            ByCustom(1, FilterOperator.Equal, "*e*").
-            ByTop10(2, true, true, 20).
-            ByDynamic(3, DynamicFilterType.Today).
-            SortBy(2, true).
-            Apply();
+        filterRange.Filter()
+            .ByValues(0, "Legal", "Marketing", "Finance")
+            .ByCustom(1, FilterOperator.Equal, "*e*")
+            .ByTop10(2, true, true, 20)
+            .ByDynamic(3, DynamicFilterType.Today)
+            .SortBy(2, true)
+            .Apply();
 
         workbook.Save("Filtering.xlsx");
     }

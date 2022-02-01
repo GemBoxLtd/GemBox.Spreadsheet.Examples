@@ -8,7 +8,7 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = New ExcelFile
+        Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Filtering")
 
         Dim rowCount As Integer = 149
@@ -31,11 +31,10 @@ Module Program
         cells(0, 3).Value = "Deadlines"
 
         ' Insert random data to sheet.
-        Dim random = New Random
+        Dim random As New Random()
         Dim departments = New String() {"Legal", "Marketing", "Finance", "Planning", "Purchasing"}
         Dim names = New String() {"John Doe", "Fred Nurk", "Hans Meier", "Ivan Horvat"}
         For i As Integer = 0 To rowCount - 1
-
             cells(i + 1, 0).Value = departments(random.Next(departments.Length))
             cells(i + 1, 1).Value = names(random.Next(names.Length)) + " "c + (i + 1).ToString()
             cells(i + 1, 2).SetValue(random.Next(10, 101) * 100)
@@ -51,13 +50,13 @@ Module Program
         ' - 'Salaries' value is in the top 20 percent of all 'Salaries' values and
         ' - 'Deadlines' value is today's date.
         ' Shown rows are then sorted by 'Salaries' values in the descending order.
-        filterRange.Filter().
-            ByValues(0, "Legal", "Marketing", "Finance").
-            ByCustom(1, FilterOperator.Equal, "*e*").
-            ByTop10(2, True, True, 20).
-            ByDynamic(3, DynamicFilterType.Today).
-            SortBy(2, True).
-            Apply()
+        filterRange.Filter() _
+            .ByValues(0, "Legal", "Marketing", "Finance") _
+            .ByCustom(1, FilterOperator.Equal, "*e*") _
+            .ByTop10(2, True, True, 20) _
+            .ByDynamic(3, DynamicFilterType.Today) _
+            .SortBy(2, True) _
+            .Apply()
 
         workbook.Save("Filtering.xlsx")
     End Sub

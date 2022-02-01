@@ -9,9 +9,14 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        var workbook = new ExcelFile();
+        Example1();
+        Example2();
+    }
 
-        ExcelWorksheet worksheet1 = workbook.Worksheets.Add("SourceSheet");
+    static void Example1()
+    {
+        var workbook = new ExcelFile();
+        var worksheet1 = workbook.Worksheets.Add("SourceSheet");
 
         // Specify sheet formatting.
         worksheet1.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
@@ -78,8 +83,46 @@ class Program
         table.RowGrandTotals = false;
 
         // Set pivot table style.
-        table.BuiltInStyle = BuiltInPivotStyleName.PivotStyleMedium7;
+        table.BuiltInStyle = BuiltInPivotStyleName.PivotStyleMedium10;
 
         workbook.Save("Pivot Tables.xlsx");
+    }
+
+    static void Example2()
+    {
+        var workbook = ExcelFile.Load("PivotTableSource.xlsx");
+        var sourceSheet = workbook.Worksheets["SourceSheet"];
+        var pivotSheet = workbook.Worksheets["PivotSheet"];
+        var pivotTable = pivotSheet.PivotTables[0];
+
+        // Calculate the pivot table with existing values in the pivot cache.
+        pivotTable.Calculate();
+
+        Console.WriteLine("Pivot table values before:");
+        foreach (var row in pivotSheet.Rows)
+        {
+            foreach (var cell in row.AllocatedCells)
+                Console.Write(cell.GetFormattedValue().PadRight(30));
+            Console.WriteLine();
+        }
+
+        // Change the values in the source sheet.
+        sourceSheet.Cells["D2"].Value = 15300;
+        sourceSheet.Cells["D4"].Value = 13300;
+        sourceSheet.Cells["D7"].Value = 18500;
+
+        // Refresh the pivot cache.
+        pivotTable.PivotCache.Refresh();
+        // Calculate the pivot table.
+        pivotTable.Calculate();
+
+        Console.WriteLine("-------------------------------------");
+        Console.WriteLine("Pivot table values after:");
+        foreach (var row in pivotSheet.Rows)
+        {
+            foreach (var cell in row.AllocatedCells)
+                Console.Write(cell.GetFormattedValue().PadRight(30));
+            Console.WriteLine();
+        }
     }
 }

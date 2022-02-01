@@ -7,50 +7,43 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim workbook = ExcelFile.Load("TemplateUse.xlsx")
+        Dim workbook = ExcelFile.Load("ComplexTemplate.xlsx")
 
-        ' Add Sheet.
-        Dim worksheet As ExcelWorksheet = workbook.Worksheets.InsertEmpty(0, "Document Properties")
+        Dim worksheet = workbook.Worksheets.InsertEmpty(0, "Properties")
         workbook.Worksheets.ActiveWorksheet = worksheet
 
-        Dim rowIndex As Integer = 0
-        ' Read Built-in Document Properties.
-        worksheet.Cells(rowIndex, 0).Value = "Built-in document properties"
-        rowIndex = rowIndex + 1
+        worksheet.Rows(0).Style = workbook.Styles(BuiltInCellStyleName.Heading1)
+        worksheet.Columns(0).SetWidth(160, LengthUnit.Pixel)
+        worksheet.Columns(1).SetWidth(160, LengthUnit.Pixel)
+        worksheet.Columns(2).SetWidth(160, LengthUnit.Pixel)
+        worksheet.Columns(3).SetWidth(160, LengthUnit.Pixel)
 
-        worksheet.Cells(rowIndex, 0).Value = "Property"
-        worksheet.Cells(rowIndex, 1).Value = "Value"
-        rowIndex = rowIndex + 1
+        worksheet.Cells("A1").Value = "Built-in Property"
+        worksheet.Cells("B1").Value = "Built-in Value"
+        worksheet.Cells("C1").Value = "Custom Property"
+        worksheet.Cells("D1").Value = "Custom Value"
 
-        For Each keyValue In workbook.DocumentProperties.BuiltIn
+        Dim rowIndex As Integer = 1
 
-            worksheet.Cells(rowIndex, 0).Value = keyValue.Key.ToString()
-            worksheet.Cells(rowIndex, 1).Value = keyValue.Value
+        ' Read built-in document properties.
+        For Each builtinProperty In workbook.DocumentProperties.BuiltIn
+            worksheet.Cells(rowIndex, 0).Value = builtinProperty.Key.ToString()
+            worksheet.Cells(rowIndex, 1).Value = builtinProperty.Value
             rowIndex = rowIndex + 1
         Next
 
-        ' Read Custom Document Properties.
-        rowIndex = rowIndex + 1
-        worksheet.Cells(rowIndex, 0).Value = "Custom Document Properties"
+        rowIndex = 1
 
-        rowIndex = rowIndex + 1
-        worksheet.Cells(rowIndex, 0).Value = "Property"
-        worksheet.Cells(rowIndex, 1).Value = "Value"
-        rowIndex = rowIndex + 1
-
-        For Each keyValue In workbook.DocumentProperties.Custom
-
-            worksheet.Cells(rowIndex, 0).Value = keyValue.Key
-            worksheet.Cells(rowIndex, 1).Value = keyValue.Value.ToString()
+        ' Read custom document properties.
+        For Each customProperty In workbook.DocumentProperties.Custom
+            worksheet.Cells(rowIndex, 2).Value = customProperty.Key
+            worksheet.Cells(rowIndex, 3).Value = customProperty.Value
             rowIndex = rowIndex + 1
         Next
 
-        ' Write/Modify Document Properties.
-        workbook.DocumentProperties.BuiltIn(BuiltInDocumentProperties.Author) = "John Doe"
-        workbook.DocumentProperties.BuiltIn(BuiltInDocumentProperties.Title) = "Generated title"
-
-        worksheet.Columns(0).SetWidth(192, LengthUnit.Pixel)
-        worksheet.Columns(1).SetWidth(217, LengthUnit.Pixel)
+        ' Write or modify document properties.
+        workbook.DocumentProperties.BuiltIn(BuiltInDocumentProperties.Author) = "Jane Doe"
+        workbook.DocumentProperties.Custom("Client") = "New Client"
 
         workbook.Save("Document Properties.xlsx")
     End Sub
