@@ -7,27 +7,27 @@ Imports Microsoft.Extensions.Logging
 Imports GemBox.Spreadsheet
 
 Module GemBoxFunction
-        <FunctionName("GemBoxFunction")>
-        Async Function Run(
-            <HttpTrigger(AuthorizationLevel.Anonymous, "get", Route := Nothing)> req As HttpRequest,
-            log As ILogger) as Task(Of IActionResult)
-        
-            ' If using Professional version, put your serial key below.
-            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+#Disable Warning BC42356 ' This async method lacks 'Await'.
+    <FunctionName("GemBoxFunction")>
+    Async Function Run(<HttpTrigger(AuthorizationLevel.Anonymous, "get", Route:=Nothing)> req As HttpRequest, log As ILogger) As Task(Of IActionResult)
+#Enable Warning BC42356
 
-            Dim workbook As New ExcelFile()
-            Dim worksheet = workbook.Worksheets.Add("Hello World")
+        ' If using Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-            worksheet.Cells(0, 0).Value = "Hello"
-            worksheet.Cells(0, 1).Value = "World"
+        Dim workbook As New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("Hello World")
 
-            Dim fileName = "Output.xlsx"
-            Dim options = SaveOptions.XlsxDefault
+        worksheet.Cells(0, 0).Value = "Hello"
+        worksheet.Cells(0, 1).Value = "World"
 
-            Using stream As new MemoryStream()
-                workbook.Save(stream, options)
-                return New FileContentResult(stream.ToArray(), options.ContentType) With { .FileDownloadName = fileName }
-            End Using
-             
-        End Function
+        Dim fileName = "Output.xlsx"
+        Dim options = SaveOptions.XlsxDefault
+
+        Using stream As new MemoryStream()
+            workbook.Save(stream, options)
+            return New FileContentResult(stream.ToArray(), options.ContentType) With { .FileDownloadName = fileName }
+        End Using
+
+    End Function
 End Module

@@ -52,16 +52,16 @@ Module Program
         worksheet.Rows("1").Style = workbook.Styles(BuiltInCellStyleName.Heading1)
 
         ' Set columns width.
-        worksheet.Columns("A").SetWidth(8, LengthUnit.ZeroCharacterWidth)  ' Rank
-        worksheet.Columns("B").SetWidth(30, LengthUnit.ZeroCharacterWidth) ' Building
-        worksheet.Columns("C").SetWidth(16, LengthUnit.ZeroCharacterWidth) ' City
-        worksheet.Columns("D").SetWidth(20, LengthUnit.ZeroCharacterWidth) ' Country
-        worksheet.Columns("E").SetWidth(9, LengthUnit.ZeroCharacterWidth)  ' Metric
-        worksheet.Columns("F").SetWidth(11, LengthUnit.ZeroCharacterWidth) ' Imperial
-        worksheet.Columns("G").SetWidth(9, LengthUnit.ZeroCharacterWidth)  ' Floors
-        worksheet.Columns("H").SetWidth(9, LengthUnit.ZeroCharacterWidth)  ' Built (Year)
-        worksheet.Columns("I").SetWidth(4, LengthUnit.ZeroCharacterWidth)  ' Top 10
-        worksheet.Columns("J").SetWidth(5, LengthUnit.ZeroCharacterWidth)  ' Top 20
+        worksheet.Columns("A").SetWidth(8, LengthUnit.CharacterWidth)  ' Rank
+        worksheet.Columns("B").SetWidth(30, LengthUnit.CharacterWidth) ' Building
+        worksheet.Columns("C").SetWidth(16, LengthUnit.CharacterWidth) ' City
+        worksheet.Columns("D").SetWidth(20, LengthUnit.CharacterWidth) ' Country
+        worksheet.Columns("E").SetWidth(9, LengthUnit.CharacterWidth)  ' Metric
+        worksheet.Columns("F").SetWidth(11, LengthUnit.CharacterWidth) ' Imperial
+        worksheet.Columns("G").SetWidth(9, LengthUnit.CharacterWidth)  ' Floors
+        worksheet.Columns("H").SetWidth(9, LengthUnit.CharacterWidth)  ' Built (Year)
+        worksheet.Columns("I").SetWidth(4, LengthUnit.CharacterWidth)  ' Top 10
+        worksheet.Columns("J").SetWidth(5, LengthUnit.CharacterWidth)  ' Top 20
 
         ' Write header data to Excel cells.
         For col As Integer = 0 To skyscrapers.GetLength(1) - 1

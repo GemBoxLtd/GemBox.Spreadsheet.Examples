@@ -34,7 +34,7 @@ Module Program
 
         ' Set header row and formatting.
         worksheet.Rows(0).Style.Font.Weight = ExcelFont.BoldWeight
-        worksheet.Columns(0).Width = CInt(LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart))
+        worksheet.Columns(0).SetWidth(3, LengthUnit.Centimeter)
         worksheet.Columns(1).Style.NumberFormat = """$""#,##0"
 
         ' Make entire sheet print on a single page.
@@ -79,7 +79,7 @@ Module Program
 
         ' Set header row And formatting.
         worksheet.Rows(0).Style.Font.Weight = ExcelFont.BoldWeight
-        worksheet.Columns(0).Width = CInt(LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart))
+        worksheet.Columns(0).SetWidth(3, LengthUnit.Centimeter)
 
         ' Set value cells number formatting.
         For Each cell In worksheet.Cells.GetSubrange("B2", "D5")

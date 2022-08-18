@@ -1,4 +1,3 @@
-using System;
 using GemBox.Spreadsheet;
 using GemBox.Spreadsheet.Charts;
 
@@ -34,7 +33,7 @@ class Program
 
         // Set header row and formatting.
         worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        worksheet.Columns[0].Width = (int)LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart);
+        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
         worksheet.Columns[1].Style.NumberFormat = "\"$\"#,##0";
 
         // Make entire sheet print on a single page.
@@ -80,7 +79,7 @@ class Program
 
         // Set header row and formatting.
         worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        worksheet.Columns[0].Width = (int)LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart);
+        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
 
         // Set value cells number formatting.
         foreach (var cell in worksheet.Cells.GetSubrange("B2", "D5"))

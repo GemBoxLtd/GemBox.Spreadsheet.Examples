@@ -27,7 +27,7 @@ class Program
 
         // Set header row and formatting.
         worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        worksheet.Columns[0].Width = (int)LengthUnitConverter.Convert(3, LengthUnit.Centimeter, LengthUnit.ZeroCharacterWidth256thPart);
+        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
         worksheet.Columns[1].Style.NumberFormat = "\"$\"#,##0";
 
         // Make entire sheet print on a single page.
@@ -40,7 +40,7 @@ class Program
 
         // Create Excel chart and select data for it.
         // You cannot set the size of the chart area when the chart is located on a chart sheet, it will snap to maximum size on the chart sheet.
-        var chart = chartsheet.Charts.Add(%ChartType%, 0, 0, 0, 0, LengthUnit.Centimeter);
+        var chart = chartsheet.Charts.Add(ChartType.Pie, 0, 0, 0, 0, LengthUnit.Centimeter);
         chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, 4, 1), true);
 
         workbook.Save("Chart Sheet.xlsx");
