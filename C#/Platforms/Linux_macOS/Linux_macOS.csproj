@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="GemBox.Spreadsheet" Version="*" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" Version="*" />
     <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="*" />
   </ItemGroup>
 
