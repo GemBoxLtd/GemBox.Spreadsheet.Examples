@@ -1,55 +1,49 @@
-# GemBox.Spreadsheet
+## What is GemBox.Spreadsheet?
 
-[![NuGet version](https://img.shields.io/nuget/v/GemBox.Spreadsheet?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Spreadsheet/) [![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Spreadsheet?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Spreadsheet/) [![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxSpreadsheet?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GemBoxSoftware.GemBoxSpreadsheet)
+GemBox.Spreadsheet is a .NET component that enables you to read, write, convert, and print spreadsheet files (XLSX, XLS, XLSB, CSV, HTML, and ODS) from .NET applications.
 
-<img src="https://www.gemboxsoftware.com/images/NugetGbs.png" alt="GemBox.Spreadsheet logo" align="left" />
+With GemBox.Spreadsheet you get a fast and reliable component that’s easy to use and doesn't depend on Microsoft Excel. It requires only .NET and it’s much faster than Microsoft Office Automation!
 
-GemBox.Spreadsheet is a .NET component which enables developers to read, write, convert and print spreadsheet files (XLSX, XLS, ODS, CSV, HTML, PDF or XPS) from .NET applications using one simple and efficient API.
+## GemBox.Spreadsheet Features
 
-With GemBox.Spreadsheet you get a standalone .NET component that doesn't dependent on Microsoft Excel; that's fast and reliable; that's easy to install, use and deploy.
+-   [Read](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-open-read-excel-file/401) Excel files (XLSX, XLS, XLSB, ODS) files, text files (CSV, TXT), and HTML files.
+-   [Write / create](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-create-write-excel-file/402) and [convert](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-convert-excel-to-pdf/404) to XLSX, XLS, XLSB, ODS, CSV, TXT, HTML, PDF, PDF/A, XPS, and image formats.
+-   View and edit spreadsheets in [WPF](https://www.gemboxsoftware.com/spreadsheet/examples/excel-xpsdocument-wpf/5201), [ASP.NET](https://www.gemboxsoftware.com/spreadsheet/examples/asp-net-excel-export-gridview/5101), [ASP.NET Core](https://www.gemboxsoftware.com/spreadsheet/examples/asp-net-core-create-excel-xlsx-pdf/5601), and [Windows.Forms](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-import-export-excel-datagridview/5301) applications.
+-   [Print](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-print-excel/451) spreadsheets or [charts](https://www.gemboxsoftware.com/spreadsheet/docs/GemBox.Spreadsheet.FormattedExcelDrawing.html#GemBox_Spreadsheet_FormattedExcelDrawing_Print_).
+-   Cell formula [calculation engine](https://www.gemboxsoftware.com/spreadsheet/examples/excel-formula-calculation/901).
+-   [Protect](https://www.gemboxsoftware.com/spreadsheet/examples/excel-sheet-protection/704), [encrypt](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-encryption/701), and [digitally sign](https://www.gemboxsoftware.com/spreadsheet/examples/pdf-digital-signature/703) spreadsheets.
+-   Get, create, or edit [sheets](https://www.gemboxsoftware.com/spreadsheet/examples/excel-sheet-copy-delete/111), [rows](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-row-column-autofit/108), [columns](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-row-column-autofit/108), [cells](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-excel-range/204), [formulas](https://www.gemboxsoftware.com/spreadsheet/examples/excel-cell-formulas/206), [hyperlinks](https://www.gemboxsoftware.com/spreadsheet/examples/excel-cell-hyperlinks/207), [comments](https://www.gemboxsoftware.com/spreadsheet/examples/excel-cell-comments/208), [images](https://www.gemboxsoftware.com/spreadsheet/examples/excel-images/209), [charts](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-create-excel-chart/301), [shapes](https://www.gemboxsoftware.com/spreadsheet/examples/excel-shapes/211), [text boxes](https://www.gemboxsoftware.com/spreadsheet/examples/excel-textboxes/212), [tables](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-create-excel-tables/119), and [pivot tables](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-create-excel-pivot-tables/114).
+-   Get, create, or edit [cell styles and formatting](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-style-formatting/202), [chart formatting](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-chart-formatting/306), [in-line text formatting](https://www.gemboxsoftware.com/spreadsheet/examples/excel-cell-inline-formatting/203), and [conditional formatting](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-conditional-formatting/105).
+-   Get, create, or edit [headers and footers](https://www.gemboxsoftware.com/spreadsheet/examples/excel-headers-footers/210), [grouping and outlining](https://www.gemboxsoftware.com/spreadsheet/examples/excel-grouping/101), [data validation](https://www.gemboxsoftware.com/spreadsheet/examples/excel-data-validation/106), [sheet protection](https://www.gemboxsoftware.com/spreadsheet/examples/excel-sheet-protection/704), [document properties](https://www.gemboxsoftware.com/spreadsheet/examples/excel-properties/107), and [print and view options](https://www.gemboxsoftware.com/spreadsheet/examples/excel-print-view-options/103).
+-   Get, create, or edit [row height and column width](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-row-column-autofit/108), [print titles and area](https://www.gemboxsoftware.com/spreadsheet/examples/excel-print-title-area/104), and [freeze or split panes](https://www.gemboxsoftware.com/spreadsheet/examples/excel-freeze-split-panes/102).
+-   [Import](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-export-datatable-dataset-to-excel/501) or [export](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-export-excel-to-datatable/502) spreadsheet data from/to a DataTable.
+-   [Search](https://www.gemboxsoftware.com/spreadsheet/examples/excel-search/109), [filter](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-autofilter/112), or [sort](https://www.gemboxsoftware.com/spreadsheet/examples/excel-sort/113) spreadsheet data.
+-   [Preserve](https://www.gemboxsoftware.com/spreadsheet/docs/preservation.html) unsupported elements, including [smart arts](https://www.gemboxsoftware.com/spreadsheet/examples/excel-smartarts/801), specific[ charts](https://www.gemboxsoftware.com/spreadsheet/examples/excel-chart-preservation/303), [macros](https://www.gemboxsoftware.com/spreadsheet/examples/excel-macros/802), [sparklines](https://www.gemboxsoftware.com/spreadsheet/examples/excel-sparklines-slicers/803), and [slicers](https://www.gemboxsoftware.com/spreadsheet/examples/excel-sparklines-slicers/803).
 
-This repository contains the source code of GemBox.Spreadsheet example projects for demos and live examples that are available on [Excel Library in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-library/601) ▶
+## Get Started
 
-## Top Features
+You are not sure how to start working with Excel spreadsheets in .NET using GemBox.Spreadsheet? Check the code below that shows how to create an XLSX file from scratch and write 'Hello World!' in first cell
 
-* [Create and write Excel files in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-create-write-to-excel-file/402)
-* [Create an Excel (XLSX) or PDF file in ASP.NET Core](https://www.gemboxsoftware.com/spreadsheet/examples/asp-net-core-create-excel-xlsx-pdf/5601)
-* [Create Excel Chart in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-create-excel-chart/301)
-* [Open and read Excel files in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-open-read-excel-file/401)
-* [Read and write CSV (or TSV) in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-read-write-csv/122)
-* [Convert Excel files to PDF in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-convert-excel-to-pdf/404)
-* [Convert Excel files to image formats in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-convert-excel-to-image/405)
-* [Convert Excel files to HTML in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-convert-excel-html/117)
-* [Print Excel files in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-print-excel/451)
-* [Export Excel files from ASP.NET GridView](https://www.gemboxsoftware.com/spreadsheet/examples/asp-net-excel-export-gridview/5101)
-* [Export a DataTable or DataSet to an Excel file in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-export-datatable-dataset-to-excel/501)
-* [Export Excel sheet into DataTable in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-export-excel-to-datatable/502)
-* [Import and Export Excel to DataGridView in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-import-export-excel-datagridview/5301)
-* [Referencing Excel cell and range in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-excel-range/204)
-* [Excel Formula Calculation in C# and VB.NET](https://www.gemboxsoftware.com/spreadsheet/examples/excel-formula-calculation/901)
+```Csharp
+// If using Professional version, put your serial key below.
+SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+        
+// Create a new empty workbook.
+var workbook = new ExcelFile();
 
-## Examples
+// Add a worksheet to it.
+var worksheet = workbook.Worksheets.Add("Sheet1");
 
-| | |
-| --- | --- |
-| Hello World | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Hello%20World), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Hello%20World) |
-| Common Uses | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Common%20Uses), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Common%20Uses) |
-| Basic Features | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Basic%20Features), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Basic%20Features) |
-| Advanced Features | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Advanced%20Features) |
-| Charts | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Charts), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Charts) |
-| Calculation Engine | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Calculation%20Engine), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Calculation%20Engine) |
-| Import and Export DataTable | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Import%20and%20Export%20DataTable), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Import%20and%20Export%20DataTable) |
-| Protection | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Protection), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Protection) |
-| Platforms | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Platforms), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Platforms) |
-| Preservation | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Preservation), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Preservation) |
-| Performance | [C#](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/C%23/Performance), [VB.NET](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/tree/master/VB.NET/Performance) |
-| COM | [PYTHON](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.py), [PHP](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.php), [VBSCRIPT](https://github.com/GemBoxLtd/GemBox.Spreadsheet.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/Program.asp) |
+// Write to the first cell.
+worksheet.Cells["A1"].Value = "Hello World!";
 
-## System Requirement
+// Save the workbook as Excel's XLSX file.
+workbook.Save("Writing.xlsx");
 
-* .NET Framework 3.5 - 4.8
-* .NET Core 3.1 (.NET 5 & 6 for Windows)
-* .NET Standard 2.0 (.NET 5 & 6 for Linux, macOS, Android, iOS, …)
+```
+
+For more GemBox.Spreadsheet code examples and demos, please visit our examples page.
+
 
 ## Installation
 
@@ -57,11 +51,11 @@ You can download GemBox.Spreadsheet from [BugFixes 🛠️](https://www.gemboxso
 
 ## Support
 
-* [Contact Us](https://support.gemboxsoftware.com/new-ticket?ticket%5Bdepartment%5D=1&ticket%5Bproduct%5D=1)
-* [Forum](https://forum.gemboxsoftware.com/c/gembox-spreadsheet/5)
-* [Blog](https://www.gemboxsoftware.com/gembox-spreadsheet)
-* [API Reference](https://www.gemboxsoftware.com/spreadsheet/docs/introduction.html)
+-   [Product Page](https://www.gemboxsoftware.com/spreadsheet)
+-   [Documentation](https://www.gemboxsoftware.com/spreadsheet/docs/introduction.html)  [API Reference](https://www.gemboxsoftware.com/spreadsheet/docs/GemBox.Spreadsheet.html) 
+-   [Examples](https://www.gemboxsoftware.com/spreadsheet/examples/c-sharp-vb-net-excel-library/601) 
+-   [Blog](https://www.gemboxsoftware.com/company/blog)
+-   [Forum](https://forum.gemboxsoftware.com/c/gembox-spreadsheet/5)
 
-## License
 
-You can download GemBox.Spreadsheet's license agreement from [EULA.rtf 📝](https://www.gemboxsoftware.com/EULA.rtf).
+
