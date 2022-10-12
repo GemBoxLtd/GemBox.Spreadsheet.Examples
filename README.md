@@ -1,3 +1,5 @@
+[![NuGet version](https://img.shields.io/nuget/v/GemBox.Spreadsheet?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Spreadsheet/) [![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Spreadsheet?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Spreadsheet/) [![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxSpreadsheet?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GemBoxSoftware.GemBoxSpreadsheet)
+
 ## What is GemBox.Spreadsheet?
 
 GemBox.Spreadsheet is a .NET component that enables you to read, write, convert, and print spreadsheet files (XLSX, XLS, XLSB, CSV, HTML, and ODS) from .NET applications.
