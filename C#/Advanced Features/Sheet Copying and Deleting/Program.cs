@@ -8,6 +8,12 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
+        Example1();
+        Example2();
+    }
+
+    static void Example1()
+    {
         var workbook = ExcelFile.Load("Template.xlsx");
 
         // Get template sheet.
@@ -51,5 +57,30 @@ class Program
         }
 
         workbook.Save("Sheet Copying_Deleting.xlsx");
+    }
+
+    static void Example2()
+    {
+        var workbook = ExcelFile.Load("CellRanges.xlsx");
+        var worksheet = workbook.Worksheets[0];
+
+        // Copy cells including all the data, like pictures, data validations, and conditional formattings.
+        var range = worksheet.Cells.GetSubrange("B3:D12");
+        range.CopyTo("F3");
+        range.CopyTo("J3");
+
+        // Copy cells with specified copy options.
+        range = worksheet.Cells.GetSubrange("B7:D8");
+        range.CopyTo("J15", new CopyOptions()
+        {
+            CopyTypes = CopyTypes.Values | CopyTypes.Formulas,
+            Transpose = true
+        });
+
+        // Delete cells and shift remaining cells to the left.
+        range = worksheet.Cells.GetSubrange("B14:D23");
+        range.Remove(RemoveShiftDirection.Left);
+
+        workbook.Save("CellRanges Copied and Deleted.xlsx");
     }
 }

@@ -8,6 +8,12 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
+        Example1()
+        Example2()
+
+    End Sub
+
+    Sub Example1
         Dim workbook = ExcelFile.Load("Template.xlsx")
 
         ' Get template sheet.
@@ -52,6 +58,30 @@ Module Program
         Next
 
         workbook.Save("Sheet Copying_Deleting.xlsx")
-
     End Sub
+
+    Sub Example2
+        Dim workbook = ExcelFile.Load("CellRanges.xlsx")
+        Dim worksheet = workbook.Worksheets(0)
+
+        ' Copy cells including all the data, like pictures, data validations, and conditional formattings.
+        Dim range = worksheet.Cells.GetSubrange("B3:D12")
+        range.CopyTo("F3")
+        range.CopyTo("J3")
+
+        ' Copy cells with specified copy options.
+        range = worksheet.Cells.GetSubrange("B7:D8")
+        range.CopyTo("J15", New CopyOptions() With
+        {
+            .CopyTypes = CopyTypes.Values Or CopyTypes.Formulas,
+            .Transpose = True
+        })
+
+        ' Delete cells and shift remains cells to the left.
+        range = worksheet.Cells.GetSubrange("B14:D23")
+        range.Remove(RemoveShiftDirection.Left)
+
+        workbook.Save("CellRanges Copied and Deleted.xlsx")
+    End Sub
+
 End Module
