@@ -8,6 +8,12 @@ Module Program
         ' If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
+        Example1()
+        Example2()
+
+    End Sub
+
+    Sub Example1()
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Tables")
 
@@ -57,4 +63,37 @@ Module Program
 
         workbook.Save("Tables.xlsx")
     End Sub
+
+    Sub Example2()
+        Dim workbook = ExcelFile.Load("Tables.xlsx")
+        Dim worksheet = workbook.Worksheets("Tables")
+        Dim table = worksheet.Tables("Table1")
+
+        ' Remove existing table row.
+        table.Rows.RemoveAt(0)
+
+        ' Update existing table row.
+        Dim tableRow = table.Rows(0)
+        tableRow.DataRange(0).Value = "Jane Updated"
+        tableRow.DataRange(1).Value = 30
+        tableRow.DataRange(2).Value = 40.0
+
+        ' Sample data for writing into a table.
+        Dim data = {
+            New Object() {"Fred Nurk", 22, 35.0},
+            New Object() {"Hans Meier", 16, 20.0},
+            New Object() {"Ivan Horvat", 24, 34.0}
+        }
+
+        For Each items As Object() In data
+            ' Add new table row by adding cell values directly.
+            tableRow = table.Rows.Add(items)
+            tableRow.DataRange(3).Formula = "=Table1[Hours] * Table1[Price]"
+        Next
+
+        table.Columns("Total").Range.Calculate()
+
+        workbook.Save("Tables Updated.xlsx")
+    End Sub
+
 End Module

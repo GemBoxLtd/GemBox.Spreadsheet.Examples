@@ -8,6 +8,13 @@ class Program
         // If using Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
+        Example1();
+        Example2();
+    }
+
+    static void Example1()
+    {
+
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Tables");
 
@@ -53,5 +60,40 @@ class Program
         table.BuiltInStyle = BuiltInTableStyleName.TableStyleMedium2;
 
         workbook.Save("Tables.xlsx");
+    }
+
+    static void Example2()
+    {
+        var workbook = ExcelFile.Load("Tables.xlsx");
+        var worksheet = workbook.Worksheets["Tables"];
+        var table = worksheet.Tables["Table1"];
+
+        // Remove existing table row.
+        table.Rows.RemoveAt(0);
+
+        // Update existing table row.
+        var tableRow = table.Rows[0];
+        tableRow.DataRange[0].Value = "Jane Updated";
+        tableRow.DataRange[1].Value = 30;
+        tableRow.DataRange[2].Value = 40.0;
+
+        // Sample data for writing into a table.
+        var data = new[]
+        {
+            new object[]{ "Fred Nurk", 22, 35.0 },
+            new object[]{ "Hans Meier", 16, 20.0 },
+            new object[]{ "Ivan Horvat", 24, 34.0 }
+        };
+
+        foreach (object[] items in data)
+        {
+            // Add new table row by adding cell values directly.
+            tableRow = table.Rows.Add(items);
+            tableRow.DataRange[3].Formula = "=Table1[Hours] * Table1[Price]";
+        }
+
+        table.Columns["Total"].Range.Calculate();
+
+        workbook.Save("Tables Updated.xlsx");
     }
 }
