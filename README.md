@@ -47,7 +47,7 @@ For more GemBox.Spreadsheet code examples and demos, please visit our [examples 
 
 ## Installation
 
-You can download GemBox.Spreadsheet from [BugFixes 🛠️](https://www.gemboxsoftware.com/spreadsheet/downloads/bugfixes.html) or from [NuGet 📦](https://www.nuget.org/packages/GemBox.Spreadsheet/).
+You can download GemBox.Spreadsheet from [NuGet 📦](https://www.nuget.org/packages/GemBox.Spreadsheet/) or from [BugFixes 🛠️](https://www.gemboxsoftware.com/spreadsheet/downloads/bugfixes.html).
 
 ## Resources
 
