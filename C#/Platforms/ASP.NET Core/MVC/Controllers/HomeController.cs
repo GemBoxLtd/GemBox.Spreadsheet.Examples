@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -12,7 +12,7 @@ namespace SpreadsheetCoreMvc.Controllers
     {
         static HomeController()
         {
-            // If using Professional version, put your serial key below.
+            // If using the Professional version, put your serial key below.
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
         }
 

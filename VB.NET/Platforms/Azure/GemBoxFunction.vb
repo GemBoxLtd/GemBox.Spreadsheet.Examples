@@ -12,7 +12,7 @@ Module GemBoxFunction
     Async Function Run(<HttpTrigger(AuthorizationLevel.Anonymous, "get", Route:=Nothing)> req As HttpRequest, log As ILogger) As Task(Of IActionResult)
 #Enable Warning BC42356
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook As New ExcelFile()

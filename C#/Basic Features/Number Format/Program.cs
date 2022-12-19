@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         Example1();
@@ -34,7 +34,7 @@ class Program
             (1.2345, "0.000"),
             (-2.345, @"0.00_);[Red]\(0.00\)"),
             (2.34, @"\$#,##0.00"),
-            (2345.67, @"#,##0.00\ [$€-1]"),
+            (2345.67, @"#,##0.00\ [$ï¿½-1]"),
             (new DateTime(2012, 11, 9, 0, 0, 0), @"[$-F800]dddd\,\ mmmm\ dd\,\ yyyy"),
             (new DateTime(2012, 12, 5, 0, 0, 0), @"[$-409]mmmm\ d\,\ yyyy;@"),
             (new DateTime(2012, 8, 10, 0, 0, 0), @"yyyy\-mm\-dd\ \(dddd\)"),
@@ -80,7 +80,7 @@ class Program
 
         // Show the value in Euros and display negative values in parentheses.
         worksheet.Cells[1, 0].Style.NumberFormat =
-            NumberFormatBuilder.Currency("€", 2, useParenthesesToDisplayNegativeValue: true);
+            NumberFormatBuilder.Currency("ï¿½", 2, useParenthesesToDisplayNegativeValue: true);
         worksheet.Cells[1, 0].Value = -50;
 
         // Show the value in accounting format with three decimal places.

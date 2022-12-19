@@ -1,10 +1,10 @@
-﻿Imports System.Threading
+Imports System.Threading
 Imports GemBox.Spreadsheet
 
 Class MainWindow
 
     Public Sub New()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
         ' Use Trial Mode
         AddHandler SpreadsheetInfo.FreeLimitReached,

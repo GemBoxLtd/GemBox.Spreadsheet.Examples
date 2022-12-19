@@ -13,7 +13,7 @@ Module Program
 
     Sub PAdES_B_B()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
@@ -37,7 +37,7 @@ Module Program
 
     Sub PAdES_B_LTA()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
@@ -45,7 +45,7 @@ Module Program
         ' Create visual representation of digital signature at the beginning of the first worksheet.
         Dim signature = workbook.Worksheets(0).Pictures.Add("GemBoxSignature.png", "B2")
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Get a digital ID from PKCS#12/PFX file.

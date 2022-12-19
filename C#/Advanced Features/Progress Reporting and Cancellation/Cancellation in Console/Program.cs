@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
         // Use Trial Mode
         SpreadsheetInfo.FreeLimitReached += (eventSender, args) => args.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
