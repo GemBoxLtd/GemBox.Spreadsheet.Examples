@@ -3,16 +3,14 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net7.0;net48</TargetFrameworks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GemBox.Spreadsheet" Version="*" />
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="RandomSheets.xlsx">
+    <None Update="SampleVba.xlsm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello World", "Hello World", "{28112FF3-A36A-4892-B977-06456410993D}"
 EndProject
@@ -182,6 +182,8 @@ EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DefinedNames", "Basic Features\Defined Names\DefinedNames.vbproj", "{156C8E32-1A84-40C8-AAB6-5628F2AEBA58}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormControls", "Advanced Features\Form Controls\FormControls.vbproj", "{DAB1C89C-DB0C-4EC9-A01E-F103E23BBE0E}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VbaMacros", "Advanced Features\VBA Macros\VbaMacros.vbproj", "{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -807,6 +809,14 @@ Global
 		{DAB1C89C-DB0C-4EC9-A01E-F103E23BBE0E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DAB1C89C-DB0C-4EC9-A01E-F103E23BBE0E}.Release|x86.ActiveCfg = Release|Any CPU
 		{DAB1C89C-DB0C-4EC9-A01E-F103E23BBE0E}.Release|x86.Build.0 = Release|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Debug|x86.Build.0 = Debug|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Release|x86.ActiveCfg = Release|Any CPU
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -891,6 +901,7 @@ Global
 		{BD41BAAA-4DBC-44D5-9111-E6ECF6925432} = {DFF1F3F4-50F9-44D0-AD14-02D9250695C2}
 		{156C8E32-1A84-40C8-AAB6-5628F2AEBA58} = {8432637F-68BD-47F9-8713-B4D1644898C5}
 		{DAB1C89C-DB0C-4EC9-A01E-F103E23BBE0E} = {5A993262-1815-4FDA-B9FB-83199254C894}
+		{60ACCFAC-EB0D-4F2F-BF6B-83BC14FA0A22} = {5A993262-1815-4FDA-B9FB-83199254C894}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB9BEFC-A1E4-47B6-9F56-8AFBD9F3F8D8}

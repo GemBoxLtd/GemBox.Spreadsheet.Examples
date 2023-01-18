@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello World", "Hello World", "{106E622F-2CC6-4AAD-B4CB-19C5ED12385F}"
 EndProject
@@ -188,6 +188,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefinedNames", "Basic Features\Defined Names\DefinedNames.csproj", "{E208EC73-F900-4120-BEC4-216C8CC71E17}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormControls", "Advanced Features\Form Controls\FormControls.csproj", "{FF88BDCD-A4E0-4A98-9B7A-737766161949}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VbaMacros", "Advanced Features\VBA Macros\VbaMacros.csproj", "{231B0FE3-65B7-4024-97ED-3706F5C0B741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -837,6 +839,14 @@ Global
 		{FF88BDCD-A4E0-4A98-9B7A-737766161949}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF88BDCD-A4E0-4A98-9B7A-737766161949}.Release|x86.ActiveCfg = Release|Any CPU
 		{FF88BDCD-A4E0-4A98-9B7A-737766161949}.Release|x86.Build.0 = Release|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Debug|x86.Build.0 = Debug|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Release|x86.ActiveCfg = Release|Any CPU
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -924,6 +934,7 @@ Global
 		{9E389ADD-041C-41B7-B3EE-00C5660082CD} = {5A5ACAE6-2EBB-4830-BD67-0F618A6443F9}
 		{E208EC73-F900-4120-BEC4-216C8CC71E17} = {1B96E082-CAEF-49BB-8526-21C0C23FBD1E}
 		{FF88BDCD-A4E0-4A98-9B7A-737766161949} = {59002381-EED6-400F-B841-759C99DE47F5}
+		{231B0FE3-65B7-4024-97ED-3706F5C0B741} = {59002381-EED6-400F-B841-759C99DE47F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {186A9BA6-6C07-4B96-A8A0-5AA2687D13C0}
