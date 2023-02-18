@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpreadsheetMaui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="50"
+            VerticalOptions="Center">
+
+            <Label
+               Text="GemBox.Spreadsheet Test"
+               HorizontalOptions="Center"
+               FontSize="Large"
+               Margin="0,0,0,30" />
+
+            <TableView x:Name="table" Intent="Data" >
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell Label="A1" Text="Joe Doe" />
+                        <EntryCell Label="A2" Text="Fred Nurk" />
+                        <EntryCell Label="A3" Text="Hans Meier" />
+                        <EntryCell Label="A4" Text="Ivan Horvat" />
+                        <EntryCell Label="A5" Text="Jean Dupont" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <ActivityIndicator x:Name="activity" />
+
+            <Button
+                x:Name="button"
+                Text="Create workbook"
+                Clicked="Button_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
