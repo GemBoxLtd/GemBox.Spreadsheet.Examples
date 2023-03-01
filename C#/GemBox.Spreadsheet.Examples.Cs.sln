@@ -191,7 +191,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormControls", "Advanced Fe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VbaMacros", "Advanced Features\VBA Macros\VbaMacros.csproj", "{231B0FE3-65B7-4024-97ED-3706F5C0B741}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpreadsheetMaui", "Platforms\Maui\SpreadsheetMaui.csproj", "{40218D0E-431E-44E3-906C-155F8F075B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpreadsheetMaui", "Platforms\MAUI\SpreadsheetMaui.csproj", "{40218D0E-431E-44E3-906C-155F8F075B0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
