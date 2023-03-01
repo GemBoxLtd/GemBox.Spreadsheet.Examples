@@ -31,7 +31,7 @@ namespace SpreadsheetMaui
 
             var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Example.pdf");
 
-            workbook.Save(filePath);
+            await Task.Run(() => workbook.Save(filePath));
 
             return filePath;
         }
@@ -41,8 +41,15 @@ namespace SpreadsheetMaui
             button.IsEnabled = false;
             activity.IsRunning = true;
 
-            var filePath = await CreateWorkbookAsync();
-            await Launcher.OpenAsync(new OpenFileRequest(Path.GetFileName(filePath), new ReadOnlyFile(filePath)));
+            try
+            {
+                var filePath = await CreateWorkbookAsync();
+                await Launcher.OpenAsync(new OpenFileRequest(Path.GetFileName(filePath), new ReadOnlyFile(filePath)));
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "Close");
+            }
 
             activity.IsRunning = false;
             button.IsEnabled = true;
