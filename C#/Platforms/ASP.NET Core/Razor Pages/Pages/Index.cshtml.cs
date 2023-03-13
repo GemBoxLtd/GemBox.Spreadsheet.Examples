@@ -39,7 +39,7 @@ namespace SpreadsheetCorePages.Pages
             // Create header row.
             worksheet.Cells["A1"].Value = nameof(ReportItemModel.Id);
             worksheet.Cells["B1"].Value = nameof(ReportItemModel.Name);
-            worksheet.Cells["C1"].Value = nameof(ReportItemModel.Salery);
+            worksheet.Cells["C1"].Value = nameof(ReportItemModel.Salary);
 
             // Create data rows.
             for (int r = 1; r <= this.Report.Items.Count; r++)
@@ -47,7 +47,7 @@ namespace SpreadsheetCorePages.Pages
                 ReportItemModel item = this.Report.Items[r - 1];
                 worksheet.Cells[r, 0].Value = item.Id;
                 worksheet.Cells[r, 1].Value = item.Name;
-                worksheet.Cells[r, 2].Value = item.Salery;
+                worksheet.Cells[r, 2].Value = item.Salary;
             }
 
             // Save spreadsheet in specified file format.
@@ -66,13 +66,13 @@ namespace SpreadsheetCorePages.Models
     {
         public IList<ReportItemModel> Items { get; set; } = new List<ReportItemModel>()
         {
-            new ReportItemModel() { Id = 100, Name = "John Doe", Salery = 3600 },
-            new ReportItemModel() { Id = 101, Name = "Jane Doe", Salery = 7200 },
-            new ReportItemModel() { Id = 102, Name = "Fred Nurk", Salery = 2580 },
-            new ReportItemModel() { Id = 103, Name = "Hans Meier", Salery = 3200 },
-            new ReportItemModel() { Id = 104, Name = "Ivan Horvat", Salery = 4100 },
-            new ReportItemModel() { Id = 105, Name = "Jean Dupont", Salery = 6850 },
-            new ReportItemModel() { Id = 106, Name = "Mario Rossi", Salery = 4400 }
+            new ReportItemModel() { Id = 100, Name = "John Doe", Salary = 3600 },
+            new ReportItemModel() { Id = 101, Name = "Jane Doe", Salary = 7200 },
+            new ReportItemModel() { Id = 102, Name = "Fred Nurk", Salary = 2580 },
+            new ReportItemModel() { Id = 103, Name = "Hans Meier", Salary = 3200 },
+            new ReportItemModel() { Id = 104, Name = "Ivan Horvat", Salary = 4100 },
+            new ReportItemModel() { Id = 105, Name = "Jean Dupont", Salary = 6850 },
+            new ReportItemModel() { Id = 106, Name = "Mario Rossi", Salary = 4400 }
         };
         public string Format { get; set; } = "PDF";
         public SaveOptions Options => this.FormatMappingDictionary[this.Format];
@@ -97,6 +97,6 @@ namespace SpreadsheetCorePages.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Salery { get; set; }
+        public int Salary { get; set; }
     }
 }

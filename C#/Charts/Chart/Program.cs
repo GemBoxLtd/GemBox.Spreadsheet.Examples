@@ -117,8 +117,8 @@ class Program
 
         // Update existing series.
         // When setting the values directly the ValuesReference will end up as null.
-        var salerySeries = comboChart.Series[0];
-        salerySeries.SetValues(3000, 3500, 4000, 4500);
+        var salarySeries = comboChart.Series[0];
+        salarySeries.SetValues(3000, 3500, 4000, 4500);
 
         // Add new data.
         worksheet.Cells["Q1"].Value = "Average";

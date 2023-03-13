@@ -1,0 +1,89 @@
+﻿@page "/"
+@inject IJSRuntime JS
+@using BlazorWebAssemblyApp.Data
+@using System.IO
+@using GemBox.Spreadsheet
+
+<h1>Report generator [Blazor WebAssembly App]</h1>
+
+<EditForm Model="model" OnSubmit="CreateSpreadsheet">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary [$]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int index = 0;}
+            @foreach (var item in model.Items)
+            {
+                <tr>
+                    <td><InputNumber @bind-Value="item.Id" class="form-control" readonly /></td>
+                    <td><InputText @bind-Value="item.Name" class="form-control" /></td>
+                    <td><InputNumber @bind-Value="item.Salary" class="form-control" /></td>
+                </tr>
+                ++index;
+            }
+        </tbody>
+    </table>
+    <div class="col-1 my-2" style="min-width:75px">
+        <InputSelect @bind-Value="model.Format" class="form-control">
+            @foreach (string format in model.FormatMappingDictionary.Select(item => item.Key))
+            {
+                <option value="@format">@format</option>
+            }
+        </InputSelect>
+    </div>
+    <button class="btn btn-primary" type="submit">Create</button>
+</EditForm>
+
+@code {
+    private ReportModel model = new();
+
+    private async Task CreateSpreadsheet()
+    {
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
+        // Add embedded resource fonts, required for saving to PDF.
+        FontSettings.FontsBaseResourceLocation = "/Fonts/";
+
+        // Create new workbook.
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Report");
+
+        // Format sheet.
+        worksheet.PrintOptions.PrintGridlines = true;
+
+        // Format rows and columns.
+        worksheet.Rows[0].Style.HorizontalAlignment = HorizontalAlignmentStyle.Center;
+        worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
+        worksheet.Columns[0].SetWidth(40, LengthUnit.Pixel);
+        worksheet.Columns[1].SetWidth(100, LengthUnit.Pixel);
+        worksheet.Columns[2].SetWidth(100, LengthUnit.Pixel);
+        worksheet.Columns[2].Style.NumberFormat = @"\$\ #,##0";
+
+        // Create header row.
+        worksheet.Cells["A1"].Value = nameof(ReportItemModel.Id);
+        worksheet.Cells["B1"].Value = nameof(ReportItemModel.Name);
+        worksheet.Cells["C1"].Value = nameof(ReportItemModel.Salary);
+
+        // Create data rows.
+        for (int r = 1; r <= this.model.Items.Count; r++)
+        {
+            ReportItemModel item = this.model.Items[r - 1];
+            worksheet.Cells[r, 0].Value = item.Id;
+            worksheet.Cells[r, 1].Value = item.Name;
+            worksheet.Cells[r, 2].Value = item.Salary;
+        }
+
+        // Save spreadsheet in specified file format.
+        var stream = new MemoryStream();
+        workbook.Save(stream, model.Options);
+
+        // Download file.
+        using var streamRef = new DotNetStreamReference(stream);
+        await JS.InvokeVoidAsync("downloadFileFromStream", $"BlazorWebAssemblyOutput.{this.model.Format.ToLower()}", streamRef);
+    }
+}
