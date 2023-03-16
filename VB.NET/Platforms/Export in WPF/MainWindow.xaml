@@ -1,0 +1,33 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Export in WPF Example">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Grid.Resources >
+                <Style TargetType="Button" >
+                    <Setter Property="Margin" Value="5,0,5,0" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="BtnOpenFile" Background="DarkGray" Click="BtnOpenFile_Click">Select a Spreadsheet File</Button>
+            <Button Grid.Column="1" Name="BtnShowAsImage" Click="BtnShowAsImage_Click">Show as an Image</Button>
+            <Button Grid.Column="2" Name="BtnShowAsDocument" Click="BtnShowAsDocument_Click">Show as a Document</Button>
+        </Grid>
+        <ScrollViewer x:Name="ImageScrollViewer" Grid.Row="1">
+            <Border Margin="10" BorderBrush="Black" BorderThickness="1">
+                <Image x:Name="ImageControl"/>
+            </Border>
+        </ScrollViewer>
+        <DocumentViewer Margin="10" Grid.Row="2" x:Name="DocumentViewer"/>
+    </Grid>
+</Window>
