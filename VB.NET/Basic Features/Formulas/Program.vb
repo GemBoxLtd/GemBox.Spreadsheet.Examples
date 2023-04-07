@@ -7,6 +7,12 @@ Module Program
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
+        Example1()
+        Example2()
+
+    End Sub
+
+    Sub Example1()
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Formulas")
 
@@ -83,6 +89,33 @@ Module Program
         Next
 
         workbook.Save("Formulas.xlsx")
-
     End Sub
+
+    Sub Example2()
+        Dim workbook As New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("Formulas")
+
+        worksheet.Cells("A1").Value = 4
+        worksheet.Cells("A2").Value = 9
+        worksheet.Cells("A3").Value = 16
+        worksheet.Cells("A4").Value = 25
+        worksheet.Cells("A5").Value = 36
+        
+        ' Set dynamic array formula
+        worksheet.Cells("B1").SetDynamicArrayFormula("=SQRT(A1:A5)")
+        
+        ' Set legacy array formula to C1:C5 range
+        worksheet.Cells.GetSubrange("C1:C5").SetArrayFormula("=SQRT(A1:A5)")
+            
+        ' Set dynamic array formula with a single result
+        worksheet.Cells("D1").SetDynamicArrayFormula("=SUM(SQRT(A1:A5))")
+            
+        ' Set normal formula which will use intersection operator
+        worksheet.Cells("E1").Formula = "=SUM(SQRT(A1:A5))"
+        
+        worksheet.Calculate()
+        
+        workbook.Save("ArrayFormulas.xlsx")
+    End Sub
+
 End Module
