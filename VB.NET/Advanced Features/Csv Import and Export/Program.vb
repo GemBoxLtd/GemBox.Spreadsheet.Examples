@@ -10,6 +10,9 @@ Module Program
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
+        ' If using the Professional version, remove this FreeLimitReached event handler.
+        AddHandler SpreadsheetInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
+
         Example1()
         Example2()
         Example3()
