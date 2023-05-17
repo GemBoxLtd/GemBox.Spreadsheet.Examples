@@ -9,7 +9,7 @@ Module Program
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
-        Dim worksheet = workbook.Worksheets(0)
+        Dim worksheet = workbook.Worksheets.ActiveWorksheet
 
         Dim columnCount = worksheet.CalculateMaxUsedColumns()
         For i As Integer = 0 To columnCount - 1

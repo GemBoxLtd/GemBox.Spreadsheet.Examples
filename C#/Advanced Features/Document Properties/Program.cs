@@ -1,3 +1,4 @@
+using System;
 using GemBox.Spreadsheet;
 
 class Program
@@ -8,45 +9,27 @@ class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
         
         var workbook = ExcelFile.Load("ComplexTemplate.xlsx");
+        var properties = workbook.DocumentProperties;
 
-        var worksheet = workbook.Worksheets.InsertEmpty(0, "Properties");
-        workbook.Worksheets.ActiveWorksheet = worksheet;
+        Console.WriteLine("# Built-in document properties:");
 
-        worksheet.Rows[0].Style = workbook.Styles[BuiltInCellStyleName.Heading1];
-        worksheet.Columns[0].SetWidth(160, LengthUnit.Pixel);
-        worksheet.Columns[1].SetWidth(160, LengthUnit.Pixel);
-        worksheet.Columns[2].SetWidth(160, LengthUnit.Pixel);
-        worksheet.Columns[3].SetWidth(160, LengthUnit.Pixel);
-
-        worksheet.Cells["A1"].Value = "Built-in Property";
-        worksheet.Cells["B1"].Value = "Built-in Value";
-        worksheet.Cells["C1"].Value = "Custom Property";
-        worksheet.Cells["D1"].Value = "Custom Value";
-
-        int rowIndex = 1;
+        // Write built-in document properties.
+        properties.BuiltIn[BuiltInDocumentProperties.Title] = "My Spreadsheet Title";
+        properties.BuiltIn[BuiltInDocumentProperties.DateLastSaved] = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
         // Read built-in document properties.
-        foreach (var builtinProperty in workbook.DocumentProperties.BuiltIn)
-        {
-            worksheet.Cells[rowIndex, 0].Value = builtinProperty.Key.ToString();
-            worksheet.Cells[rowIndex, 1].Value = builtinProperty.Value;
-            ++rowIndex;
-        }
+        foreach (var builtinProperty in properties.BuiltIn)
+            Console.WriteLine($"{builtinProperty.Key,20}: {builtinProperty.Value}");
 
-        rowIndex = 1;
+        Console.WriteLine();
+        Console.WriteLine("# Custom document properties:");
+
+        // Write custom document properties.
+        properties.Custom["My Custom Property 1"] = "My Custom Value";
+        properties.Custom["My Custom Property 2"] = 123.4;
 
         // Read custom document properties.
-        foreach (var customProperty in workbook.DocumentProperties.Custom)
-        {
-            worksheet.Cells[rowIndex, 2].Value = customProperty.Key;
-            worksheet.Cells[rowIndex, 3].Value = customProperty.Value;
-            ++rowIndex;
-        }
-
-        // Write or modify document properties.
-        workbook.DocumentProperties.BuiltIn[BuiltInDocumentProperties.Author] = "Jane Doe";
-        workbook.DocumentProperties.Custom["Client"] = "New Client";
-
-        workbook.Save("Document Properties.xlsx");
+        foreach (var customProperty in properties.Custom)
+            Console.WriteLine($"{customProperty.Key,20}: {customProperty.Value,-20} [{customProperty.Value.GetType()}]");
     }
 }

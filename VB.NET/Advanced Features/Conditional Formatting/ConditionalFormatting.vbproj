@@ -9,4 +9,10 @@
     <PackageReference Include="GemBox.Spreadsheet" Version="*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="SampleData.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

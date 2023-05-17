@@ -44,17 +44,18 @@ Module Program
         Dim mergedRange = worksheet.Rows _
             .SelectMany(Function(row) row.AllocatedCells) _
             .Select(Function(cell) cell.MergedRange) _
-            .First(Function(range) range IsNot Nothing)
+            .FirstOrDefault(Function(range) range IsNot Nothing)
 
-        ' Important, you cannot unmerge the ExcelCell.MergedRange property.
-        ' In other words, the following is not allowed:
-        'mergedRange.Merged = False
+        If mergedRange <> Nothing Then
+            ' Important, you cannot unmerge the ExcelCell.MergedRange property.
+            ' In other words, the following is not allowed:  mergedRange.Merged = False
 
-        ' Instead, you need to retrieve the same CellRange from the ExcelWorksheet and then unmerge it.
-        ' This kind of implementation was chosen for performance reasons.
-        worksheet.Cells.GetSubrange(mergedRange.Name).Merged = False
+            ' Instead, you need to retrieve the same CellRange from the ExcelWorksheet and then unmerge it.
+            ' This kind of implementation was chosen for performance reasons.
+            worksheet.Cells.GetSubrange(mergedRange.Name).Merged = False
 
-        worksheet.Cells(mergedRange.StartPosition).Value = "Unmerged"
+            worksheet.Cells(mergedRange.StartPosition).Value = "Unmerged"
+        End If
 
         workbook.Save("Unmerged Cells.xlsx")
     End Sub

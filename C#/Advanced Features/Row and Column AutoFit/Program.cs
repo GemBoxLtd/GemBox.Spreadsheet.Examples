@@ -9,7 +9,7 @@ class Program
 
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        var worksheet = workbook.Worksheets[0];
+        var worksheet = workbook.Worksheets.ActiveWorksheet;
 
         int columnCount = worksheet.CalculateMaxUsedColumns();
         for (int i = 0; i < columnCount; i++)

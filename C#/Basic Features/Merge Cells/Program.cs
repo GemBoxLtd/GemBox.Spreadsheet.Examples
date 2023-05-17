@@ -45,17 +45,19 @@ class Program
         var mergedRange = worksheet.Rows
             .SelectMany(row => row.AllocatedCells)
             .Select(cell => cell.MergedRange)
-            .First(range => range != null);
+            .FirstOrDefault(range => range != null);
 
-        // Important, you cannot unmerge the ExcelCell.MergedRange property.
-        // In other words, the following is not allowed:
-        //mergedRange.Merged = false;
+        if (mergedRange != null)
+        {
+            // Important, you cannot unmerge the ExcelCell.MergedRange property.
+            // In other words, the following is not allowed:  mergedRange.Merged = false;
 
-        // Instead, you need to retrieve the same CellRange from the ExcelWorksheet and then unmerge it.
-        // This kind of implementation was chosen for performance reasons.
-        worksheet.Cells.GetSubrange(mergedRange.Name).Merged = false;
+            // Instead, you need to retrieve the same CellRange from the ExcelWorksheet and then unmerge it.
+            // This kind of implementation was chosen for performance reasons.
+            worksheet.Cells.GetSubrange(mergedRange.Name).Merged = false;
 
-        worksheet.Cells[mergedRange.StartPosition].Value = "Unmerged";
+            worksheet.Cells[mergedRange.StartPosition].Value = "Unmerged";
+        }
 
         workbook.Save("Unmerged Cells.xlsx");
     }

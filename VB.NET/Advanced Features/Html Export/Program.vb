@@ -53,10 +53,13 @@ Module Program
 
             ' Write Excel sheets to a single HTML file in reverse order.
             For Each worksheet In workbook.Worksheets.Reverse()
-                writer.WriteElementString("h1", worksheet.Name)
 
+                If worksheet.Visibility <> SheetVisibility.Visible Then Continue For
+
+                writer.WriteElementString("h1", worksheet.Name)
                 workbook.Worksheets.ActiveWorksheet = worksheet
                 workbook.Save(writer, options)
+
             Next
 
             writer.WriteEndDocument()

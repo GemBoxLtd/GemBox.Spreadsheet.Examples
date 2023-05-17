@@ -1,3 +1,4 @@
+Imports System
 Imports GemBox.Spreadsheet
 
 Module Program
@@ -8,43 +9,30 @@ Module Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook = ExcelFile.Load("ComplexTemplate.xlsx")
+        Dim properties = workbook.DocumentProperties
 
-        Dim worksheet = workbook.Worksheets.InsertEmpty(0, "Properties")
-        workbook.Worksheets.ActiveWorksheet = worksheet
+        Console.WriteLine("# Built-in document properties:")
 
-        worksheet.Rows(0).Style = workbook.Styles(BuiltInCellStyleName.Heading1)
-        worksheet.Columns(0).SetWidth(160, LengthUnit.Pixel)
-        worksheet.Columns(1).SetWidth(160, LengthUnit.Pixel)
-        worksheet.Columns(2).SetWidth(160, LengthUnit.Pixel)
-        worksheet.Columns(3).SetWidth(160, LengthUnit.Pixel)
-
-        worksheet.Cells("A1").Value = "Built-in Property"
-        worksheet.Cells("B1").Value = "Built-in Value"
-        worksheet.Cells("C1").Value = "Custom Property"
-        worksheet.Cells("D1").Value = "Custom Value"
-
-        Dim rowIndex As Integer = 1
+        ' Write built-in document properties.
+        properties.BuiltIn(BuiltInDocumentProperties.Title) = "My Spreadsheet Title"
+        properties.BuiltIn(BuiltInDocumentProperties.DateLastSaved) = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ")
 
         ' Read built-in document properties.
-        For Each builtinProperty In workbook.DocumentProperties.BuiltIn
-            worksheet.Cells(rowIndex, 0).Value = builtinProperty.Key.ToString()
-            worksheet.Cells(rowIndex, 1).Value = builtinProperty.Value
-            rowIndex = rowIndex + 1
+        For Each builtinProperty In properties.BuiltIn
+            Console.WriteLine($"{builtinProperty.Key,20}: {builtinProperty.Value}")
         Next
 
-        rowIndex = 1
+        Console.WriteLine()
+        Console.WriteLine("# Custom document properties:")
+
+        ' Write custom document properties.
+        properties.Custom("My Custom Property 1") = "My Custom Value"
+        properties.Custom("My Custom Property 2") = 123.4
 
         ' Read custom document properties.
-        For Each customProperty In workbook.DocumentProperties.Custom
-            worksheet.Cells(rowIndex, 2).Value = customProperty.Key
-            worksheet.Cells(rowIndex, 3).Value = customProperty.Value
-            rowIndex = rowIndex + 1
+        For Each customProperty In properties.Custom
+            Console.WriteLine($"{customProperty.Key,20}: {customProperty.Value,-20} [{customProperty.Value.GetType()}]")
         Next
 
-        ' Write or modify document properties.
-        workbook.DocumentProperties.BuiltIn(BuiltInDocumentProperties.Author) = "Jane Doe"
-        workbook.DocumentProperties.Custom("Client") = "New Client"
-
-        workbook.Save("Document Properties.xlsx")
     End Sub
 End Module

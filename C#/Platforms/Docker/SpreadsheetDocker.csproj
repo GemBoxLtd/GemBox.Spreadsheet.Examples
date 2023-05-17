@@ -14,10 +14,4 @@
     <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="*" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Dices.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

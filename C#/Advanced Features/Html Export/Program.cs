@@ -55,8 +55,10 @@ class Program
             // Write Excel sheets to a single HTML file in reverse order.
             foreach (var worksheet in workbook.Worksheets.Reverse())
             {
-                writer.WriteElementString("h1", worksheet.Name);
+                if (worksheet.Visibility != SheetVisibility.Visible)
+                    continue;
 
+                writer.WriteElementString("h1", worksheet.Name);
                 workbook.Worksheets.ActiveWorksheet = worksheet;
                 workbook.Save(writer, options);
             }

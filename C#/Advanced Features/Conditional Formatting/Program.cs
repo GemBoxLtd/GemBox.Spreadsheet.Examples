@@ -1,4 +1,3 @@
-using System;
 using GemBox.Spreadsheet;
 using GemBox.Spreadsheet.ConditionalFormatting;
 
@@ -9,48 +8,16 @@ class Program
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        var workbook = new ExcelFile();
-        var worksheet = workbook.Worksheets.Add("Conditional Formatting");
+        // If using the Professional version, remove this FreeLimitReached event handler.
+        SpreadsheetInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
 
-        int rowCount = 20;
-
-        // Specify sheet formatting.
-        worksheet.Rows[0].Style.Font.Weight = ExcelFont.BoldWeight;
-        worksheet.Columns[0].SetWidth(3, LengthUnit.Centimeter);
-        worksheet.Columns[1].SetWidth(3, LengthUnit.Centimeter);
-        worksheet.Columns[2].SetWidth(3, LengthUnit.Centimeter);
-        worksheet.Columns[3].SetWidth(3, LengthUnit.Centimeter);
-        worksheet.Columns[3].Style.NumberFormat = "[$$-409]#,##0.00";
-        worksheet.Columns[4].SetWidth(3, LengthUnit.Centimeter);
-        worksheet.Columns[4].Style.NumberFormat = "yyyy-mm-dd";
-
-        var cells = worksheet.Cells;
-
-        // Specify header row.
-        cells[0, 0].Value = "Departments";
-        cells[0, 1].Value = "Names";
-        cells[0, 2].Value = "Years of Service";
-        cells[0, 3].Value = "Salaries";
-        cells[0, 4].Value = "Deadlines";
-
-        // Insert random data to sheet.
-        var random = new Random();
-        var departments = new string[] { "Legal", "Marketing", "Finance", "Planning", "Purchasing" };
-        var names = new string[] { "John Doe", "Fred Nurk", "Hans Meier", "Ivan Horvat" };
-        for (int i = 0; i < rowCount; ++i)
-        {
-            cells[i + 1, 0].Value = departments[random.Next(departments.Length)];
-            cells[i + 1, 1].Value = names[random.Next(names.Length)] + ' ' + (i + 1).ToString();
-            cells[i + 1, 2].SetValue(random.Next(1, 31));
-            cells[i + 1, 3].SetValue(random.Next(10, 101) * 100);
-            cells[i + 1, 4].SetValue(DateTime.Now.AddDays(random.Next(-1, 2)));
-        }
+        var workbook = ExcelFile.Load("SampleData.xlsx");
+        var worksheet = workbook.Worksheets["Data"];
+        int rowCount = worksheet.Rows.Count;
 
         // Apply shading to alternate rows in a worksheet using 'Formula' based conditional formatting.
         worksheet.ConditionalFormatting.AddFormula(worksheet.Cells.Name, "MOD(ROW(),2)=0")
             .Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Accent1Lighter40Pct);
-        worksheet.ConditionalFormatting.AddFormula(worksheet.Cells.Name, "MOD(ROW(),2)=1")
-            .Style.FillPattern.PatternBackgroundColor = SpreadsheetColor.FromName(ColorName.Accent5Lighter80Pct);
 
         // Apply '2-Color Scale' conditional formatting to 'Years of Service' column.
         worksheet.ConditionalFormatting.Add2ColorScale("C2:C" + (rowCount + 1));

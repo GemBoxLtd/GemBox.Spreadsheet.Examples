@@ -9,17 +9,10 @@ class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
-        var worksheet = workbook.Worksheets[0];
+        var worksheet = workbook.Worksheets.ActiveWorksheet;
 
         var searchText = "Apollo";
-        var range = worksheet.Columns[0].Cells;
-
-        while (range.FindText(searchText, out int row, out int column))
-        {
-            var cell = worksheet.Cells[row, column];
+        foreach (var cell in worksheet.Cells.FindAllText(searchText))
             Console.WriteLine($"Text was found in cell '{cell.Name}' (\"{cell.StringValue}\").");
-
-            range = range.GetSubrangeAbsolute(row + 1, 0, worksheet.Rows.Count, 0);
-        }
     }
 }
