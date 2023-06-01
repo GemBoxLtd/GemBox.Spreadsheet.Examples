@@ -11,6 +11,7 @@ Module Program
 
         Example1()
         Example2()
+        Example3()
 
     End Sub
 
@@ -66,4 +67,11 @@ Module Program
         End Using
     End Sub
 
+    Sub Example3()
+        ' Load input HTML file.
+        Dim workbook = ExcelFile.Load("HtmlImport.html")
+
+        ' Save output XLSX file.
+        workbook.Save("HtmlImport.xlsx")
+    End Sub
 End Module

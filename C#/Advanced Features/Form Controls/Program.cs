@@ -1,4 +1,6 @@
+using System;
 using GemBox.Spreadsheet;
+using GemBox.Spreadsheet.Drawing;
 
 class Program
 {
@@ -7,6 +9,12 @@ class Program
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
+        Example1();
+        Example2();
+    }
+
+    static void Example1()
+    {
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Form Controls");
 
@@ -29,5 +37,37 @@ class Program
         scrollBar.CurrentValue = 20;
 
         workbook.Save("Form Controls.xlsx");
+    }
+
+    static void Example2()
+    {
+        var workbook = ExcelFile.Load("FormControls.xlsx");
+        var worksheet = workbook.Worksheets[0];
+
+        // Update CheckBox control.
+        var checkBox = worksheet.FormControls[0] as CheckBox;
+        checkBox.Checked = false;
+
+        // Read CheckBox control.
+        Console.WriteLine("CheckBox checked: " + checkBox.Checked);
+        Console.WriteLine("Linked cell value: " + checkBox.CellLink?.Value);
+        Console.WriteLine();
+
+        // Update ComboBox control.
+        var comboBox = worksheet.FormControls[1] as ComboBox;
+        comboBox.SelectedIndex = 1;
+
+        // Read ComboBox control.
+        Console.WriteLine("ComboBox range: " + comboBox.InputRange?.Name);
+        Console.WriteLine("ComboBox selected: " + comboBox.SelectedValue);
+        Console.WriteLine();
+
+        // Update ScrollBar control.
+        var scrollBar = worksheet.FormControls[2] as ScrollBar;
+        scrollBar.CurrentValue = 33;
+
+        // Read ScrollBar control.
+        Console.WriteLine("ScrollBar current: " + scrollBar.CurrentValue);
+        Console.WriteLine("Linked cell value: " + scrollBar.CellLink?.Value);
     }
 }

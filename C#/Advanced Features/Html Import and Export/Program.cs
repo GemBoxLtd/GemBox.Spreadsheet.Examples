@@ -11,6 +11,7 @@ class Program
 
         Example1();
         Example2();
+        Example3();
     }
 
     static void Example1()
@@ -65,5 +66,14 @@ class Program
 
             writer.WriteEndDocument();
         }
+    }
+
+    static void Example3()
+    {
+        // Load input HTML file.
+        var workbook = ExcelFile.Load("HtmlImport.html");
+
+        // Save output XLSX file.
+        workbook.Save("HtmlImport.xlsx");
     }
 }

@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Searching", "Advanced Featu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grouping", "Advanced Features\Grouping\Grouping.csproj", "{2CC9F339-E9D5-452E-A6DC-368AEF530903}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlExport", "Advanced Features\Html Export\HtmlExport.csproj", "{3601836A-FE2F-4235-9B04-053BD2DF326E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlImportAndExport", "Advanced Features\Html Import and Export\HtmlImportAndExport.csproj", "{3601836A-FE2F-4235-9B04-053BD2DF326E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PivotTables", "Advanced Features\Pivot Tables\PivotTables.csproj", "{6B279CD9-3434-4CA5-BEA3-4939F3245EAB}"
 EndProject

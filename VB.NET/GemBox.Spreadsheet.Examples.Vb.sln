@@ -25,7 +25,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FreezeAndSplitPanes", "Adva
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Grouping", "Advanced Features\Grouping\Grouping.vbproj", "{FBAAEAC6-2D55-4B8D-8E07-1C5B426BDBBA}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HtmlExport", "Advanced Features\Html Export\HtmlExport.vbproj", "{FF1B4EFA-348E-445E-9F73-BE801D4C72DE}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HtmlImportAndExport", "Advanced Features\Html Import and Export\HtmlImportAndExport.vbproj", "{FF1B4EFA-348E-445E-9F73-BE801D4C72DE}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PivotTables", "Advanced Features\Pivot Tables\PivotTables.vbproj", "{2AA5D70D-E850-41BB-8F43-5D11B5CC2BA0}"
 EndProject

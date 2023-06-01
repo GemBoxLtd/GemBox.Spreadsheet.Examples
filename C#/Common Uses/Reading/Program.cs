@@ -33,6 +33,10 @@ class Program
                     // Read cell's data.
                     string value = cell.Value?.ToString() ?? "EMPTY";
 
+                    // For merged cells, read only the first cell's data.
+                    if (cell.MergedRange != null && cell.MergedRange[0] != cell)
+                        value = "MERGED";
+
                     // Display cell's value and type.
                     value = value.Length > 15 ? value.Remove(15) + "…" : value;
                     Console.Write($"{value} [{cell.ValueType}]".PadRight(30));

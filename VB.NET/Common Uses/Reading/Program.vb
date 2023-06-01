@@ -33,6 +33,9 @@ Module Program
                     ' Read cell's data.
                     Dim value As String = If(cell.Value?.ToString(), "EMPTY")
 
+                    ' For merged cells, read only the first cell's data.
+                    If cell.MergedRange IsNot Nothing AndAlso cell.MergedRange(0) <> cell Then value = "MERGED"
+
                     ' Display cell's value and type.
                     value = If(value.Length > 15, value.Remove(15) & "…", value)
                     Console.Write($"{value} [{cell.ValueType}]".PadRight(30))
