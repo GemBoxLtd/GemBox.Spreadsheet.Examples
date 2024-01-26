@@ -89,12 +89,13 @@ namespace SpreadsheetCoreMvc.Models
             ["CSV"] = new CsvSaveOptions(CsvType.CommaDelimited),
             ["PDF"] = new PdfSaveOptions(),
             ["HTML"] = new HtmlSaveOptions() { EmbedImages = true },
-            ["XPS"] = new XpsSaveOptions(),
+            ["XPS"] = new XpsSaveOptions(), // XPS is supported only on Windows.
             ["BMP"] = new ImageSaveOptions(ImageSaveFormat.Bmp),
             ["PNG"] = new ImageSaveOptions(ImageSaveFormat.Png),
             ["JPG"] = new ImageSaveOptions(ImageSaveFormat.Jpeg),
             ["GIF"] = new ImageSaveOptions(ImageSaveFormat.Gif),
-            ["TIF"] = new ImageSaveOptions(ImageSaveFormat.Tiff)
+            ["TIF"] = new ImageSaveOptions(ImageSaveFormat.Tiff),
+            ["SVG"] = new ImageSaveOptions(ImageSaveFormat.Svg)
         };
     }
 

@@ -10,7 +10,9 @@ class Program
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Private Fonts");
 
-        // Current directory contains a font file.
+        // Set the directory path where the component will look for additional font files.
+        // The "." targets the current directory, so besides the installed fonts,
+        // the component will be able to use the fonts within the specified directory.
         FontSettings.FontsBaseDirectory = ".";
 
         worksheet.Parent.Styles.Normal.Font.Name = "Almonte Snow";
