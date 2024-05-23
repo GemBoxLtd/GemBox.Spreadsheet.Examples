@@ -1,25 +1,18 @@
-using System;
+using GemBox.Spreadsheet;
+using Microsoft.AspNetCore.Mvc;
+using SpreadsheetCoreMvc.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using Microsoft.AspNetCore.Mvc;
-using SpreadsheetCoreMvc.Models;
-using GemBox.Spreadsheet;
 
 namespace SpreadsheetCoreMvc.Controllers
 {
     public class HomeController : Controller
     {
-        static HomeController()
-        {
-            // If using the Professional version, put your serial key below.
-            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-        }
+        // If using the Professional version, put your serial key below.
+        static HomeController() => SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        public IActionResult Index()
-        {
-            return View(new ReportModel());
-        }
+        public IActionResult Index() => this.View(new ReportModel());
 
         public FileStreamResult Download(ReportModel model)
         {
@@ -58,10 +51,8 @@ namespace SpreadsheetCoreMvc.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() =>
+            this.View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
 

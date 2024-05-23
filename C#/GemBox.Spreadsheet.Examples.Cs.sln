@@ -117,7 +117,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataValidation", "Features\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filtering", "Features\Filtering\Filtering.csproj", "{B4C63C45-195B-4324-AC3D-3F75DD8C2D42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Searching", "Features\Find and Replace\Searching.csproj", "{A6C7C89F-9B0E-4676-AFE4-9A673D3E4170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindAndReplace", "Features\Find and Replace\FindAndReplace.csproj", "{A6C7C89F-9B0E-4676-AFE4-9A673D3E4170}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupingAndOutlining", "Features\Grouping and Outlining\GroupingAndOutlining.csproj", "{4DFE6972-D4FC-4429-9193-2971CF3F6DB1}"
 EndProject

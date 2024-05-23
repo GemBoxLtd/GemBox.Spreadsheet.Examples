@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{5A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Progress Reporting and Cancellation", "Progress Reporting and Cancellation", "{891E8CE8-C1AE-403A-913E-B5B21A027E42}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CancellationInConsole", "Advanced Features\Progress Reporting and Cancellation\Cancellation in Console\CancellationInConsole.vbproj", "{73A9BA70-F7B1-4AE7-A187-3E4F0FDAC338}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CancellationInConsole", "Features\Progress Reporting and Cancellation\Cancellation in Console\CancellationInConsole.vbproj", "{73A9BA70-F7B1-4AE7-A187-3E4F0FDAC338}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CancellationInWpf", "Advanced Features\Progress Reporting and Cancellation\Cancellation in WPF\CancellationInWpf.vbproj", "{DD8E6270-16F0-4686-B4B5-23B319258511}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CancellationInWpf", "Features\Progress Reporting and Cancellation\Cancellation in WPF\CancellationInWpf.vbproj", "{DD8E6270-16F0-4686-B4B5-23B319258511}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ProgressReportingInConsole", "Advanced Features\Progress Reporting and Cancellation\Progress Reporting in Console\ProgressReportingInConsole.vbproj", "{DA77FD36-DADD-471A-9BCC-EBCD2DD687A9}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ProgressReportingInConsole", "Features\Progress Reporting and Cancellation\Progress Reporting in Console\ProgressReportingInConsole.vbproj", "{DA77FD36-DADD-471A-9BCC-EBCD2DD687A9}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWindowsForms", "Advanced Features\Progress Reporting and Cancellation\Progress Reporting in WindowsForms\ProgressReportingInWindowsForms.vbproj", "{F739C5F2-A529-4381-AB93-93662F64404C}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWindowsForms", "Features\Progress Reporting and Cancellation\Progress Reporting in WindowsForms\ProgressReportingInWindowsForms.vbproj", "{F739C5F2-A529-4381-AB93-93662F64404C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWpf", "Advanced Features\Progress Reporting and Cancellation\Progress Reporting in WPF\ProgressReportingInWpf.vbproj", "{5FC557FB-0756-4A27-9498-B08A31CE9D26}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgressReportingInWpf", "Features\Progress Reporting and Cancellation\Progress Reporting in WPF\ProgressReportingInWpf.vbproj", "{5FC557FB-0756-4A27-9498-B08A31CE9D26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Charts", "Charts", "{B5B89434-32A3-4DBF-9183-099E81789A00}"
 EndProject
@@ -55,11 +55,11 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SpreadsheetDocker", "Platfo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Print", "Print", "{1A1B55CB-E757-4C18-A92D-8968F3240119}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintInConsole", "Common Uses\Print\Print in Console\PrintInConsole.vbproj", "{F5DF6CB9-85A7-4287-8906-E358935F1418}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintInConsole", "Introduction\Printing\Print in Console\PrintInConsole.vbproj", "{F5DF6CB9-85A7-4287-8906-E358935F1418}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintInWinForms", "Common Uses\Print\Print in WinForms\PrintInWinForms.vbproj", "{523769AE-9A52-43F5-8120-02E857821B1D}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintInWinForms", "Introduction\Printing\Print in WinForms\PrintInWinForms.vbproj", "{523769AE-9A52-43F5-8120-02E857821B1D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintInWpf", "Common Uses\Print\Print in WPF\PrintInWpf.vbproj", "{7373C27D-2732-4C39-9272-BCD3355905E2}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintInWpf", "Introduction\Printing\Print in WPF\PrintInWpf.vbproj", "{7373C27D-2732-4C39-9272-BCD3355905E2}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "XlsDecryption", "Protection\XLS Decryption\XlsDecryption.vbproj", "{BD41BAAA-4DBC-44D5-9111-E6ECF6925432}"
 EndProject
@@ -113,7 +113,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DataValidation", "Features\
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Filtering", "Features\Filtering\Filtering.vbproj", "{E99AAA65-223A-43CE-B535-67EF3C99CA55}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Searching", "Features\Find and Replace\Searching.vbproj", "{D0C5AFC5-2AE7-4E45-96FD-7A2E9E7D70CA}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FindAndReplace", "Features\Find and Replace\FindAndReplace.vbproj", "{D0C5AFC5-2AE7-4E45-96FD-7A2E9E7D70CA}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Grouping", "Features\Grouping and Outlining\Grouping.vbproj", "{11D4B77D-96D2-493F-BA5B-E2EA53768BB7}"
 EndProject
@@ -160,6 +160,8 @@ EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Templates", "Introduction\Templates\Templates.vbproj", "{AF412B5D-D3C0-4685-B1A4-6940F080D248}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Writing", "Introduction\Writing\Writing.vbproj", "{AEA7E8C7-4D90-43C2-81B9-3091EDAF0888}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Preservation", "Introduction\Preservation\Preservation.vbproj", "{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -721,6 +723,14 @@ Global
 		{AEA7E8C7-4D90-43C2-81B9-3091EDAF0888}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEA7E8C7-4D90-43C2-81B9-3091EDAF0888}.Release|x86.ActiveCfg = Release|Any CPU
 		{AEA7E8C7-4D90-43C2-81B9-3091EDAF0888}.Release|x86.Build.0 = Release|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Debug|x86.Build.0 = Debug|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Release|x86.ActiveCfg = Release|Any CPU
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -797,6 +807,7 @@ Global
 		{19A1AC49-FF37-4F90-B6A2-EC3C71F068E1} = {27034C2B-7523-4D72-8BB7-86E2EB1DE35E}
 		{AF412B5D-D3C0-4685-B1A4-6940F080D248} = {27034C2B-7523-4D72-8BB7-86E2EB1DE35E}
 		{AEA7E8C7-4D90-43C2-81B9-3091EDAF0888} = {27034C2B-7523-4D72-8BB7-86E2EB1DE35E}
+		{AE7A81F3-6A2F-44D3-A4BF-F71A932930E6} = {27034C2B-7523-4D72-8BB7-86E2EB1DE35E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB9BEFC-A1E4-47B6-9F56-8AFBD9F3F8D8}

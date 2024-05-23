@@ -1,9 +1,9 @@
-using System.Collections.Generic;
-using System.IO;
+using GemBox.Spreadsheet;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SpreadsheetCorePages.Models;
-using GemBox.Spreadsheet;
+using System.Collections.Generic;
+using System.IO;
 
 namespace SpreadsheetCorePages.Pages
 {
@@ -12,13 +12,10 @@ namespace SpreadsheetCorePages.Pages
         [BindProperty]
         public ReportModel Report { get; set; }
 
-        public IndexModel()
-        {
-            this.Report = new ReportModel();
+        // If using the Professional version, put your serial key below.
+        static IndexModel() => SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-            // If using the Professional version, put your serial key below.
-            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-        }
+        public IndexModel() => this.Report = new ReportModel();
 
         public void OnGet() { }
 
