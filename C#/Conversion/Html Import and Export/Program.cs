@@ -1,14 +1,11 @@
+using GemBox.Spreadsheet;
 using System.Linq;
 using System.Xml;
-using GemBox.Spreadsheet;
 
 class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -16,6 +13,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = ExcelFile.Load("HtmlExport.xlsx");
 
         var worksheet = workbook.Worksheets[0];
@@ -38,6 +38,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = ExcelFile.Load("HtmlExport.xlsx");
 
         // Specify exporting of Excel data as an HTML table with embedded images.
@@ -70,6 +73,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Load input HTML file.
         var workbook = ExcelFile.Load("HtmlImport.html");
 

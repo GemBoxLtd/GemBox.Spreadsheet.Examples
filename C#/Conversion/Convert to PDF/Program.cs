@@ -4,9 +4,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -14,6 +11,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // In order to convert Excel to PDF, we just need to:
         //   1. Load XLS or XLSX file into ExcelFile object.
         //   2. Save ExcelFile object to PDF file.
@@ -23,6 +23,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Load Excel file.
         ExcelFile workbook = ExcelFile.Load("ComplexTemplate.xlsx");
 
@@ -45,6 +48,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         PdfConformanceLevel conformanceLevel = PdfConformanceLevel.PdfA1a;
 
         // Load Excel file.

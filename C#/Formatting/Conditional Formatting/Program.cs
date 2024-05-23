@@ -8,9 +8,6 @@ class Program
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        // If using the Professional version, remove this FreeLimitReached event handler.
-        SpreadsheetInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
-
         var workbook = ExcelFile.Load("SampleData.xlsx");
         var worksheet = workbook.Worksheets["Data"];
         int rowCount = worksheet.Rows.Count;

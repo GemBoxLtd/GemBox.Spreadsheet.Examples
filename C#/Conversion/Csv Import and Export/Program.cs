@@ -1,18 +1,12 @@
+using GemBox.Spreadsheet;
 using System;
 using System.IO;
 using System.Linq;
-using GemBox.Spreadsheet;
 
 class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
-        // If using the Professional version, remove this FreeLimitReached event handler.
-        SpreadsheetInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
-
         Example1();
         Example2();
         Example3();
@@ -22,6 +16,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Read CSV file.
         var workbook = ExcelFile.Load("Input.csv", new CsvLoadOptions(CsvType.CommaDelimited));
 
@@ -38,6 +35,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var csvOptions = new CsvLoadOptions(CsvType.CommaDelimited)
         {
             AllowNewLineInQuotes = true,
@@ -69,6 +69,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Sheet1");
 
@@ -140,6 +143,9 @@ class Program
 
     static void Example4()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Create large CSV file.
         using (var csv = File.CreateText("large-file.csv"))
             for (int i = 0; i < 5_000_000; i++)
@@ -155,6 +161,9 @@ class Program
 
     static void Example5()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Create large ExcelFile.
         ExcelFile workbook = new ExcelFile();
         ExcelWorksheet worksheet = null;

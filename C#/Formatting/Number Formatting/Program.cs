@@ -1,13 +1,10 @@
-using System;
 using GemBox.Spreadsheet;
+using System;
 
 class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
     }

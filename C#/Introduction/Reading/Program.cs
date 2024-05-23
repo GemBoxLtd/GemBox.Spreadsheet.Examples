@@ -1,13 +1,10 @@
-using System;
 using GemBox.Spreadsheet;
+using System;
 
 class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -15,6 +12,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Load Excel workbook from file's path.
         ExcelFile workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
@@ -49,6 +49,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         ExcelFile workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
         for (int sheetIndex = 0; sheetIndex < workbook.Worksheets.Count; sheetIndex++)
@@ -79,6 +82,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         ExcelFile workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
         foreach (ExcelWorksheet worksheet in workbook.Worksheets)

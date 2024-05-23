@@ -1,6 +1,6 @@
+using GemBox.Spreadsheet;
 using System;
 using System.Diagnostics;
-using GemBox.Spreadsheet;
 
 class Program
 {
@@ -8,10 +8,8 @@ class Program
     {
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-        // Use Trial Mode
-        SpreadsheetInfo.FreeLimitReached += (eventSender, args) => args.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
 
-        // Create workbook
+        // Create workbook.
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("sheet");
         for (int i = 0; i < 1000000; i++)
@@ -20,11 +18,11 @@ class Program
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        // Create save options
+        // Create save options.
         var saveOptions = new XlsxSaveOptions();
         saveOptions.ProgressChanged += (sender, args) =>
         {
-            // Cancel operation after five seconds
+            // Cancel operation after five seconds.
             if (stopwatch.Elapsed.Seconds >= 5)
                 args.CancelOperation();
         };
@@ -34,7 +32,7 @@ class Program
             workbook.Save("Cancellation.xlsx", saveOptions);
             Console.WriteLine("Operation fully finished");
         } 
-        catch(OperationCanceledException)
+        catch (OperationCanceledException)
         {
             Console.WriteLine("Operation was cancelled");
         }

@@ -1,4 +1,4 @@
-﻿using GemBox.Spreadsheet;
+using GemBox.Spreadsheet;
 using GemBox.Spreadsheet.Charts;
 
 class Program

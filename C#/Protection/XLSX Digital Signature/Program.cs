@@ -5,15 +5,15 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
     }
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
         var saveOptions = new XlsxSaveOptions();
@@ -28,6 +28,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
         var signature1 = new XlsxDigitalSignatureSaveOptions()

@@ -5,9 +5,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -15,6 +12,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Chart");
 
@@ -49,6 +49,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = new ExcelFile();
         var worksheet = workbook.Worksheets.Add("Chart");
 
@@ -111,6 +114,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         var workbook = ExcelFile.Load("Combo.xlsx");
         var worksheet = workbook.Worksheets["Chart"];
         var comboChart = worksheet.Charts[0] as ComboChart;
