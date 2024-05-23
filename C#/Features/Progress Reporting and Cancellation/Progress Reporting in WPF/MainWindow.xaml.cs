@@ -1,7 +1,7 @@
+using GemBox.Spreadsheet;
 using System.Windows;
 using System.Threading;
 using System.Threading.Tasks;
-using GemBox.Spreadsheet;
 
 public partial class MainWindow : Window
 {
@@ -9,25 +9,23 @@ public partial class MainWindow : Window
     {
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-        // Use Trial Mode
-        SpreadsheetInfo.FreeLimitReached += (eventSender, args) => args.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial;
         InitializeComponent();
     }
 
     private async void loadButton_Click(object sender, RoutedEventArgs e)
     {
-        // Capture the current context on UI thread
+        // Capture the current context on UI thread.
         var context = SynchronizationContext.Current;
 
-        // Create load options
+        // Create load options.
         var loadOptions = new XlsxLoadOptions();
         loadOptions.ProgressChanged += (eventSender, args) =>
         {
             var percentage = args.ProgressPercentage;
-            // Invoke on UI thread
+            // Invoke on UI thread.
             context.Post(progressPercentage =>
             {
-                // Update UI
+                // Update UI.
                 this.progressBar.Value = (int)progressPercentage;
                 this.percentageLabel.Content = progressPercentage.ToString() + "%";
             }, percentage);

@@ -1,33 +1,32 @@
-Imports System.Threading
 Imports GemBox.Spreadsheet
+Imports System
+Imports System.Threading
+Imports System.Threading.Tasks
+Imports System.Windows.Forms
 
 Public Class MainForm
+
     Public Sub New()
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
-        ' Use Trial Mode
-        AddHandler SpreadsheetInfo.FreeLimitReached,
-            Sub(eventSender, args)
-                args.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
-            End Sub
         InitializeComponent()
     End Sub
 
     Private Async Sub LoadButton_Click(sender As Object, e As EventArgs) Handles LoadButton.Click
-        ' Capture the current context on UI thread
+        ' Capture the current context on UI thread.
         Dim context = SynchronizationContext.Current
 
-        ' Create load options
+        ' Create load options.
         Dim loadOptions = New XlsxLoadOptions()
         AddHandler loadOptions.ProgressChanged,
             Sub(eventSender, args)
                 Dim percentage = args.ProgressPercentage
-                ' Invoke on UI thread
+                ' Invoke on UI thread.
                 context.Post(
                     Sub(progressPercentage)
-                        ' Update UI
+                        ' Update UI.
                         Me.ProgressBar.Value = CType(progressPercentage, Integer)
-                        Me.PercentageLabel.Text = progressPercentage.ToString() + "%"
+                        Me.PercentageLabel.Text = progressPercentage.ToString() & "%"
                     End Sub, percentage)
             End Sub
 
@@ -38,4 +37,5 @@ Public Class MainForm
                 ExcelFile.Load("LargeFile.xlsx", loadOptions)
             End Sub)
     End Sub
+
 End Class

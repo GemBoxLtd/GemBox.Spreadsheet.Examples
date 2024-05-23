@@ -1,6 +1,6 @@
+Imports GemBox.Spreadsheet
 Imports System
 Imports System.Diagnostics
-Imports GemBox.Spreadsheet
 
 Module Program
 
@@ -8,13 +8,8 @@ Module Program
 
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
-        ' Use Trial Mode
-        AddHandler SpreadsheetInfo.FreeLimitReached,
-            Sub(eventSender, args)
-                args.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
-            End Sub
 
-        ' Create workbook
+        ' Create workbook.
         Dim workbook = New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("sheet")
         For i As Integer = 0 To 1000000
@@ -24,11 +19,11 @@ Module Program
         Dim stopwatch = New Stopwatch()
         stopwatch.Start()
 
-        ' Create save options
+        ' Create save options.
         Dim saveOptions = New XlsxSaveOptions()
         AddHandler saveOptions.ProgressChanged,
             Sub(eventSender, args)
-                ' Cancel operation after five seconds
+                ' Cancel operation after five seconds.
                 If stopwatch.Elapsed.Seconds >= 5 Then
                     args.CancelOperation()
                 End If
@@ -40,5 +35,7 @@ Module Program
         Catch ex As OperationCanceledException
             Console.WriteLine("Operation was cancelled")
         End Try
+
     End Sub
+
 End Module
