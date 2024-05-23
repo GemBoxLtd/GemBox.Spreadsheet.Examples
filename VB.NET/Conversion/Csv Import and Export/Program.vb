@@ -1,27 +1,22 @@
+Imports GemBox.Spreadsheet
 Imports System
 Imports System.IO
 Imports System.Linq
-Imports GemBox.Spreadsheet
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
-
-        ' If using the Professional version, remove this FreeLimitReached event handler.
-        AddHandler SpreadsheetInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
-
         Example1()
         Example2()
         Example3()
         Example4()
         Example5()
-
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Read CSV file.
         Dim workbook = ExcelFile.Load("Input.csv", New CsvLoadOptions(CsvType.CommaDelimited))
 
@@ -37,6 +32,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim csvOptions As New CsvLoadOptions(CsvType.CommaDelimited) With
         {
             .AllowNewLineInQuotes = True,
@@ -65,6 +63,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Sheet1")
 
@@ -137,6 +138,9 @@ Module Program
     End Sub
 
     Sub Example4()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Create large CSV file.
         Using csv = File.CreateText("large-file.csv")
             For i As Integer = 0 To 5_000_000 - 1
@@ -154,6 +158,9 @@ Module Program
     End Sub
 
     Sub Example5()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Create large ExcelFile.
         Dim workbook As New ExcelFile()
         Dim worksheet As ExcelWorksheet = Nothing

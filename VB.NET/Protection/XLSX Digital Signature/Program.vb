@@ -5,15 +5,15 @@ Module Program
 
     Sub Main()
 
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
-
         Example1()
         Example2()
 
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
         Dim saveOptions As New XlsxSaveOptions()
@@ -27,6 +27,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
         Dim signature1 As New XlsxDigitalSignatureSaveOptions() With

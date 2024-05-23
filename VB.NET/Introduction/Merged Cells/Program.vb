@@ -1,12 +1,9 @@
-Imports System.Linq
 Imports GemBox.Spreadsheet
+Imports System.Linq
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -14,6 +11,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Sheet1")
 
@@ -37,6 +37,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("Merged Cells.xlsx")
         Dim worksheet = workbook.Worksheets(0)
 

@@ -8,9 +8,6 @@ Module Program
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        ' If using the Professional version, remove this FreeLimitReached event handler.
-        AddHandler SpreadsheetInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
-
         Dim workbook = ExcelFile.Load("SampleData.xlsx")
         Dim worksheet = workbook.Worksheets("Data")
         Dim rowCount As Integer = worksheet.Rows.Count
@@ -56,5 +53,7 @@ Module Program
             .Style.Font.Italic = True
 
         workbook.Save("Conditional Formatting.xlsx")
+
     End Sub
+
 End Module

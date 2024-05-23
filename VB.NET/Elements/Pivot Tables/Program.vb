@@ -1,13 +1,10 @@
-Imports System
 Imports GemBox.Spreadsheet
 Imports GemBox.Spreadsheet.PivotTables
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -15,6 +12,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As New ExcelFile()
         Dim worksheet1 = workbook.Worksheets.Add("SourceSheet")
 
@@ -88,6 +88,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("PivotTableSource.xlsx")
         Dim sourceSheet = workbook.Worksheets("SourceSheet")
         Dim pivotSheet = workbook.Worksheets("PivotSheet")

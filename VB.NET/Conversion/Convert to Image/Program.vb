@@ -1,13 +1,10 @@
+Imports GemBox.Spreadsheet
 Imports System.IO
 Imports System.IO.Compression
-Imports GemBox.Spreadsheet
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -16,6 +13,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load an Excel file into the ExcelFile object.
         Dim workbook = ExcelFile.Load("CombinedTemplate.xlsx")
 
@@ -32,6 +32,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load an Excel file.
         Dim workbook = ExcelFile.Load("CombinedTemplate.xlsx")
 
@@ -47,6 +50,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load an Excel file.
         Dim workbook = ExcelFile.Load("CombinedTemplate.xlsx")
 

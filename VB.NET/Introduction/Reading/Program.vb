@@ -1,12 +1,9 @@
-Imports System
 Imports GemBox.Spreadsheet
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -15,6 +12,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load Excel workbook from file's path.
         Dim workbook As ExcelFile = ExcelFile.Load("SimpleTemplate.xlsx")
 
@@ -47,6 +47,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As ExcelFile = ExcelFile.Load("SimpleTemplate.xlsx")
 
         For sheetIndex As Integer = 0 To workbook.Worksheets.Count - 1
@@ -76,6 +79,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As ExcelFile = ExcelFile.Load("SimpleTemplate.xlsx")
 
         For Each worksheet As ExcelWorksheet In workbook.Worksheets

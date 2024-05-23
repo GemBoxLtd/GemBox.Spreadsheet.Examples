@@ -1,4 +1,4 @@
-﻿Imports GemBox.Spreadsheet
+Imports GemBox.Spreadsheet
 Imports GemBox.Spreadsheet.Charts
 
 Module Program

@@ -7,9 +7,6 @@ Module Program
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        ' If using the Professional version, remove this FreeLimitReached event handler.
-        AddHandler SpreadsheetInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.ContinueAsTrial
-
         Dim workbook = ExcelFile.Load("SampleData.xlsx")
         Dim worksheet = workbook.Worksheets("Data")
         Dim rowCount As Integer = worksheet.Rows.Count
@@ -32,5 +29,7 @@ Module Program
             .Apply()
 
         workbook.Save("Filtering.xlsx")
+
     End Sub
+
 End Module

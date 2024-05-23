@@ -1,13 +1,10 @@
+Imports GemBox.Spreadsheet
 Imports System.Linq
 Imports System.Xml
-Imports GemBox.Spreadsheet
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -16,6 +13,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("HtmlExport.xlsx")
 
         Dim worksheet = workbook.Worksheets(0)
@@ -37,6 +37,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("HtmlExport.xlsx")
 
         ' Specify exporting of Excel data as an HTML table with embedded images.
@@ -68,6 +71,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load input HTML file.
         Dim workbook = ExcelFile.Load("HtmlImport.html")
 

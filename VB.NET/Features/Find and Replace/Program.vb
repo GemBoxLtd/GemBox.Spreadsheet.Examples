@@ -1,13 +1,10 @@
+Imports GemBox.Spreadsheet
 Imports System
 Imports System.Text.RegularExpressions
-Imports GemBox.Spreadsheet
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -15,6 +12,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
         Dim worksheet = workbook.Worksheets.ActiveWorksheet
 
@@ -37,6 +37,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
         Dim worksheet = workbook.Worksheets.ActiveWorksheet
 

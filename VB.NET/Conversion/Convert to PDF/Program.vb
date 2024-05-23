@@ -4,9 +4,6 @@ Module Program
 
     Sub Main()
 
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
-
         Example1()
         Example2()
         Example3()
@@ -14,6 +11,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' In order to convert Excel to PDF, we just need to
         '   1. Load XLS Or XLSX file into ExcelFile object.
         '   2. Save ExcelFile object to PDF file.
@@ -22,6 +22,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load Excel file.
         Dim workbook As ExcelFile = ExcelFile.Load("ComplexTemplate.xlsx")
 
@@ -43,6 +46,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim conformanceLevel As PdfConformanceLevel = PdfConformanceLevel.PdfA1a
 
         ' Load Excel file.

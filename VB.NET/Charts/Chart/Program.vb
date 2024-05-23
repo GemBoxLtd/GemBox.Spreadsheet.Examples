@@ -1,13 +1,10 @@
-Imports System
 Imports GemBox.Spreadsheet
 Imports GemBox.Spreadsheet.Charts
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -16,6 +13,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Chart")
 
@@ -49,6 +49,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Chart")
 
@@ -111,6 +114,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("Combo.xlsx")
         Dim worksheet = workbook.Worksheets("Chart")
         Dim comboChart = TryCast(worksheet.Charts(0), ComboChart)
