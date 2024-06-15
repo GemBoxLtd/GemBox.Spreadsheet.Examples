@@ -23,7 +23,7 @@
             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#D54A06" Font-Bold="True" ForeColor="White"/>
         </asp:GridView>
-        <br />
+        <br>
         <asp:RadioButtonList ID="RadioButtonList1" runat="server">
             <asp:ListItem Value="xls">XLS</asp:ListItem>
             <asp:ListItem Value="xlsx" Selected="True">XLSX</asp:ListItem>
@@ -33,11 +33,11 @@
             <asp:ListItem Value="mht">MHTML</asp:ListItem>
             <asp:ListItem Value="pdf">PDF</asp:ListItem>
         </asp:RadioButtonList>
-        <br />
+        <br>
         <asp:Button ID="ExportData" runat="server" style="font-size:24px;padding:4px;margin-bottom:8px;"
             Text="Export GridView data"
             OnClick="ExportData_Click" />
-        <br />
+        <br>
         <asp:Button ID="ExportDataAndFormatting" runat="server" style="font-size:24px;padding:4px;margin-bottom:8px;"
             Text="Export GridView data and formatting"
             OnClick="ExportDataAndFormatting_Click" />
