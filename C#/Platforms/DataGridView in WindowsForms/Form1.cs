@@ -1,7 +1,7 @@
-using System;
-using System.Windows.Forms;
 using GemBox.Spreadsheet;
 using GemBox.Spreadsheet.WinFormsUtilities;
+using System;
+using System.Windows.Forms;
 
 public partial class Form1 : Form
 {
@@ -59,7 +59,8 @@ public partial class Form1 : Form
             "JPEG (*.jpg)|*.jpg|" +
             "PNG (*.png)|*.png|" +
             "TIFF (*.tif)|*.tif|" +
-            "WMP (*.wdp)|*.wdp";
+            "WMP (*.wdp)|*.wdp"; +
+            "SVG (*.svg)|*.svg";
 
         saveFileDialog.FilterIndex = 3;
 

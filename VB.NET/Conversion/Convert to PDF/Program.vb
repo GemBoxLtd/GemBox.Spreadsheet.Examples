@@ -18,7 +18,7 @@ Module Program
         '   1. Load XLS Or XLSX file into ExcelFile object.
         '   2. Save ExcelFile object to PDF file.
         Dim workbook As ExcelFile = ExcelFile.Load("ComplexTemplate.xlsx")
-        workbook.Save("Convert1.pdf", New PdfSaveOptions() With {.SelectionType = SelectionType.EntireFile})
+        workbook.Save("Convert.pdf", New PdfSaveOptions() With {.SelectionType = SelectionType.EntireFile})
     End Sub
 
     Sub Example2()
@@ -42,7 +42,7 @@ Module Program
 
         ' Save to PDF file.
         ' By default, the SelectionType.ActiveSheet is used.
-        workbook.Save("Convert2.pdf")
+        workbook.Save("ConvertRange.pdf")
     End Sub
 
     Sub Example3()
@@ -61,7 +61,7 @@ Module Program
         }
 
         ' Save to PDF file.
-        workbook.Save("Output3.pdf", options)
+        workbook.Save("ConvertWithConformance.pdf", options)
     End Sub
 
 End Module

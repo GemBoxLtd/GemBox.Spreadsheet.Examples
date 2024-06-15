@@ -15,7 +15,7 @@ Class MainWindow
     End Sub
 
     Private Async Sub loadButton_Click(sender As Object, e As RoutedEventArgs) Handles loadButton.Click
-        ' Capture the current context on UI thread.
+        ' Capture the current context on the UI thread.
         Dim context = SynchronizationContext.Current
 
         ' Create load options.

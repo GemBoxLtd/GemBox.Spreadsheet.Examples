@@ -25,7 +25,7 @@ public class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         // If using Free version and example exceeds its limitations, use Trial or Time Limited version:
-        // https://www.gemboxsoftware.com/spreadsheet/examples/free-trial-professional-modes/1001
+        // https://www.gemboxsoftware.com/spreadsheet/examples/free-trial-professional/1001
 
         this.workbook = ExcelFile.Load("RandomSheets.xlsx");
     }

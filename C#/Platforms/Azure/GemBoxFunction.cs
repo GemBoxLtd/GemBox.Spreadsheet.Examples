@@ -1,9 +1,9 @@
+using GemBox.Spreadsheet;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
-using GemBox.Spreadsheet;
 
 public class GemBoxFunction
 {

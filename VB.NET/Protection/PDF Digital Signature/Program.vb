@@ -5,20 +5,17 @@ Imports GemBox.Spreadsheet
 Module Program
 
     Sub Main()
-
-        PAdES_B_B()
-
-        PAdES_B_LTA()
+        Example1()
+        Example2()
     End Sub
 
-    Sub PAdES_B_B()
-
+    Sub Example1()
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
-        ' Create visual representation of digital signature at the beginning of the worksheet.
+        ' Create a visual representation of digital signature at the beginning of the worksheet.
         Dim signature = workbook.Worksheets(0).Pictures.Add("GemBoxSignature.png", "B2")
 
         Dim options As New PdfSaveOptions() With
@@ -35,14 +32,13 @@ Module Program
         workbook.Save("PDF Digital Signature.pdf", options)
     End Sub
 
-    Sub PAdES_B_LTA()
-
+    Sub Example2()
         ' If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
-        ' Create visual representation of digital signature at the beginning of the first worksheet.
+        ' Create a visual representation of digital signature at the beginning of the first worksheet.
         Dim signature = workbook.Worksheets(0).Pictures.Add("GemBoxSignature.png", "B2")
 
         ' If using the Professional version, put your serial key below.
@@ -51,7 +47,7 @@ Module Program
         ' Get a digital ID from PKCS#12/PFX file.
         Dim digitalId = New PdfDigitalId("GemBoxECDsa521.pfx", "GemBoxPassword")
 
-        ' Create a PDF signer that will create PAdES B-LTA level signature.
+        ' Create a PDF signer that will create a PAdES B-LTA level signature.
         Dim signer = New PdfSigner(digitalId)
 
         ' PdfSigner should create CAdES-equivalent signature.
@@ -98,4 +94,5 @@ Module Program
             pdfDocument.Save()
         End Using
     End Sub
+
 End Module

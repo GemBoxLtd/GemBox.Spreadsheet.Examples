@@ -21,12 +21,12 @@ class Program
 
         worksheet.Protected = true;
 
-        worksheet.Cells[2, 2].Value = "Inserting columns is allowed (only supported for XLSX file format).";
         var protectionSettings = worksheet.ProtectionSettings;
-        protectionSettings.AllowInsertingColumns = true;
-
-        worksheet.Cells[3, 2].Value = "Sheet password is 123 (only supported for XLSX file format).";
+        worksheet.Cells[3, 2].Value = "Sheet password is 123 (only supported for XLSX and XLS file format).";
         protectionSettings.SetPassword("123");
+
+        worksheet.Cells[2, 2].Value = "Inserting columns is allowed (only supported for XLSX file format).";
+        protectionSettings.AllowInsertingColumns = true;
 
         workbook.Save("Sheet Protection.xlsx");
     }

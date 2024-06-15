@@ -14,7 +14,7 @@ public partial class MainWindow : Window
 
     private async void loadButton_Click(object sender, RoutedEventArgs e)
     {
-        // Capture the current context on UI thread.
+        // Capture the current context on the UI thread.
         var context = SynchronizationContext.Current;
 
         // Create load options.

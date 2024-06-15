@@ -15,7 +15,7 @@ public partial class MainForm : Form
 
     private async void loadButton_Click(object sender, EventArgs e)
     {
-        // Capture the current context on UI thread.
+        // Capture the current context on the UI thread.
         var context = SynchronizationContext.Current;
 
         // Create load options.
@@ -23,7 +23,7 @@ public partial class MainForm : Form
         loadOptions.ProgressChanged += (eventSender, args) =>
         {
             var percentage = args.ProgressPercentage;
-            // Invoke on UI thread.
+            // Invoke on the UI thread.
             context.Post(progressPercentage =>
             {
                 // Update UI.

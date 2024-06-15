@@ -140,7 +140,7 @@ Module Program
         worksheet.PrintOptions.FitWorksheetWidthToPages = 1
 
         ' Save workbook as an Excel file.
-        workbook.Save("Writing1.xlsx")
+        workbook.Save("Writing.xlsx")
     End Sub
 
     Sub Example2()
@@ -174,7 +174,7 @@ Module Program
         worksheet.Cells("B6").SetValue(html, LoadOptions.HtmlDefault)
 
         ' Save workbook as an Excel file.
-        workbook.Save("Writing2.xlsx")
+        workbook.Save("WritingWithRichText.xlsx")
     End Sub
 
 End Module

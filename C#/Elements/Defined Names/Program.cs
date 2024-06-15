@@ -1,7 +1,4 @@
 using GemBox.Spreadsheet;
-using System;
-using System.IO;
-using System.Text;
 
 class Program
 {

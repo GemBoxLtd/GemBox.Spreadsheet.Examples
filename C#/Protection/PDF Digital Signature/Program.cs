@@ -6,19 +6,18 @@ class Program
 {
     static void Main()
     {
-        PAdES_B_B();
-
-        PAdES_B_LTA();
+        Example1();
+        Example2();
     }
 
-    static void PAdES_B_B()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        // Create visual representation of digital signature at the beginning of the worksheet.
+        // Create a visual representation of digital signature at the beginning of the worksheet.
         var signature = workbook.Worksheets[0].Pictures.Add("GemBoxSignature.png", "B2");
 
         var options = new PdfSaveOptions()
@@ -35,14 +34,14 @@ class Program
         workbook.Save("PDF Digital Signature.pdf", options);
     }
 
-    static void PAdES_B_LTA()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        // Create visual representation of digital signature at the beginning of the first worksheet.
+        // Create a visual representation of the digital signature at the beginning of the first worksheet.
         var signature = workbook.Worksheets[0].Pictures.Add("GemBoxSignature.png", "B2");
 
         // If using the Professional version, put your serial key below.
@@ -51,7 +50,7 @@ class Program
         // Get a digital ID from PKCS#12/PFX file.
         var digitalId = new PdfDigitalId("GemBoxECDsa521.pfx", "GemBoxPassword");
 
-        // Create a PDF signer that will create PAdES B-LTA level signature.
+        // Create a PDF signer that will create a PAdES B-LTA level signature.
         var signer = new PdfSigner(digitalId);
 
         // PdfSigner should create CAdES-equivalent signature.

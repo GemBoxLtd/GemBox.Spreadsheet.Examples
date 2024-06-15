@@ -144,7 +144,7 @@ class Program
         worksheet.PrintOptions.FitWorksheetWidthToPages = 1;
 
         // Save workbook as an Excel file.
-        workbook.Save("Writing1.xlsx");
+        workbook.Save("Writing.xlsx");
     }
 
     static void Example2()
@@ -179,6 +179,6 @@ class Program
         worksheet.Cells["B6"].SetValue(html, LoadOptions.HtmlDefault);
 
         // Save workbook as an Excel file.
-        workbook.Save("Writing2.xlsx");
+        workbook.Save("WritingWithRichText.xlsx");
     }
 }

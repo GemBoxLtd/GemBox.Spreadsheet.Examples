@@ -18,7 +18,7 @@ class Program
         //   1. Load XLS or XLSX file into ExcelFile object.
         //   2. Save ExcelFile object to PDF file.
         ExcelFile workbook = ExcelFile.Load("ComplexTemplate.xlsx");
-        workbook.Save("Convert1.pdf", new PdfSaveOptions() { SelectionType = SelectionType.EntireFile });
+        workbook.Save("Convert.pdf", new PdfSaveOptions() { SelectionType = SelectionType.EntireFile });
     }
 
     static void Example2()
@@ -43,7 +43,7 @@ class Program
 
         // Save to PDF file.
         // By default, the SelectionType.ActiveSheet is used.
-        workbook.Save("Convert2.pdf");
+        workbook.Save("ConvertRange.pdf");
     }
 
     static void Example3()
@@ -63,6 +63,6 @@ class Program
         };
 
         // Save to PDF file.
-        workbook.Save("Output3.pdf", options);
+        workbook.Save("ConvertWithConformance.pdf", options);
     }
 }

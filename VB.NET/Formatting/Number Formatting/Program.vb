@@ -33,7 +33,7 @@ Module Program
             (1.2345, "0.000"),
             (-2.345, "0.00_);[Red]\(0.00\)"),
             (2.34, "\$#,##0.00"),
-            (2345.67, "#,##0.00\ [$�-1]"),
+            (2345.67, "#,##0.00\ [$€-1]"),
             (New DateTime(2012, 11, 9, 0, 0, 0), "[$-F800]dddd\,\ mmmm\ dd\,\ yyyy"),
             (New DateTime(2012, 12, 5, 0, 0, 0), "[$-409]mmmm\ d\,\ yyyy;@"),
             (New DateTime(2012, 8, 10, 0, 0, 0), "yyyy\-mm\-dd\ \(dddd\)"),
@@ -73,32 +73,32 @@ Module Program
         Dim worksheet = workbook.Worksheets.Add("sheet")
         worksheet.Columns(0).SetWidth(200, LengthUnit.Pixel)
 
-        ' Show the value as a number with two decimal places And thousands separator.
+        ' Show the value as a number with two decimal places and a thousands separator.
         worksheet.Cells(0, 0).Style.NumberFormat =
             NumberFormatBuilder.Number(2, useThousandsSeparator:=True)
         worksheet.Cells(0, 0).Value = 2500.333
 
         ' Show the value in Euros And display negative values in parentheses.
         worksheet.Cells(1, 0).Style.NumberFormat =
-            NumberFormatBuilder.Currency("�", 2, useParenthesesToDisplayNegativeValue:=True)
+            NumberFormatBuilder.Currency("€", 2, useParenthesesToDisplayNegativeValue:=True)
         worksheet.Cells(1, 0).Value = -50
 
-        ' Show the value in accounting format with three decimal places.
+        ' Show the value in an accounting format with three decimal places.
         worksheet.Cells(2, 0).Style.NumberFormat =
             NumberFormatBuilder.Accounting(3, currencySymbol:="$")
         worksheet.Cells(2, 0).Value = -50
 
-        ' Show the value in ISO 8061 date format.
+        ' Show the value in the ISO 8061 date format.
         worksheet.Cells(3, 0).Style.NumberFormat =
             NumberFormatBuilder.DateTimeIso8061()
         worksheet.Cells(3, 0).Value = DateTime.Now
 
-        ' Show the value as percentage.
+        ' Show the value as a percentage.
         worksheet.Cells(4, 0).Style.NumberFormat =
             NumberFormatBuilder.Percentage(2)
         worksheet.Cells(4, 0).Value = 1 / 3D
 
-        ' Show the value as fraction with 100 as a denominator.
+        ' Show the value as a fraction with 100 as the denominator.
         worksheet.Cells(5, 0).Style.NumberFormat =
             NumberFormatBuilder.FractionWithPreciseDenominator(100)
         worksheet.Cells(5, 0).Value = 1 / 3D

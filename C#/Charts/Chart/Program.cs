@@ -104,10 +104,11 @@ class Program
         var salaryChart = comboChart.Add(ChartType.Column);
         salaryChart.Series.Add("=Chart!B1", "Chart!B2:B5");
 
-        // Add line chart for displaying min and max series.
+        // Add line chart for displaying min and max series, those will use the combo chart's secondary axis.
         var minMaxChart = comboChart.Add(ChartType.Line);
         minMaxChart.Series.Add("=Chart!C1", "Chart!C2:C5");
         minMaxChart.Series.Add("=Chart!D1", "Chart!D2:D5");
+        minMaxChart.UseSecondaryAxis = true;
 
         workbook.Save("Combo Chart.xlsx");
     }

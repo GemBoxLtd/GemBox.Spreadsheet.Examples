@@ -1,7 +1,7 @@
-Imports System
-Imports System.Windows.Forms
 Imports GemBox.Spreadsheet
 Imports GemBox.Spreadsheet.WinFormsUtilities
+Imports System
+Imports System.Windows.Forms
 
 Public Class Form1
 
@@ -57,7 +57,8 @@ Public Class Form1
             "JPEG (*.jpg)|*.jpg|" &
             "PNG (*.png)|*.png|" &
             "TIFF (*.tif)|*.tif|" &
-            "WMP (*.wdp)|*.wdp"
+            "WMP (*.wdp)|*.wdp" &
+            "SVG (*.svg)|*.svg"
         saveFileDialog.FilterIndex = 3
 
         If (saveFileDialog.ShowDialog() = DialogResult.OK) Then

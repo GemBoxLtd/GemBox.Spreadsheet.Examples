@@ -13,7 +13,7 @@ Public Class MainForm
     End Sub
 
     Private Async Sub LoadButton_Click(sender As Object, e As EventArgs) Handles LoadButton.Click
-        ' Capture the current context on UI thread.
+        ' Capture the current context on the UI thread.
         Dim context = SynchronizationContext.Current
 
         ' Create load options.
@@ -21,7 +21,7 @@ Public Class MainForm
         AddHandler loadOptions.ProgressChanged,
             Sub(eventSender, args)
                 Dim percentage = args.ProgressPercentage
-                ' Invoke on UI thread.
+                ' Invoke on the UI thread.
                 context.Post(
                     Sub(progressPercentage)
                         ' Update UI.

@@ -12,7 +12,7 @@ Module Program
         Dim workbook = ExcelFile.Load("XlsDecryption.xls",
             New XlsLoadOptions With {.Password = inputPassword})
 
-        workbook.Save("Decrypted File.xlsx")
+        workbook.Save("Decrypted File.xls")
 
     End Sub
 End Module
