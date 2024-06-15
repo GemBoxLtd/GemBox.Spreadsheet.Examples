@@ -10,6 +10,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
         ' Create DataTable with specified columns.

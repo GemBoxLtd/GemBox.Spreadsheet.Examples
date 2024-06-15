@@ -9,7 +9,7 @@ class Program
         Example2();
     }
 
-    public static void Example1()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
@@ -67,7 +67,7 @@ class Program
         workbook.Save("Number Formats.xlsx");
     }
 
-    public static void Example2()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");

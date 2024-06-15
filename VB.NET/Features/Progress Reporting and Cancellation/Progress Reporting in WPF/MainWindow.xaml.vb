@@ -20,7 +20,7 @@ Class MainWindow
         AddHandler loadOptions.ProgressChanged,
             Sub(eventSender, args)
                 Dim percentage = args.ProgressPercentage
-                ' Invoke on UI thread.
+                ' Invoke on the UI thread.
                 context.Post(
                     Sub(progressPercentage)
                         ' Update UI.

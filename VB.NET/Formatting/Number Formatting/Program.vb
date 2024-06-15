@@ -4,7 +4,6 @@ Imports System
 Module Program
 
     Sub Main()
-
         Example1()
         Example2()
     End Sub

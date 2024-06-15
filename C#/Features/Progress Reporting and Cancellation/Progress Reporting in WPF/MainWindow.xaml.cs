@@ -22,7 +22,7 @@ public partial class MainWindow : Window
         loadOptions.ProgressChanged += (eventSender, args) =>
         {
             var percentage = args.ProgressPercentage;
-            // Invoke on UI thread.
+            // Invoke on the UI thread.
             context.Post(progressPercentage =>
             {
                 // Update UI.
