@@ -31,10 +31,10 @@ Class MainWindow
         worksheet.Cells(0, 1).Value = "Hello"
 
         worksheet.Cells(1, 0).Value = "Russian:"
-        worksheet.Cells(1, 1).Value = New String(New Char() {"З"c, "д"c, "р"c, "а"c, "в"c, "с"c, "т"c, "в"c, "у"c, "й"c, "т"c, "е"c})
+        worksheet.Cells(1, 1).Value = New String(New Char() {ChrW(&H417), ChrW(&H434), ChrW(&H440), ChrW(&H430), ChrW(&H432), ChrW(&H441), ChrW(&H442), ChrW(&H432), ChrW(&H443), ChrW(&H439), ChrW(&H442), ChrW(&H435)})
 
         worksheet.Cells(2, 0).Value = "Chinese:"
-        worksheet.Cells(2, 1).Value = New String(New Char() {"你"c, "好"c})
+        worksheet.Cells(2, 1).Value = New String(New Char() {ChrW(&H4F60), ChrW(&H597D)})
 
         worksheet.Cells(4, 0).Value = "In order to see Russian and Chinese characters you need to have appropriate fonts on your PC."
         worksheet.Cells.GetSubrangeAbsolute(4, 0, 4, 7).Merged = True

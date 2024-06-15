@@ -4,13 +4,14 @@ Imports System
 Module Program
 
     Sub Main()
-
         Example1()
         Example2()
-
     End Sub
 
-    Sub Example1
+    Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("Template.xlsx")
 
         ' Get template sheet.
@@ -57,7 +58,10 @@ Module Program
         workbook.Save("Sheet Copying_Deleting.xlsx")
     End Sub
 
-    Sub Example2
+    Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim workbook = ExcelFile.Load("CellRanges.xlsx")
         Dim worksheet = workbook.Worksheets(0)
 

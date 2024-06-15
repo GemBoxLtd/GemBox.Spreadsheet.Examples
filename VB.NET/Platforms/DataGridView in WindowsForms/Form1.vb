@@ -57,7 +57,7 @@ Public Class Form1
             "JPEG (*.jpg)|*.jpg|" &
             "PNG (*.png)|*.png|" &
             "TIFF (*.tif)|*.tif|" &
-            "WMP (*.wdp)|*.wdp" &
+            "WMP (*.wdp)|*.wdp|" &
             "SVG (*.svg)|*.svg"
         saveFileDialog.FilterIndex = 3
 
