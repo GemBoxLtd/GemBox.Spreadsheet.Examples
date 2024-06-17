@@ -69,28 +69,18 @@ Module Program
 
         Dim workbook = ExcelFile.Load("SimpleTemplate.xlsx")
 
-        ' Create DataTable with specified columns.
-        Dim dataTable As New DataTable()
-        dataTable.Columns.Add("First_Column", GetType(String))
-        dataTable.Columns.Add("Second_Column", GetType(String))
-        dataTable.Columns.Add("Third_Column", GetType(Integer))
-        dataTable.Columns.Add("Fourth_Column", GetType(Double))
-
         ' Select the first worksheet from the file.
         Dim worksheet = workbook.Worksheets(0)
 
-        ' Extract the data from an Excel worksheet to the DataTable.
-        Dim options As New ExtractToDataTableOptions(0, 0, 20)
-        AddHandler options.ExcelCellToDataTableCellConverting,
-            Sub(sender, e)
-                If Not e.IsDataTableValueValid Then
-                    ' Convert ExcelCell value to string.
-                    e.DataTableValue = If(e.DataTableColumnType = GetType(String),
-                        e.ExcelCell.Value?.ToString(),
-                        DBNull.Value)
-                End If
-            End Sub
-        worksheet.ExtractToDataTable(dataTable, options)
+        ' Create DataTable from an Excel worksheet.
+        Dim dataTable = worksheet.CreateDataTable(New CreateDataTableOptions() With
+        {
+            .ColumnHeaders = True,
+            .StartRow = 1,
+            .NumberOfColumns = 5,
+            .NumberOfRows = worksheet.Rows.Count - 1,
+            .Resolution = ColumnTypeResolution.AutoPreferStringCurrentCulture
+        })
 
         ' Write DataTable columns.
         For Each column As DataColumn In dataTable.Columns
@@ -110,7 +100,7 @@ Module Program
         For Each row As DataRow In dataTable.Rows
             For Each item In row.ItemArray
                 Dim value As String = item.ToString()
-                value = If(value.Length > 20, value.Remove(19) & "…", value)
+                value = If(value.Length > 20, value.Remove(19) & "�", value)
                 Console.Write(value.PadRight(20))
             Next
             Console.WriteLine()

@@ -73,30 +73,18 @@ class Program
 
         var workbook = ExcelFile.Load("SimpleTemplate.xlsx");
 
-        // Create DataTable with specified columns.
-        var dataTable = new DataTable();
-        dataTable.Columns.Add("First_Column", typeof(string));
-        dataTable.Columns.Add("Second_Column", typeof(string));
-        dataTable.Columns.Add("Third_Column", typeof(int));
-        dataTable.Columns.Add("Fourth_Column", typeof(double));
-
         // Select the first worksheet from the file.
         var worksheet = workbook.Worksheets[0];
 
-        // Extract the data from an Excel worksheet to the DataTable.
-        var options = new ExtractToDataTableOptions(0, 0, 20);
-        options.ExcelCellToDataTableCellConverting += (sender, e) =>
+        // Create DataTable from an Excel worksheet.
+        var dataTable = worksheet.CreateDataTable(new CreateDataTableOptions()
         {
-            if (!e.IsDataTableValueValid)
-            {
-                // Convert ExcelCell value to string.
-                if (e.DataTableColumnType == typeof(string))
-                    e.DataTableValue = e.ExcelCell.Value?.ToString();
-                else
-                    e.DataTableValue = DBNull.Value;
-            }
-        };
-        worksheet.ExtractToDataTable(dataTable, options);
+            ColumnHeaders = true,
+            StartRow = 1,
+            NumberOfColumns = 5,
+            NumberOfRows = worksheet.Rows.Count - 1,
+            Resolution = ColumnTypeResolution.AutoPreferStringCurrentCulture
+        });
 
         // Write DataTable columns.
         foreach (DataColumn column in dataTable.Columns)
