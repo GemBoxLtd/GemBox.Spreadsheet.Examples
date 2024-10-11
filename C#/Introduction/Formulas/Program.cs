@@ -1,4 +1,5 @@
 using GemBox.Spreadsheet;
+using System;
 
 class Program
 {
@@ -6,6 +7,7 @@ class Program
     {
         Example1();
         Example2();
+        Example3();
     }
 
     static void Example1()
@@ -142,5 +144,40 @@ class Program
         worksheet.Parent.Calculate();
 
         workbook.Save("Formula Calculation.xlsx");
+    }
+
+    static void Example3()
+    {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Formula Evaluation");
+
+        // Enter values in some cells.
+        worksheet.Cells["A1"].Value = 1;
+        worksheet.Cells["B1"].Value = 2;
+        worksheet.Cells["C1"].Value = -1;
+        Console.WriteLine($"A1: {worksheet.Cells["A1"].Value}");
+        Console.WriteLine($"B1: {worksheet.Cells["B1"].Value}");
+        Console.WriteLine($"C1: {worksheet.Cells["C1"].Value}");
+        Console.WriteLine();
+
+        // Evaluation of a formula that returns just one value.
+        var formula = "=A1 + B1 + C1";
+        var value = worksheet.CalculateFormula(formula);
+
+        Console.WriteLine($"Formula: {formula}");
+        Console.WriteLine($"Result: {value[0, 0]}");
+        Console.WriteLine();
+
+        // Evaluation of a formula that returns more than one value.
+        formula = "=ABS(A1:C1)";
+        value = worksheet.CalculateFormula(formula);
+
+        Console.WriteLine($"Formula: {formula}");
+        for (int i = 0; i < value.GetLength(0); i++)
+            for (int j = 0; j < value.GetLength(1); j++)
+                Console.WriteLine($"Result [{i}, {j}]: {value[i, j]}");
     }
 }

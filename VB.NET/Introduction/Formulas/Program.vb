@@ -3,10 +3,9 @@ Imports GemBox.Spreadsheet
 Module Program
 
     Sub Main()
-
         Example1()
         Example2()
-
+        Example3()
     End Sub
 
     Sub Example1()
@@ -142,6 +141,42 @@ Module Program
         worksheet.Parent.Calculate()
 
         workbook.Save("Formula Calculation.xlsx")
+    End Sub
+
+    Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
+        Dim workbook = New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("Formula Evaluation")
+
+        ' Enter values in some cells.
+        worksheet.Cells("A1").Value = 1
+        worksheet.Cells("B1").Value = 2
+        worksheet.Cells("C1").Value = -1
+        Console.WriteLine($"A1: {worksheet.Cells(CStr("A1")).Value}")
+        Console.WriteLine($"B1: {worksheet.Cells(CStr("B1")).Value}")
+        Console.WriteLine($"C1: {worksheet.Cells(CStr("C1")).Value}")
+        Console.WriteLine()
+
+        ' Evaluation of a formula that returns just one value.
+        Dim formula = "=A1 + B1 + C1"
+        Dim value = worksheet.CalculateFormula(formula)
+
+        Console.WriteLine($"Formula: {formula}")
+        Console.WriteLine($"Result: {value(0, 0)}")
+        Console.WriteLine()
+
+        ' Evaluation of a formula that returns more than one value.
+        formula = "=ABS(A1:C1)"
+        value = worksheet.CalculateFormula(formula)
+
+        Console.WriteLine($"Formula: {formula}")
+        For i As Integer = 0 To value.GetLength(0) - 1
+            For j As Integer = 0 To value.GetLength(1) - 1
+                Console.WriteLine($"Result [{i}, {j}]: {value(i, j)}")
+            Next
+        Next
     End Sub
 
 End Module

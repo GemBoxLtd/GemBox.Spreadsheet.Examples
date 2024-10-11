@@ -7,6 +7,7 @@ class Program
     {
         Example1();
         Example2();
+        Example3();
     }
 
     static void Example1()
@@ -79,5 +80,25 @@ class Program
         }
 
         workbook.Save("CellsImages.xlsx");
+    }
+
+    static void Example3()
+    {
+        // If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
+        var workbook = new ExcelFile();
+        var worksheet = workbook.Worksheets.Add("Camera");
+
+        // Define some data in a specific range of cells.
+        worksheet.Cells[0, 0].Value = 100;
+        worksheet.Cells[0, 1].Value = "ABC";
+        worksheet.Cells[1, 0].Value = "DEF";
+        worksheet.Cells[1, 1].Value = 200;
+
+        // Add image with camera function enabled.
+        worksheet.Pictures.Add("=A1:B2", "E6", "F7");
+
+        workbook.Save("CameraTool.xlsx");
     }
 }

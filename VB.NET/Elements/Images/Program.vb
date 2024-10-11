@@ -7,6 +7,7 @@ Module Program
 
         Example1()
         Example2()
+        Example3()
 
     End Sub
 
@@ -75,6 +76,25 @@ Module Program
         Next
 
         workbook.Save("CellsImages.xlsx")
+    End Sub
+
+    Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+
+        Dim workbook = New ExcelFile()
+        Dim worksheet = workbook.Worksheets.Add("Camera")
+
+        ' Define some data in a specific range of cells.
+        worksheet.Cells(0, 0).Value = 100
+        worksheet.Cells(0, 1).Value = "ABC"
+        worksheet.Cells(1, 0).Value = "DEF"
+        worksheet.Cells(1, 1).Value = 200
+
+        ' Add image with camera function enabled.
+        worksheet.Pictures.Add("=A1:B2", "E6", "F7")
+
+        workbook.Save("CameraTool.xlsx")
     End Sub
 
 End Module

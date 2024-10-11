@@ -9,4 +9,10 @@
     <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1839" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Dices.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
