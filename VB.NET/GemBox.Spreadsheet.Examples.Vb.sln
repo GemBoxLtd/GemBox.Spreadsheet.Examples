@@ -121,7 +121,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintAndViewOptions", "Feat
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrintTitlesAndArea", "Features\Print Titles and Area\PrintTitlesAndArea.vbproj", "{A5F9920E-AEB9-4B4A-B42F-2486E6445553}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PrivateFonts", "Features\Private Fonts\PrivateFonts.vbproj", "{77B9861C-B35C-4B2B-B9BC-4B648700AA06}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Fonts", "Features\Fonts\Fonts.vbproj", "{77B9861C-B35C-4B2B-B9BC-4B648700AA06}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RightToLeftText", "Features\Right to Left Text\RightToLeftText.vbproj", "{3B04B35D-394A-454C-8494-6A548BE2CDD0}"
 EndProject

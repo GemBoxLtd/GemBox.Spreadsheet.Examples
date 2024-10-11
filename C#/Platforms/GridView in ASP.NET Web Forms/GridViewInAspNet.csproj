@@ -25,6 +25,8 @@
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
     <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,19 +81,45 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="GemBox.Spreadsheet, Version=49.0.0.1379, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GemBox.Spreadsheet.49.0.1379\lib\net461\GemBox.Spreadsheet.dll</HintPath>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet, Version=49.0.0.1839, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GemBox.Spreadsheet.49.0.1839\lib\net462\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HarfBuzzSharp.7.3.0.2\lib\net462\HarfBuzzSharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />
+    <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SkiaSharp.2.88.8\lib\net462\SkiaSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
@@ -127,6 +155,19 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\..\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets" Condition="Exists('..\..\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets'))" />
+    <Error Condition="!Exists('..\..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
+    <Error Condition="!Exists('..\..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets" Condition="Exists('..\..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" />
+  <Import Project="..\..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

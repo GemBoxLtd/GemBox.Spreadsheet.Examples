@@ -125,7 +125,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintAndViewOptions", "Feat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintTitlesAndArea", "Features\Print Titles and Area\PrintTitlesAndArea.csproj", "{E00B9E4D-0F41-46E0-899B-4ED6693987EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrivateFonts", "Features\Private Fonts\PrivateFonts.csproj", "{54FBD2F9-5800-465D-9179-048849766341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fonts", "Features\Fonts\Fonts.csproj", "{54FBD2F9-5800-465D-9179-048849766341}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Progress Reporting and Cancellation", "Progress Reporting and Cancellation", "{70F962AB-2D3A-452A-AEFC-10FBE2C5B9A0}"
 EndProject
