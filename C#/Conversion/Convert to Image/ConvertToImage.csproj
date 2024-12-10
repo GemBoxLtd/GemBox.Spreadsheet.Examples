@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1839" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1895" />
     <Reference Include="System.IO.Compression" Condition=" '$(TargetFramework)' == 'net48' " />
-    <PackageReference Include="System.IO.Compression" Condition=" '$(TargetFramework)' != 'net48' " Version="*" />
+    <PackageReference Include="System.IO.Compression" Condition=" '$(TargetFramework)' != 'net48' " Version="4.3.0" />
+    <PackageReference Include="System.Private.Uri" Condition=" '$(TargetFramework)' != 'net48' " Version="4.3.2" />
   </ItemGroup>
 
   <ItemGroup>

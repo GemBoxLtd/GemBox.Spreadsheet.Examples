@@ -175,6 +175,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlImportAndExport", "Conv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SheetToDataTable", "Conversion\Sheet to DataTable\SheetToDataTable.csproj", "{A8217337-2EEA-47E2-85B8-B324E1DA53A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteProtection", "Protection\Write Protection\WriteProtection.csproj", "{7B4B0E89-E020-4420-A730-F8C4C4331C5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -795,6 +797,14 @@ Global
 		{A8217337-2EEA-47E2-85B8-B324E1DA53A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8217337-2EEA-47E2-85B8-B324E1DA53A3}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8217337-2EEA-47E2-85B8-B324E1DA53A3}.Release|x86.Build.0 = Release|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Debug|x86.Build.0 = Debug|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -878,6 +888,7 @@ Global
 		{A1D76566-0D11-4ABC-BCD3-C96C6F6F003C} = {D280AB6F-D07D-4CBC-8BEA-3E66C788B986}
 		{ACDE4B0C-F18C-4DBE-B4D3-6988AF8EEA01} = {D280AB6F-D07D-4CBC-8BEA-3E66C788B986}
 		{A8217337-2EEA-47E2-85B8-B324E1DA53A3} = {D280AB6F-D07D-4CBC-8BEA-3E66C788B986}
+		{7B4B0E89-E020-4420-A730-F8C4C4331C5C} = {150328BE-4393-4B43-9E1F-9E7AD37C77FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {186A9BA6-6C07-4B96-A8A0-5AA2687D13C0}

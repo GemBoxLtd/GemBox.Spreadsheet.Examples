@@ -48,7 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="*" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1895" />
     <Reference Include="ReachFramework" />
     <Reference Include="System.Core" />
     <Reference Include="System.Printing" />
