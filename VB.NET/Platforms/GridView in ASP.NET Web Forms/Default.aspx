@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="MediumTrust._Default" EnableEventValidation="false" %>
+﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="AspNetGridView._Default" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 <html lang="en-US">

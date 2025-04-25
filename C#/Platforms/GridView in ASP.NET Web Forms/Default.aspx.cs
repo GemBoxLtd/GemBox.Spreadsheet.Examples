@@ -5,17 +5,13 @@ using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MediumTrust
+namespace AspNetGridView
 {
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
-            // To be able to save ExcelFile to PDF format in Medium Trust environment,
-            // you need to specify a font files location that is under your ASP.NET application's control.
-            FontSettings.FontsBaseDirectory = Server.MapPath("Fonts/");
 
             if (!Page.IsPostBack)
             {

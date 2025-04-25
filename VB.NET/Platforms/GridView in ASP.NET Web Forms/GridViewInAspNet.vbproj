@@ -11,8 +11,8 @@
     <ProjectGuid>{A622566D-7E31-4BB6-8098-A690FA4D1543}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>MediumTrust</RootNamespace>
-    <AssemblyName>MediumTrust</AssemblyName>
+    <RootNamespace>AspNetGridView</RootNamespace>
+    <AssemblyName>AspNetGridView</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>false</UseIISExpress>
@@ -34,7 +34,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>MediumTrust.xml</DocumentationFile>
+    <DocumentationFile>AspNetGridView.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -44,7 +44,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>MediumTrust.xml</DocumentationFile>
+    <DocumentationFile>AspNetGridView.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -61,7 +61,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1895" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="2025.4.107" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -118,9 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="InputData.xlsx" />
-    <Content Include="Fonts\calibri.ttf" />
-    <Content Include="Fonts\times.ttf" />
-    <Content Include="Fonts\timesbd.ttf" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

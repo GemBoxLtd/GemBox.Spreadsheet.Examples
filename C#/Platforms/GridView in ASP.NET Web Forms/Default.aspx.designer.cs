@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MediumTrust
+namespace AspNetGridView
 {
 
 

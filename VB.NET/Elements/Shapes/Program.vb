@@ -15,11 +15,6 @@ Module Program
         Dim workbook As New ExcelFile()
         Dim worksheet = workbook.Worksheets.Add("Shapes")
 
-        Dim shape = worksheet.Shapes.Add(ShapeType.Oval, 100, 100, 200, 150, LengthUnit.Point)
-        shape.Fill.SetSolid(DrawingColor.FromName(DrawingColorName.GreenYellow))
-        shape.Outline.Fill.SetSolid(DrawingColor.FromName(DrawingColorName.DarkBlue))
-        shape.Outline.Width = Length.From(3, LengthUnit.Point)
-
         Dim roundedRectangle = worksheet.Shapes.Add(ShapeType.RoundedRectangle, "B2", "D4")
         ' Radius of the corners is 35% of the rounded rectangle height (since it is smaller than width).
         roundedRectangle.AdjustValues.Add("adj", 35000)
@@ -31,6 +26,13 @@ Module Program
 
         Dim line = worksheet.Shapes.Add(ShapeType.Line, "B12", "B15")
         line.Outline.Width = Length.From(10, LengthUnit.Pixel)
+
+        Dim shape = worksheet.Shapes.Add(ShapeType.Oval, 100, 100, 200, 150, LengthUnit.Point)
+        shape.Fill.SetSolid(DrawingColor.FromName(DrawingColorName.GreenYellow))
+        shape.Outline.Fill.SetSolid(DrawingColor.FromName(DrawingColorName.DarkBlue))
+        shape.Outline.Width = Length.From(3, LengthUnit.Point)
+        ' Sending the shape behind the rightArrow.
+        shape.SendToBack()
 
         workbook.Save("Shapes.xlsx")
     End Sub

@@ -37,7 +37,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1895" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="2025.4.107" />
     <Reference Include="System" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />

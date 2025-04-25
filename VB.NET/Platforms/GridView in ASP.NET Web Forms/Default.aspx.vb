@@ -12,10 +12,6 @@ Public Class _Default
 
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        ' To be able to save ExcelFile to PDF format in Medium Trust environment,
-        ' you need to specify a font files location that is under your ASP.NET application's control.
-        FontSettings.FontsBaseDirectory = Server.MapPath("Fonts/")
-
         If Not Page.IsPostBack Then
 
             Dim people As New DataTable()

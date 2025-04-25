@@ -52,7 +52,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1895" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="2025.4.107" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
