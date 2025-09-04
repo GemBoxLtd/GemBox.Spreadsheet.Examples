@@ -16,15 +16,13 @@ Module Program
 
         ' Show only rows which satisfy following conditions:
         ' - 'Departments' value is either "Legal" or "Marketing" or "Finance" and
-        ' - 'Names' value contains letter 'e' and
-        ' - 'Salaries' value is in the top 20 percent of all 'Salaries' values and
-        ' - 'Deadlines' value is today's date.
+        ' - 'Names' value contains word "Fred" and
+        ' - 'Salaries' value is in the top 20 percent of all 'Salaries' values.
         ' Shown rows are then sorted by 'Salaries' values in the descending order.
         filterRange.Filter() _
             .ByValues(0, "Legal", "Marketing", "Finance") _
-            .ByCustom(1, FilterOperator.Equal, "*e*") _
+            .ByCustom(1, FilterOperator.Equal, "*Fred*") _
             .ByTop10(3, True, True, 20) _
-            .ByDynamic(4, DynamicFilterType.Today) _
             .SortBy(3, True) _
             .Apply()
 

@@ -16,15 +16,13 @@ class Program
 
         // Show only rows which satisfy following conditions:
         // - 'Departments' value is either "Legal" or "Marketing" or "Finance" and
-        // - 'Names' value contains letter 'e' and
-        // - 'Salaries' value is in the top 20 percent of all 'Salaries' values and
-        // - 'Deadlines' value is today's date.
+        // - 'Names' value contains word "Fred" and
+        // - 'Salaries' value is in the top 20 percent of all 'Salaries' values.
         // Shown rows are then sorted by 'Salaries' values in the descending order.
         filterRange.Filter()
             .ByValues(0, "Legal", "Marketing", "Finance")
-            .ByCustom(1, FilterOperator.Equal, "*e*")
+            .ByCustom(1, FilterOperator.Equal, "*Fred*")
             .ByTop10(3, true, true, 20)
-            .ByDynamic(4, DynamicFilterType.Today)
             .SortBy(3, true)
             .Apply();
 

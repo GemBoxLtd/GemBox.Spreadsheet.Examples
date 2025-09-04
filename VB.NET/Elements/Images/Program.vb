@@ -1,5 +1,5 @@
 Imports GemBox.Spreadsheet
-Imports System
+Imports GemBox.Spreadsheet.RichData
 
 Module Program
 
@@ -49,33 +49,15 @@ Module Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim workbook As New ExcelFile()
-        Dim worksheet = workbook.Worksheets.Add("Smileys")
+        Dim worksheet = workbook.Worksheets.Add("Picture in-cell")
 
-        ' Create a sheet with specified columns width and rows height.
-        For i As Integer = 0 To 5
-            worksheet.Columns(i).SetWidth(10 * (i + 1), LengthUnit.Point)
-            worksheet.Rows(i).SetHeight(10 * (i + 1), LengthUnit.Point)
-        Next
+        worksheet.Columns(1).SetWidth(100, LengthUnit.Point)
+        worksheet.Rows(1).SetHeight(100, LengthUnit.Point)
 
-        ' Add images that fit inside a single cell.
-        For Each cell In worksheet.Cells.GetSubrange("A1:F6")
-            Dim picture = worksheet.Pictures.Add("SmilingFace.png", cell.Name)
-            Dim position = picture.Position
+        ' Insert an image into a cell.
+        worksheet.Cells("B2").RichValue = New RichPictureValue("SmilingFace.png")
 
-            Dim maxWidth As Double = cell.Column.GetWidth(LengthUnit.Point)
-            Dim maxHeight As Double = cell.Row.GetHeight(LengthUnit.Point)
-
-            Dim ratioX = maxWidth / position.Width
-            Dim ratioY = maxHeight / position.Height
-            Dim ratio = Math.Min(ratioX, ratioY)
-
-            If ratio < 1 Then
-                position.Width *= ratio
-                position.Height *= ratio
-            End If
-        Next
-
-        workbook.Save("CellsImages.xlsx")
+        workbook.Save("PictureInCell.xlsx")
     End Sub
 
     Sub Example3()

@@ -1,5 +1,5 @@
 using GemBox.Spreadsheet;
-using System;
+using GemBox.Spreadsheet.RichData;
 
 class Program
 {
@@ -50,36 +50,15 @@ class Program
         SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
         var workbook = new ExcelFile();
-        var worksheet = workbook.Worksheets.Add("Smileys");
+        var worksheet = workbook.Worksheets.Add("Picture in-cell");
 
-        // Create a sheet with specified columns width and rows height.
-        for (int i = 0; i < 6; i++)
-        {
-            worksheet.Columns[i].SetWidth(10 * (i + 1), LengthUnit.Point);
-            worksheet.Rows[i].SetHeight(10 * (i + 1), LengthUnit.Point);
-        }
+        worksheet.Columns[1].SetWidth(100, LengthUnit.Point);
+        worksheet.Rows[1].SetHeight(100, LengthUnit.Point);
 
-        // Add images that fit inside a single cell.
-        foreach (var cell in worksheet.Cells.GetSubrange("A1:F6"))
-        {
-            var picture = worksheet.Pictures.Add("SmilingFace.png", cell.Name);
-            var position = picture.Position;
+        // Insert an image into a cell.
+        worksheet.Cells["B2"].RichValue = new RichPictureValue("SmilingFace.png");
 
-            double maxWidth = cell.Column.GetWidth(LengthUnit.Point);
-            double maxHeight = cell.Row.GetHeight(LengthUnit.Point);
-
-            var ratioX = maxWidth / position.Width;
-            var ratioY = maxHeight / position.Height;
-            var ratio = Math.Min(ratioX, ratioY);
-
-            if (ratio < 1)
-            {
-                position.Width *= ratio;
-                position.Height *= ratio;
-            }
-        }
-
-        workbook.Save("CellsImages.xlsx");
+        workbook.Save("PictureInCell.xlsx");
     }
 
     static void Example3()
