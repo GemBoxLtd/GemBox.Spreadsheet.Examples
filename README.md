@@ -2,9 +2,9 @@
 
 ## What is GemBox.Spreadsheet?
 
-GemBox.Spreadsheet is a .NET component that enables you to read, write, convert, and print spreadsheet files (XLSX, XLS, XLSB, CSV, HTML, and ODS) from .NET applications.
+GemBox.Spreadsheet is a .NET library that enables you to read, write, convert, and print spreadsheet files (XLSX, XLS, XLSB, CSV, HTML, and ODS) from .NET applications.
 
-With GemBox.Spreadsheet you get a fast and reliable component that's easy to use and doesn't depend on Microsoft Excel. It requires only .NET and it's much faster than Microsoft Office Automation!
+With GemBox.Spreadsheet you get a fast and reliable library that's easy to use and doesn't depend on Microsoft Excel. It requires only .NET and it's much faster than Microsoft Office Automation!
 
 ## GemBox.Spreadsheet Features
 
