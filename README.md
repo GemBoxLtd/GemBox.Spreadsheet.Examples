@@ -53,7 +53,7 @@ For more GemBox.Spreadsheet code examples and demos, please visit our [examples 
 
 ## Installation
 
-You can download GemBox.Spreadsheet from [NuGet 📦](https://www.nuget.org/packages/GemBox.Spreadsheet/) or from [Downloads 🛠️](https://www.gemboxsoftware.com/spreadsheet/downloads/).
+You can download GemBox.Spreadsheet from [NuGet 📦](https://www.nuget.org/packages/GemBox.Spreadsheet/) or from [Downloads 🛠️](https://www.gemboxsoftware.com/spreadsheet/free-version).
 
 ## AI Coding
 
