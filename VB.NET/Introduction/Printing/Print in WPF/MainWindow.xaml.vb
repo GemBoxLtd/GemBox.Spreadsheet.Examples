@@ -43,7 +43,7 @@ Partial Public Class MainWindow
                 .SelectionType = SelectionType.EntireFile
             }
 
-            printOptions.FromPage = printDialog.PageRange.PageFrom - 1
+            printOptions.FromPage = If(printDialog.PageRange.PageFrom = 0, 0, printDialog.PageRange.PageFrom - 1)
             printOptions.ToPage = If(printDialog.PageRange.PageTo = 0, Integer.MaxValue, printDialog.PageRange.PageTo - 1)
 
             Me.workbook.Print(printDialog.PrintQueue.FullName, printOptions)

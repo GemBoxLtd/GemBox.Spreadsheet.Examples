@@ -44,7 +44,7 @@ public partial class MainWindow : Window
                 SelectionType = SelectionType.EntireFile
             };
 
-            printOptions.FromPage = printDialog.PageRange.PageFrom - 1;
+            printOptions.FromPage = printDialog.PageRange.PageFrom == 0 ? 0 : printDialog.PageRange.PageFrom - 1;
             printOptions.ToPage = printDialog.PageRange.PageTo == 0 ? int.MaxValue : printDialog.PageRange.PageTo - 1;
 
             this.workbook.Print(printDialog.PrintQueue.FullName, printOptions);
